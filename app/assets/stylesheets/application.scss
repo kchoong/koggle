@@ -13,3 +13,49 @@
  *= require_tree .
  *= require_self
  */
+
+.content {
+  font-family: Arial, serif;
+}
+
+.calendar {
+  width: 20%;
+
+  .calendar-header {
+    text-align: center;
+    font-size: 1.5em;
+    padding: 5px;
+
+    .calendar-title {
+      display: inline-block;
+      width: 80%;
+    }
+
+    .calendar-btn {
+      display: inline-block;
+      width: 10%;
+      font-family: monospace;
+      text-decoration: none;
+    }
+  }
+
+  .calendar-content {
+    table {
+      table-layout: fixed;
+      width: 100%;
+      border-collapse: collapse;
+
+      th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        width: 100 / 7;
+        height: 2em;
+        text-align: center;
+      }
+
+      .calendar-today {
+        background: lightskyblue;
+      }
+    }
+  }
+}
