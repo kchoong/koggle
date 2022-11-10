@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "home#index"
   get "/calendar/:year/:month" => "calendar#show_month", as: "calendar_month"
+  resources :users
 end

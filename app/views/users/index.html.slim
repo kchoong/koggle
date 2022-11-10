@@ -1,0 +1,18 @@
+h1 List of Users
+
+= link_to "Register", new_user_path
+
+table [class="entity-table"]
+  tr
+    th = User.human_attribute_name :username
+    th = User.human_attribute_name :firstname
+    th = User.human_attribute_name :lastname
+    th = User.human_attribute_name :email
+    th = User.human_attribute_name :birthday
+  - @users.each do |user|
+    tr
+      td = user.username
+      td = user.firstname
+      td = user.lastname
+      td = user.email
+      td = user.birthday
