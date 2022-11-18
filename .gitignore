@@ -35,6 +35,10 @@ yarn-error.log
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
+# Build files
+/app/assets/builds/*
+!/app/assets/builds/.keep
+
 # NodeJS packages
 node_modules
 
