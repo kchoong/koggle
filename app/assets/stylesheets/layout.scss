@@ -1,0 +1,26 @@
+$navigation-height: 70px;
+$sidebar-width: 280px;
+
+#navigation {
+  .navbar-brand {
+    font-size: 1.5em;
+  }
+}
+
+#sidebar {
+  width: $sidebar-width;
+  height: 100vh;
+  margin-top: $navigation-height !important;
+
+  #usermenu {
+    margin-bottom: $navigation-height !important;
+  }
+}
+
+#content {
+  margin-top: $navigation-height !important;
+}
+
+.sidebar-offset {
+  margin-left: $sidebar-width !important;
+}

@@ -1,0 +1,36 @@
+div id="sidebar" class="d-flex flex-column bg-dark text-white flex-shrink-0 p-3 position-fixed"
+  ul class="nav nav-pills flex-column mb-auto"
+    li class="nav-item"
+      a class="nav-link text-white active" aria-current="page" href=root_path
+        i<> class="bi bi-house-fill"
+        | Home
+    li
+      a class="nav-link text-white" href=new_user_path
+        i<> class="bi bi-calendar"
+        | Dashboard
+    li
+      a class="nav-link text-white" href=users_path
+        i<> class="bi bi-people-fill"
+        | Users
+
+  hr
+
+  div id="usermenu" class="dropdown"
+    a id="usermenuDropdown" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" href="#"
+      = image_tag "profile.jpg", class: "rounded-circle me-2", height: 32, width: 32
+      strong kchoong
+    ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="usermenuDropdown"
+      li
+        a class="dropdown-item" href="#"
+          | New
+      li
+        a class="dropdown-item" href="#"
+          | Settings
+      li
+        a class="dropdown-item" href="#"
+          | Profile
+      li
+        hr class="dropdown-divider"
+      li
+        a class="dropdown-item" href="#"
+          | Sign out

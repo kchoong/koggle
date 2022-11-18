@@ -13,14 +13,19 @@ html
     = stylesheet_link_tag "application", "data-turbo-track": "reload"
     = javascript_include_tag "application", "data-turbo-track": "reload", defer: true
   body
-    header
-      = render "layouts/partials/navigation"
+    = render "layouts/partials/navigation"
+
     main class="d-flex flex-nowrap"
-      h1
-        = @title
+      = render "layouts/partials/sidebar"
 
-      - flash.each do |key, val|
-        - if !%w[danger success info primary].member?(key.to_s)
-          - raise "#{key} is not a valid flash class."
+      div id="content" class="container-fluid sidebar-offset"
+        h1
+          = @title
 
-      = yield
+        - flash.each do |key, text|
+          - if !%w[primary secondary success danger info].member?(key.to_s)
+            - raise "#{key} is not a valid flash class."
+          div class="alert alert-#{key} alert-dismissible fade show" role="alert"
+            = text
+
+        = yield
