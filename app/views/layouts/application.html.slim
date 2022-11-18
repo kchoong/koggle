@@ -6,11 +6,21 @@ html
         = @title
         | ::
       | Koggle
-    meta [name="viewport" content="width=device-width,initial-scale=1"]
+
+    meta name="viewport" content="width=device-width,initial-scale=1"
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag "application", "data-turbo-track": "reload"
     = javascript_include_tag "application", "data-turbo-track": "reload", defer: true
   body
-    div [class="content"]
+    header
+      = render "layouts/partials/navigation"
+    main class="d-flex flex-nowrap"
+      h1
+        = @title
+
+      - flash.each do |key, val|
+        - if !%w[danger success info primary].member?(key.to_s)
+          - raise "#{key} is not a valid flash class."
+
       = yield
