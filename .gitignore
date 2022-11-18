@@ -16,6 +16,7 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+yarn-error.log
 
 # Ignore pidfiles, but keep the directory.
 /tmp/pids/*
@@ -33,6 +34,9 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+# NodeJS packages
+node_modules
 
 # RubyMine
 .idea
