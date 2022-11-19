@@ -1,0 +1,11 @@
+@use "sass:math";
+@import "bootstrap/scss/variables";
+
+.calendar-table {
+  text-align: center;
+  line-height: 2.5em;
+
+  td {
+    width: percentage(math.div(1, 7));
+  }
+}

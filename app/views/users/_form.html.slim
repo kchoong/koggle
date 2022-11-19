@@ -1,0 +1,16 @@
+= simple_form_for @user do |f|
+  div class="mb-3"
+    = f.input :username, label: "Username", disabled: editing
+  div class="mb-3"
+    = f.input :email, label: "E-Mail"
+  div class="mb-3"
+    = f.input :firstname, label: "Firstname"
+  div class="mb-3"
+    = f.input :lastname, label: "Lastname"
+  div class="mb-3"
+    = f.input :birthday, label: "Birthday", start_year: Time.now.year - 100, end_year: Time.now.year
+  div class="mb-3"
+    = f.submit submit_label, class: "btn btn-primary me-1"
+    button class="btn btn-secondary me-1" type="button"
+      a class="text-white text-decoration-none" href="javascript:history.back()"
+        | Back

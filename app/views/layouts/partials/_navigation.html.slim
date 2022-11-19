@@ -3,7 +3,7 @@ header
     div class="container-fluid"
       div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
         a class="navbar-brand d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none" href="/"
-          i<> class="bi bi-triangle-half"
+          i class="bi bi-triangle-half pe-3"
           | Koggle
 
         div class="nav.col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"
@@ -12,5 +12,9 @@ header
           input class="form-control form-control-dark text-bg-dark" aria-label="Search" placeholder="Search..." type="search"
 
         div class="text-end"
-          button class="btn btn-outline-light me-2" type="button" Login
-          button class="btn btn-primary" type="button" Sign-up
+          button class="btn btn-outline-light me-2" type="button"
+            a class="nav-link text-white" href="#"
+              | Login
+          button class="btn btn-primary" type="button"
+            a class="nav-link text-white" href=new_user_path
+              | Sign-up

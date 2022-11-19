@@ -1,27 +1,33 @@
-h1 Monthly View
+h1 class="page-title" Calendar
 
-div [class="calendar"]
-  div [class="calendar-header"]
-    a [class="calendar-btn" href=calendar_month_path(@previous_month.year, @previous_month.month)]
-      | <
-    span [class="calendar-title"]
-      = @title
-    a [class="calendar-btn" href=calendar_month_path(@next_month.year, @next_month.month)]
-      | >
-  div [class="calendar-content"]
-    table
-      tr
-        th Mon
-        th Tue
-        th Wed
-        th Thu
-        th Fri
-        th Sat
-        th Sun
-      - @days_matrix.each do |row|
-        tr
-          - row.each do |day|
-            - if day == @highlight_day
-              td [class="calendar-today"] = day
-            - else
-              td = day
+div class="row"
+  div class="col-3"
+    div class="table-responsive"
+      table class="table calendar-table"
+        thead class="table-dark"
+          tr
+            th colspan="2"
+              a href=calendar_month_path(@previous_month.year, @previous_month.month)
+                i class="bi bi-caret-left-fill px-3 text-white"
+            th colspan="3"
+              = @calendar_title
+            th colspan="2"
+              a href=calendar_month_path(@next_month.year, @next_month.month)
+                i class="bi bi-caret-right-fill px-3 text-white"
+          tr
+            th Mon
+            th Tue
+            th Wed
+            th Thu
+            th Fri
+            th Sat
+            th Sun
+        tbody class="table-group-divider"
+          - @days_matrix.each do |row|
+            tr
+              - row.each do |day|
+                - if day == @highlight_day
+                  td
+                    span class="bg-primary text-white p-2" style="border-radius: 50%;" = day
+                - else
+                  td = day

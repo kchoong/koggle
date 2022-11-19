@@ -2,15 +2,19 @@ div id="sidebar" class="d-flex flex-column bg-dark text-white flex-shrink-0 p-3 
   ul class="nav nav-pills flex-column mb-auto"
     li class="nav-item"
       a class="nav-link text-white active" aria-current="page" href=root_path
-        i<> class="bi bi-house-fill"
+        i class="bi bi-house-fill pe-3"
         | Home
     li
-      a class="nav-link text-white" href=new_user_path
-        i<> class="bi bi-calendar"
+      a class="nav-link text-white" href=dashboard_path
+        i class="bi bi-kanban-fill pe-3"
         | Dashboard
     li
+      a class="nav-link text-white" href=calendar_month_path(Time.now.year, Time.now.month)
+        i class="bi bi-calendar-fill pe-3"
+        | Calendar
+    li
       a class="nav-link text-white" href=users_path
-        i<> class="bi bi-people-fill"
+        i class="bi bi-people-fill pe-3"
         | Users
 
   hr
@@ -22,15 +26,15 @@ div id="sidebar" class="d-flex flex-column bg-dark text-white flex-shrink-0 p-3 
     ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="usermenuDropdown"
       li
         a class="dropdown-item" href="#"
-          | New
-      li
-        a class="dropdown-item" href="#"
-          | Settings
-      li
-        a class="dropdown-item" href="#"
+          i class="bi bi-person-fill pe-3"
           | Profile
+      li
+        a class="dropdown-item" href="#"
+          i class="bi bi-gear-fill pe-3"
+          | Settings
       li
         hr class="dropdown-divider"
       li
         a class="dropdown-item" href="#"
+          i class="bi bi-box-arrow-right pe-3"
           | Sign out

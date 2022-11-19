@@ -37,8 +37,8 @@ class CalendarController < ApplicationController
     @previous_month = selected_time - 1.month
     @next_month = selected_time + 1.month
 
-    # Pretty print title
-    @title = "#{selected_time.strftime("%B")} #{@year}"
+    # Pretty print calendar title
+    @calendar_title = selected_time.strftime("%B %Y")
   end
 
 end
