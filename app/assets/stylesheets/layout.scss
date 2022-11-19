@@ -20,6 +20,10 @@ $sidebar-width: 280px;
 }
 
 #content {
+  .page-title {
+    padding: 20px 0;
+  }
+
   margin-top: $navigation-height + 15px !important;
 }
 

@@ -2,16 +2,16 @@ h1 class="page-title" Calendar
 
 div class="row"
   div class="col-3"
-    div class="table-responsive"
+    div class=""
       table class="table calendar-table"
         thead class="table-dark"
           tr
-            th colspan="2"
+            th class="text-end"
               a href=calendar_month_path(@previous_month.year, @previous_month.month)
                 i class="bi bi-caret-left-fill px-3 text-white"
-            th colspan="3"
+            th colspan="5"
               = @calendar_title
-            th colspan="2"
+            th class="text-start"
               a href=calendar_month_path(@next_month.year, @next_month.month)
                 i class="bi bi-caret-right-fill px-3 text-white"
           tr
