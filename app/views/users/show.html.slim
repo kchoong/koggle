@@ -1,1 +1,3 @@
 h1 class="page-title" = @user.name
+
+= render "application/comments", entity: @user, entity_id: @user.id, entity_class: @user.class

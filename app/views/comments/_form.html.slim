@@ -1,0 +1,12 @@
+= simple_form_for @comment do |f|
+  = f.hidden_field :commentable_id, value: entity_id
+  = f.hidden_field :commentable_type, value: entity_class
+
+  div class="mb-3"
+    = f.input :name, label: "Name"
+    small class="form-text text-muted"
+      | Leave empty to stay anonymous
+  div class="mb-3"
+    = f.input :text, :as => :text, :input_html => { 'rows' => 3 }, label: "Comment"
+  div class="mb-3"
+    = f.submit Comment, class: "btn btn-primary me-1"
