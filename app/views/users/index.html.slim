@@ -8,6 +8,7 @@ div class="table-responsive"
         th = User.human_attribute_name :username
         th = User.human_attribute_name :email
         th = User.human_attribute_name :birthday
+        th = User.human_attribute_name :group
         th
     tbody class="table-group-divider"
       - @users.each do |user|
@@ -16,6 +17,11 @@ div class="table-responsive"
           td = user.username
           td = user.email
           td = user.birthday.strftime("%d. %B %Y")
+          td
+            - if user.group
+              = user.group.name
+            - else
+              | -
           td
             a href=user_path(user)
               i class="bi bi-search px-3 text-black"

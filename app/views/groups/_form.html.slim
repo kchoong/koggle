@@ -1,0 +1,12 @@
+= simple_form_for @group do |f|
+  div class="mb-3"
+    = f.input :groupname, label: "Groupname", disabled: editing
+  div class="mb-3"
+    = f.input :title, label: "Real Name"
+  div class="mb-3"
+    = f.input :description, label: "Description"
+  div class="mb-3"
+    = f.submit submit_label, class: "btn btn-primary me-1"
+    button class="btn btn-secondary me-1" type="button"
+      a class="text-white text-decoration-none" href="javascript:history.back()"
+        | Back

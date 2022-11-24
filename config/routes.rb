@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   # Model CRUD
   resources :users
+  resources :groups
 
   # GET
   get "/dashboard" => "dashboard#index", as: "dashboard"

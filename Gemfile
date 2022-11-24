@@ -49,7 +49,7 @@ gem "bootsnap", require: false
 gem "sassc-rails"
 
 # Slim for template language
-gem "slim"
+gem "slim-rails"
 
 # Simple Form for easy rails forms
 gem "simple_form"
