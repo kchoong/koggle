@@ -9,3 +9,16 @@
     width: percentage(math.div(1, 7));
   }
 }
+
+.comment-box {
+  padding: 10px 30px;
+  margin: 5px 0;
+
+  .comment-footer {
+    text-align: right;
+  }
+
+  hr {
+    margin: 0.5rem 0;
+  }
+}
