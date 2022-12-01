@@ -3,23 +3,23 @@ div id="sidebar" class="d-flex flex-column bg-dark text-white flex-shrink-0 p-3 
     li class="nav-item"
       a class="nav-link text-white active" aria-current="page" href=root_path
         i class="bi bi-house-fill pe-3"
-        | Home
+        = t("navigation.home")
     li
       a class="nav-link text-white" href=dashboard_path
         i class="bi bi-kanban-fill pe-3"
-        | Dashboard
+        = t("navigation.dashboard")
     li
       a class="nav-link text-white" href=calendar_month_path(Time.now.year, Time.now.month)
         i class="bi bi-calendar-fill pe-3"
-        | Calendar
+        = t("navigation.calendar")
     li
       a class="nav-link text-white" href=users_path
         i class="bi bi-person-fill pe-3"
-        | Users
+        = t("navigation.users")
     li
       a class="nav-link text-white" href=groups_path
         i class="bi bi-people-fill pe-3"
-        | Groups
+        = t("navigation.groups")
 
   hr
 
@@ -31,14 +31,14 @@ div id="sidebar" class="d-flex flex-column bg-dark text-white flex-shrink-0 p-3 
       li
         a class="dropdown-item" href="#"
           i class="bi bi-person-fill pe-3"
-          | Profile
+          = t("navigation.profile")
       li
         a class="dropdown-item" href="#"
           i class="bi bi-gear-fill pe-3"
-          | Settings
+          = t("navigation.settings")
       li
         hr class="dropdown-divider"
       li
         a class="dropdown-item" href="#"
           i class="bi bi-box-arrow-right pe-3"
-          | Sign out
+          = t("navigation.logout")

@@ -1,6 +1,10 @@
 @use "sass:math";
 @import "bootstrap/scss/variables";
 
+.placeholder {
+  cursor: default;
+}
+
 .calendar-table {
   text-align: center;
   line-height: 2.5em;

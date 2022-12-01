@@ -1,0 +1,9 @@
+en:
+  application: Koggle
+  language:
+    de: Deutsch
+    en: English
+  time:
+    format:
+      minutes_ago: "%{minutes}min ago"
+      seconds_ago: "%{seconds}s ago"

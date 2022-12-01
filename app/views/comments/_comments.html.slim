@@ -1,0 +1,37 @@
+- comments = entity.comments.order(created_at: :desc)
+
+div class="row"
+  div class="col-12"
+    hr
+
+div class="comment-section"
+  div class="row"
+    div class="col-4"
+      h3
+        | Comments
+        span<> class="badge bg-primary"
+          = comments.count
+      = simple_form_for [entity, Comment.new] do |f|
+        div class="mb-3"
+          = f.input :name, label: "Name"
+          small class="form-text text-muted"
+            | Leave empty to stay anonymous
+        div class="mb-3"
+          = f.input :text, :as => :text, :input_html => { 'rows' => 3 }, label: "Comment"
+        div class="mb-3"
+          = f.submit Comment, class: "btn btn-primary me-1"
+    div class="col-8"
+      - if comments.blank?
+        div class="alert alert-secondary" No comments...
+      - comments.each do |comment|
+        div class="comment-box container rounded rounded-4 border border-secondary my-3 p-3"
+          span = comment.text
+          div class="comment-footer"
+            hr
+            span<>
+              - if comment.name.empty?
+                i Anonymous
+              - else
+                = comment.name
+            | -
+            span<> = comment.created_at.strftime("%d. %B %Y, %H:%M")
