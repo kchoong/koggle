@@ -23,6 +23,7 @@ header
           div class="btn-group"
             button type="button" class="btn btn-outline-light dropdown-toggle me-2" data-bs-toggle="dropdown" aria-expanded="false"
               = get_locale_flag(I18n.locale)
+              span<> = I18n.locale.upcase
             ul class="dropdown-menu dropdown-menu-dark"
               - I18n.available_locales.each do |locale|
                 li

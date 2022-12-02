@@ -1,0 +1,29 @@
+en:
+  activerecord:
+    models:
+      user:
+        one: User
+        other: Users
+      group:
+        one: Group
+        other: Groups
+      comment:
+        one: Comment
+        other: Comments
+    attributes:
+      comment:
+        name: Name
+        text: Comment
+      group:
+        description: Description
+        groupname: Group name
+        title: Real name
+        users: Members
+      user:
+        birthday: Birthday
+        email: E-Mail
+        firstname: First Name
+        group: Group
+        lastname: Last Name
+        username: User name
+

@@ -1,5 +1,21 @@
 de:
   application: Koggle
+  date:
+    format:
+      minutes_ago: "Vor %{minutes}min"
+      seconds_ago: "Vor %{seconds}s"
   language:
     de: Deutsch
     en: English
+  navigation:
+    calendar: Kalendar
+    dashboard: Dashboard
+    groups: Gruppen
+    home: Startseite
+    login: Anmelden
+    logout: Abmelden
+    profile: Profil
+    register: Registrieren
+    search: Suche...
+    settings: Einstellungen
+    users: Benutzer

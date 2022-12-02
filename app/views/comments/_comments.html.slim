@@ -8,21 +8,21 @@ div class="comment-section"
   div class="row"
     div class="col-4"
       h3
-        | Comments
+        = Comment.model_name.human(count: comments.count)
         span<> class="badge bg-primary"
           = comments.count
       = simple_form_for [entity, Comment.new] do |f|
         div class="mb-3"
-          = f.input :name, label: "Name"
+          = f.input :name
           small class="form-text text-muted"
-            | Leave empty to stay anonymous
+            = t("comment.anonymous_hint")
         div class="mb-3"
-          = f.input :text, :as => :text, :input_html => { 'rows' => 3 }, label: "Comment"
+          = f.input :text, :as => :text, :input_html => { 'rows' => 3 }
         div class="mb-3"
           = f.submit Comment, class: "btn btn-primary me-1"
     div class="col-8"
       - if comments.blank?
-        div class="alert alert-secondary" No comments...
+        div class="alert alert-secondary" = t("comment.no_comments")
       - comments.each do |comment|
         div class="comment-box container rounded rounded-4 border border-secondary my-3 p-3"
           span = comment.text
@@ -30,7 +30,7 @@ div class="comment-section"
             hr
             span<>
               - if comment.name.empty?
-                i Anonymous
+                i = t("anonymous")
               - else
                 = comment.name
             | -

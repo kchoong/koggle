@@ -1,6 +1,15 @@
 @use "sass:math";
 @import "bootstrap/scss/variables";
 
+a {
+  text-decoration: none;
+}
+
+abbr[title] {
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .placeholder {
   cursor: default;
 }
@@ -24,5 +33,12 @@
 
   hr {
     margin: 0.5rem 0;
+  }
+}
+
+.entity-table {
+  tbody {
+    font-size: 18px;
+    line-height: 2.25em;
   }
 }

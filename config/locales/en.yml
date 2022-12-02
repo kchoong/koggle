@@ -1,13 +1,25 @@
 en:
-  navigation:
-    calendar: Calendar
-    dashboard: Dashboard
-    groups: Groups
-    home: Home
-    login: Login
-    logout: Sign out
-    profile: Profile
-    register: Sign up
-    search: Search...
-    settings: Settings
-    users: Users
+  anonymous: Anonymous
+  id: ID
+  actions:
+    actions: Actions
+    back: Back
+    confirm: Are you sure?
+    create: Create
+    delete: Delete
+    edit: Edit
+    save: Save
+    update: Update
+  comment:
+    anonymous_hint: Leave empty to stay anonymous
+    no_comments: No comments...
+  group:
+    all_groups: List of all groups
+    create: Create new group
+    create_btn: New Group
+    edit_html: "Edit group <i>%{name}</i>"
+  user:
+    all_users: List of all users
+    create: Create new user
+    create_btn: New User
+    edit_html: "Edit user <i>%{name}</i>"
