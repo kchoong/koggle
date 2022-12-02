@@ -1,14 +1,52 @@
 en:
   application: Koggle
+  anonymous: Anonymous
+  id: ID
+  actions:
+    actions: Actions
+    back: Back
+    confirm: Are you sure?
+    create: Create
+    delete: Delete
+    edit: Edit
+    save: Save
+    update: Update
+  comment:
+    anonymous_hint: Leave empty to stay anonymous
+    no_comments: No comments...
   date:
-    format:
-      minutes_ago: "%{minutes}min ago"
-      seconds_ago: "%{seconds}s ago"
+    abbr_day_names:
+      - Mon
+      - Tue
+      - Wed
+      - Thu
+      - Fri
+      - Sat
+      - Sun
+    day_names:
+      - Monday
+      - Tuesday
+      - Wednesday
+      - Thursday
+      - Friday
+      - Saturday
+      - Sunday
+    formats:
+      month_year: "%B %Y"
+  datetime:
+    ago: "%{time} ago"
+    formats:
+  dashboard:
+    title: Dashboard
   language:
     de: Deutsch
     en: English
+  group:
+    all_groups: List of all groups
+    create: Create new group
+    create_btn: New Group
+    edit_html: "Edit group <i>%{name}</i>"
   navigation:
-    calendar: Calendar
     dashboard: Dashboard
     groups: Groups
     home: Home
@@ -19,3 +57,8 @@ en:
     search: Search...
     settings: Settings
     users: Users
+  user:
+    all_users: List of all users
+    create: Create new user
+    create_btn: New User
+    edit_html: "Edit user <i>%{name}</i>"

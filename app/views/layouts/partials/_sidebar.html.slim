@@ -9,10 +9,6 @@ div id="sidebar" class="d-flex flex-column bg-dark text-white flex-shrink-0 p-3 
         i class="bi bi-kanban-fill pe-3"
         = t("navigation.dashboard")
     li
-      a class="nav-link text-white" href=calendar_month_path(Time.now.year, Time.now.month)
-        i class="bi bi-calendar-fill pe-3"
-        = t("navigation.calendar")
-    li
       a class="nav-link text-white" href=users_path
         i class="bi bi-person-fill pe-3"
         = t("navigation.users")

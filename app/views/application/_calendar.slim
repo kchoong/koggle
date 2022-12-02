@@ -1,0 +1,24 @@
+div class="calendar"
+  table class="table calendar-table"
+    thead class="table-dark"
+      tr
+        th class="text-end"
+          a href="#"
+            i class="bi bi-caret-left-fill px-3 text-white"
+        th colspan="5"
+          = title
+        th class="text-start"
+          a href="#"
+            i class="bi bi-caret-right-fill px-3 text-white"
+      tr
+        - t("date.abbr_day_names").each do |weekday|
+          th = weekday
+    tbody class="table-group-divider"
+      - calendar_matrix.each do |row|
+        tr
+          - row.each do |day|
+            - if day == highlight_day
+              td class="bg-primary text-white"
+                span = day
+            - else
+              td = day

@@ -15,6 +15,5 @@ Rails.application.routes.draw do
   # GET
   get "/locale/:locale" => "home#switch_locale", as: "switch_locale"
   get "/dashboard" => "dashboard#index", as: "dashboard"
-  get "/calendar/:year/:month" => "calendar#show_month", as: "calendar_month"
 
 end

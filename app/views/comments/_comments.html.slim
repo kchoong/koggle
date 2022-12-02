@@ -34,4 +34,4 @@ div class="comment-section"
               - else
                 = comment.name
             | -
-            span<> = comment.created_at.strftime("%d. %B %Y, %H:%M")
+            span<> = format_time(comment.created_at)

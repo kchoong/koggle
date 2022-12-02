@@ -17,6 +17,7 @@ abbr[title] {
 .calendar-table {
   text-align: center;
   line-height: 2.5em;
+  font-size: 18px;
 
   td {
     width: percentage(math.div(1, 7));
