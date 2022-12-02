@@ -26,8 +26,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        flash[:success] = "#{@user.username} has been successfully created."
-        format.html { redirect_to user_url(@user) }
+        format.html { redirect_to user_url(@user), success: t("group.controller.success.created", name: @group.name) }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -40,8 +39,7 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        flash[:success] = "#{@user.username} has been successfully updated."
-        format.html { redirect_to user_url(@user) }
+        format.html { redirect_to user_url(@user), success: t("group.controller.success.edited", name: @group.name) }
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -55,8 +53,7 @@ class UsersController < ApplicationController
     @user.destroy
 
     respond_to do |format|
-      flash[:danger] = "#{@user.username} has been successfully deleted."
-      format.html { redirect_to users_url }
+      format.html { redirect_to users_url, danger: t("group.controller.success.deleted", name: @group.name) }
       format.json { head :no_content }
     end
   end

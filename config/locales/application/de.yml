@@ -14,6 +14,11 @@ de:
   comment:
     anonymous_hint: Lassen Sie den Namen weg, um anonym zu bleiben
     no_comments: Keine Kommentare...
+    controller:
+      error:
+        created: Kommentar konnte nicht erstellt werden.
+      success:
+        created: Kommentar wurde erfolgreich erstellt.
   date:
     abbr_day_names:
       - Mo
@@ -49,6 +54,12 @@ de:
     create: Neue Gruppe erstellen
     create_btn: Neue Gruppe
     edit_html: "Gruppe <i>%{name}</i> bearbeiten"
+    controller:
+      error:
+      success:
+        created: "#{name} wurde erfolgreich erstellt."
+        deleted: "#{name} wurde erfolgreich gelöscht."
+        edited: "#{name} wurde erfolgreich aktualisiert."
   navigation:
     dashboard: Dashboard
     groups: Gruppen
@@ -65,3 +76,9 @@ de:
     create: Neuen Benutzer erstellen
     create_btn: Neuer Benutzer
     edit_html: "Benutzer <i>%{name}</i> bearbeiten"
+    controller:
+      error:
+      success:
+        created: "#{name} wurde erfolgreich erstellt."
+        deleted: "#{name} wurde erfolgreich gelöscht."
+        edited: "#{name} wurde erfolgreich aktualisiert."

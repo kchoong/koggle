@@ -26,8 +26,8 @@ class GroupsController < ApplicationController
 
     respond_to do |format|
       if @group.save
-        flash[:success] = "#{@group.groupname} has been successfully created."
-        format.html { redirect_to group_url(@group) }
+        flash[:success] = ""
+        format.html { redirect_to group_url(@group), success: t("group.controller.success.created", name: @group.name) }
         format.json { render :show, status: :created, location: @group }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -40,8 +40,7 @@ class GroupsController < ApplicationController
   def update
     respond_to do |format|
       if @group.update(group_params)
-        flash[:success] = "#{@group.groupname} has been successfully updated."
-        format.html { redirect_to group_url(@group) }
+        format.html { redirect_to group_url(@group), success: t("group.controller.success.edited", name: @group.name) }
         format.json { render :show, status: :ok, location: @group }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -55,8 +54,7 @@ class GroupsController < ApplicationController
     @group.destroy
 
     respond_to do |format|
-      flash[:danger] = "#{@user.username} has been successfully deleted."
-      format.html { redirect_to groups_url }
+      format.html { redirect_to groups_url, danger: t("group.controller.success.deleted", name: @group.name) }
       format.json { head :no_content }
     end
   end

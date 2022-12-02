@@ -5,17 +5,17 @@ class CommentsController < ApplicationController
   def create
     if params[:user_id] then @entity = User.find(params[:user_id])
     elsif params[:group_id] then @entity = Group.find(params[:group_id])
-    else raise "Nothing to comment..."
+    else raise "No entity to comment on."
     end
 
     @comment = Comment.new(comment_params.merge(commentable: @entity))
 
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to @entity, success: "Comment was successfully created." }
+        format.html { redirect_to @entity, success: t("comment.controller.success.created") }
         format.json { render :show, status: :created, location: @comment }
       else
-        format.html { redirect_to @entity, danger: "Comment was not created." }
+        format.html { redirect_to @entity, danger: t("comment.controller.error.created") }
         format.json { render json: @comment.errors, status: :unprocessable_entity }
       end
     end

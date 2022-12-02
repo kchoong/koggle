@@ -14,6 +14,11 @@ en:
   comment:
     anonymous_hint: Leave empty to stay anonymous
     no_comments: No comments...
+    controller:
+      error:
+        created: Comment could not be posted.
+      success:
+        created: Comment has been successfully posted.
   date:
     abbr_day_names:
       - Mon
@@ -46,6 +51,12 @@ en:
     create: Create new group
     create_btn: New Group
     edit_html: "Edit group <i>%{name}</i>"
+    controller:
+      error:
+      success:
+        created: "#{name} has been successfully created."
+        deleted: "#{name} has been successfully deleted."
+        edited: "#{name} has been successfully updated."
   navigation:
     dashboard: Dashboard
     groups: Groups
@@ -62,3 +73,9 @@ en:
     create: Create new user
     create_btn: New User
     edit_html: "Edit user <i>%{name}</i>"
+    controller:
+      error:
+      success:
+        created: "#{name} has been successfully created."
+        deleted: "#{name} has been successfully deleted."
+        edited: "#{name} has been successfully updated."
