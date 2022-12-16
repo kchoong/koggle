@@ -19,31 +19,6 @@ de:
         created: Kommentar konnte nicht erstellt werden.
       success:
         created: Kommentar wurde erfolgreich erstellt.
-  date:
-    abbr_day_names:
-      - Mo
-      - Di
-      - Mi
-      - Do
-      - Fr
-      - Sa
-      - So
-    day_names:
-      - Montag
-      - Dienstag
-      - Mittwoch
-      - Donnerstag
-      - Freitag
-      - Samstag
-      - Sonntag
-    difference:
-      minutes_ago: "Vor %{minutes}min"
-      seconds_ago: "Vor %{seconds}s"
-    formats:
-      month_year: "%B %Y"
-  datetime:
-    ago: "Vor %{time}"
-    formats:
   dashboard:
     title: Dashboard
   language:
@@ -82,3 +57,10 @@ de:
         created: "#{name} wurde erfolgreich erstellt."
         deleted: "#{name} wurde erfolgreich gelöscht."
         edited: "#{name} wurde erfolgreich aktualisiert."
+  time:
+    ago: "Vor %{time}"
+    formats:
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      long: "%B %d, %Y %H:%M"
+      short: "%d %b %H:%M"
+      month_year: "%B %Y"

@@ -3,8 +3,13 @@
 import "./controllers"
 import * as bootstrap from "bootstrap"
 import Rails from '@rails/ujs';
-
-// Other JS files
-import "./layout";
+import {PageTitle} from "./layout";
+import {DynamicTime} from "./date";
 
 Rails.start();
+
+// Dynamically set the page title
+PageTitle.init();
+
+// Dynamic display for dates
+// DynamicTime.init();

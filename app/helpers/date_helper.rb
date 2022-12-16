@@ -9,7 +9,7 @@ module DateHelper
     # Build days array
     day = 1
     days_in_month = Time.days_in_month(month, year)
-    first_weekday = selected_time.wday - 1 % 7 # wday returns weekday starting from sunday instead of monday
+    first_weekday = selected_time.wday
     calendar_matrix = []
     for i in (0..5) do
       days_row = []
@@ -38,17 +38,17 @@ module DateHelper
     # previous_month = selected_time - 1.month
     # next_month = selected_time + 1.month
 
-    render "application/calendar", calendar_matrix: calendar_matrix, highlight_day: highlight_day, title: l(DateTime.now.to_date, :format => :month_year)
+    render "application/calendar", calendar_matrix: calendar_matrix, highlight_day: highlight_day, title: l(DateTime.now, :format => :month_year)
   end
 
   def format_time(time)
     return "–" if time.nil?
 
     if time > 1.days.ago
-      return t("datetime.ago", time: distance_of_time_in_words_to_now(time))
+      return t("time.ago", time: distance_of_time_in_words_to_now(time))
     end
 
-    l(time)
+    l(time, :format => :long)
   end
 
 end

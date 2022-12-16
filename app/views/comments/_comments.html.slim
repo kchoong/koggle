@@ -34,4 +34,4 @@ div class="comment-section"
               - else
                 = comment.name
             | -
-            span<> = format_time(comment.created_at)
+            span<> class="date" data-date=l(comment.created_at) = format_time(comment.created_at)
