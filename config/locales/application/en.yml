@@ -19,25 +19,24 @@ en:
         created: Comment could not be posted.
       success:
         created: Comment has been successfully posted.
-  dashboard:
-    title: Dashboard
-  language:
-    de: Deutsch
-    en: English
-  group:
-    all_groups: List of all groups
-    create: Create new group
-    create_btn: New Group
-    edit_html: "Edit group <i>%{name}</i>"
+  crud:
     controller:
       error:
       success:
         created: "#{name} has been successfully created."
         deleted: "#{name} has been successfully deleted."
         edited: "#{name} has been successfully updated."
+  dashboard:
+    title: Dashboard
+  language:
+    de: Deutsch
+    en: English
   navigation:
+    admin:
+      organizations: Organizations
+      persons: Persons
+      users: Users
     dashboard: Dashboard
-    groups: Groups
     home: Home
     login: Login
     logout: Sign out
@@ -45,18 +44,17 @@ en:
     register: Sign up
     search: Search...
     settings: Settings
-    users: Users
-  user:
-    all_users: List of all users
-    create: Create new user
-    create_btn: New User
-    edit_html: "Edit user <i>%{name}</i>"
-    controller:
-      error:
-      success:
-        created: "#{name} has been successfully created."
-        deleted: "#{name} has been successfully deleted."
-        edited: "#{name} has been successfully updated."
+  organization:
+    all_organizations: List of all organizations
+    all_members: List of all members
+    create: Create new organization
+    create_btn: New Organization
+    edit_html: "Edit organization <i>%{name}</i>"
+  person:
+    all_persons: List of all persons
+    create: Create new person
+    create_btn: New Person
+    edit_html: "Edit person <i>%{name}</i>"
   time:
     ago: "%{time} ago"
     formats:

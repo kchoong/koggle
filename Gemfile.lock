@@ -106,9 +106,6 @@ GEM
     io-console (0.5.11)
     irb (1.4.2)
       reline (>= 0.3.0)
-    jbuilder (2.11.5)
-      actionview (>= 5.0.0)
-      activesupport (>= 5.0.0)
     jsbundling-rails (1.0.3)
       railties (>= 6.0.0)
     loofah (2.19.0)
@@ -252,7 +249,6 @@ DEPENDENCIES
   cssbundling-rails
   debug
   devise
-  jbuilder
   jsbundling-rails
   puma (~> 5.0)
   rails (~> 7.0.4)

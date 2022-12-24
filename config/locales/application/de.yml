@@ -19,25 +19,24 @@ de:
         created: Kommentar konnte nicht erstellt werden.
       success:
         created: Kommentar wurde erfolgreich erstellt.
-  dashboard:
-    title: Dashboard
-  language:
-    de: Deutsch
-    en: English
-  group:
-    all_groups: Liste aller Gruppen
-    create: Neue Gruppe erstellen
-    create_btn: Neue Gruppe
-    edit_html: "Gruppe <i>%{name}</i> bearbeiten"
+  crud:
     controller:
       error:
       success:
         created: "#{name} wurde erfolgreich erstellt."
         deleted: "#{name} wurde erfolgreich gelöscht."
         edited: "#{name} wurde erfolgreich aktualisiert."
+  dashboard:
+    title: Dashboard
+  language:
+    de: Deutsch
+    en: English
   navigation:
+    admin:
+      organizations: Organisationen
+      persons: Personen
+      users: Benutzer
     dashboard: Dashboard
-    groups: Gruppen
     home: Startseite
     login: Anmelden
     logout: Abmelden
@@ -45,18 +44,17 @@ de:
     register: Registrieren
     search: Suche...
     settings: Einstellungen
-    users: Benutzer
-  user:
-    all_users: Liste aller Benutzer
-    create: Neuen Benutzer erstellen
-    create_btn: Neuer Benutzer
-    edit_html: "Benutzer <i>%{name}</i> bearbeiten"
-    controller:
-      error:
-      success:
-        created: "#{name} wurde erfolgreich erstellt."
-        deleted: "#{name} wurde erfolgreich gelöscht."
-        edited: "#{name} wurde erfolgreich aktualisiert."
+  organization:
+    all_organizations: Liste aller Organisationen
+    all_members: Liste aller Mitglieder
+    create: Neue Organisation erstellen
+    create_btn: Neue Organisation
+    edit_html: "Organisation <i>%{name}</i> bearbeiten"
+  person:
+    all_persons: Liste aller Personen
+    create: Neue Person erstellen
+    create_btn: Neue Person
+    edit_html: "Person <i>%{name}</i> bearbeiten"
   time:
     ago: "Vor %{time}"
     formats:

@@ -6,10 +6,10 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-(1..20).each do |i|
-  User.create!(username: "testuser#{i}", email: "testuser#{i}@mail.azg", birthday: Time.at(rand * Time.now.to_i))
+(1..10).each do |i|
+  Person.create!(lastname: "testperson#{i}", birthday: Time.at(rand * Time.now.to_i), gender: rand(0..3))
 end
 
 (1..5).each do |i|
-  Group.create!(groupname: "testgroup#{i}", title: "Test Group #{i}")
+  Organization.create!(name: "testorg#{i}", description: "Test Organization #{i}")
 end

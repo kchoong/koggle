@@ -19,15 +19,7 @@ html
       = render "layouts/partials/sidebar"
 
       div id="content" class="container-fluid sidebar-offset"
-        - if flash.any?
-          div class="row"
-            div class="col-10 offset-1"
-              - flash.each do |key, text|
-                - if !%w[primary secondary success danger info].member?(key.to_s)
-                  - raise "#{key} is not a valid flash class."
-                div class="alert alert-#{key} alert-dismissible fade show" role="alert"
-                  = text
-                  button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"
+        = render "layouts/partials/flash"
 
         div class="row"
           div class="col-10 offset-1"

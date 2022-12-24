@@ -10,14 +10,10 @@ class CommentsController < ApplicationController
 
     @comment = Comment.new(comment_params.merge(commentable: @entity))
 
-    respond_to do |format|
-      if @comment.save
-        format.html { redirect_to @entity, success: t("comment.controller.success.created") }
-        format.json { render :show, status: :created, location: @comment }
-      else
-        format.html { redirect_to @entity, danger: t("comment.controller.error.created") }
-        format.json { render json: @comment.errors, status: :unprocessable_entity }
-      end
+    if @comment.save
+      redirect_to @entity, success: t("comment.controller.success.created")
+    else
+      redirect_to @entity, danger: t("comment.controller.error.created")
     end
   end
 

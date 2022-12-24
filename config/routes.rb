@@ -1,16 +1,18 @@
+# Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Root
   root "home#index"
 
   # Model CRUD
-  resources :users do
+  resources :persons do
     resources :comments, only: [:create, :destroy]
   end
-  resources :groups do
+  resources :organizations do
     resources :comments, only: [:create, :destroy]
   end
+  devise_for :users
 
   # GET
   get "/locale/:locale" => "home#switch_locale", as: "switch_locale"

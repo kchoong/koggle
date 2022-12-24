@@ -1,0 +1,34 @@
+h1 class="page-title" = t("organization.all_organizations")
+
+div class="container-fluid bg-light rounded-3 p-3 mb-3"
+  button class="btn btn-primary btn-lg me-2" type="button"
+    a class="text-white" href=new_organization_path
+      = t("organization.create")
+      i class="bi bi-plus-square-fill ps-2"
+
+div class="table-responsive"
+  table class="entity-table table table-striped"
+    thead class="table-dark"
+      tr
+        th = t("id")
+        th = Organization.human_attribute_name :name
+        th = Organization.human_attribute_name :description
+        th = Organization.human_attribute_name :persons
+        th = t("actions.actions")
+    tbody class="table-group-divider"
+      - @organizations.each do |organization|
+        tr
+          th = organization.id
+          td
+            a href=organization_path(organization) = organization.name
+          td = organization.description
+          td
+          td
+            button type="button" class="btn btn-primary btn-sm me-2"
+              a class="text-white" href=edit_organization_path(organization)
+                = t("actions.edit")
+                i class="bi bi-pencil-fill ps-2"
+            button type="button" class="btn btn-primary btn-sm me-2"
+              a class="text-white" href=organization_path(organization) data-method="delete" data-confirm=t("actions.confirm")
+                = t("actions.delete")
+                i class="bi bi-trash-fill ps-2"

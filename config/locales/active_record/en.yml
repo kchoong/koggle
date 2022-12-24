@@ -1,29 +1,36 @@
 en:
   activerecord:
     models:
-      user:
-        one: User
-        other: Users
-      group:
-        one: Group
-        other: Groups
       comment:
         one: Comment
         other: Comments
+      organization:
+        one: Organization
+        other: Organizations
+      person:
+        one: Person
+        other: Persons
+      user:
+        one: User
+        other: Users
     attributes:
       comment:
         name: Name
         text: Comment
       group:
         description: Description
-        groupname: Group name
-        title: Real name
-        users: Members
-      user:
+        name: Name
+        persons: Members
+      person:
         birthday: Birthday
+        firstname: Firstname
+        gender: Gender
+        lastname: Lastname
+        organization: Organization
+        profession: Profession
+        title: Title
+      user:
+        username: Username
         email: E-Mail
-        firstname: First Name
-        group: Group
-        lastname: Last Name
-        username: User name
+        encrypted_password: Password
 
