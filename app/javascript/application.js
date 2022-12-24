@@ -5,6 +5,7 @@ import * as bootstrap from "bootstrap"
 import Rails from '@rails/ujs';
 import {PageTitle} from "./layout";
 import {DynamicTime} from "./date";
+import {Calendar} from "./dashboard";
 
 Rails.start();
 
@@ -13,3 +14,5 @@ PageTitle.init();
 
 // Dynamic display for dates
 // DynamicTime.init();
+
+Calendar.init();
