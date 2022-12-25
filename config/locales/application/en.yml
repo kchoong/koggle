@@ -33,25 +33,23 @@ en:
     en: English
   navigation:
     admin:
-      organizations: Organizations
-      persons: Persons
+      groups: Groups
       users: Users
     dashboard: Dashboard
     home: Home
     profile: Profile
     search: Search...
     settings: Settings
-  organization:
-    all_organizations: List of all organizations
+  group:
+    all_groups: List of all groups
     all_members: List of all members
-    create: Create new organization
-    create_btn: New Organization
-    edit_html: "Edit organization <i>%{name}</i>"
-  person:
-    all_persons: List of all persons
-    create: Create new person
-    create_btn: New Person
-    edit_html: "Edit person <i>%{name}</i>"
+    create: Create new group
+    create_btn: New Group
+    edit_html: "Edit group <i>%{name}</i>"
+  profile:
+    edit_html: "Edit profile <i>%{name}</i>"
+  user:
+    all_users: List of all users
   time:
     ago: "%{time} ago"
     formats:

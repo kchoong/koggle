@@ -1,14 +1,13 @@
-class Person < ApplicationRecord
+class Profile < ApplicationRecord
 
   validates :title, presence: false
   validates :firstname, presence: false
-  validates :lastname, presence: true
+  validates :lastname, presence: false
   validates :gender, presence: false
   validates :birthday, presence: false
-  validates :profession, presence: false
+  validates :occupation, presence: false
 
-  belongs_to :organization, optional: true
-
+  belongs_to :user
   has_many :comments, as: :commentable
 
   def name

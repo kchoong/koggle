@@ -1,12 +1,12 @@
-class CreatePersons < ActiveRecord::Migration[7.0]
+class CreateProfiles < ActiveRecord::Migration[7.0]
   def change
-    create_table :persons do |t|
+    create_table :profiles do |t|
       t.string :title
       t.string :firstname
       t.string :lastname
-      t.integer :gender, default: 0
+      t.integer :gender
       t.date :birthday
-      t.string :profession
+      t.string :occupation
 
       t.timestamps
     end

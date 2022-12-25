@@ -10,7 +10,7 @@ de:
     delete: Löschen
     edit: Bearbeiten
     save: Speichern
-    update: Updaten
+    update: Aktualisieren
   comment:
     anonymous_hint: Lassen Sie den Namen weg, um anonym zu bleiben
     no_comments: Keine Kommentare...
@@ -33,25 +33,23 @@ de:
     en: English
   navigation:
     admin:
-      organizations: Organisationen
-      persons: Personen
+      groups: Gruppen
       users: Benutzer
     dashboard: Dashboard
     home: Startseite
     profile: Profil
     search: Suche...
     settings: Einstellungen
-  organization:
-    all_organizations: Liste aller Organisationen
+  group:
+    all_groups: Liste aller Gruppen
     all_members: Liste aller Mitglieder
-    create: Neue Organisation erstellen
-    create_btn: Neue Organisation
-    edit_html: "Organisation <i>%{name}</i> bearbeiten"
-  person:
-    all_persons: Liste aller Personen
-    create: Neue Person erstellen
-    create_btn: Neue Person
-    edit_html: "Person <i>%{name}</i> bearbeiten"
+    create: Neue Gruppe erstellen
+    create_btn: Neue Gruppe
+    edit_html: "Gruppe <i>%{name}</i> bearbeiten"
+  profile:
+    edit_html: "Profil <i>%{name}</i> bearbeiten"
+  user:
+    all_users: Liste aller Benutzer
   time:
     ago: "Vor %{time}"
     formats:

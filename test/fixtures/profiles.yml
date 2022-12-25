@@ -5,13 +5,13 @@ one:
   firstname: MyString
   lastname: MyString
   gender: 1
-  birthday: 2022-12-24
-  profession: MyString
+  birthday: 2022-12-25
+  occupation: MyString
 
 two:
   title: MyString
   firstname: MyString
   lastname: MyString
   gender: 1
-  birthday: 2022-12-24
-  profession: MyString
+  birthday: 2022-12-25
+  occupation: MyString

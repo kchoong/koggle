@@ -9,12 +9,13 @@ Rails.application.routes.draw do
   devise_for :users
 
   # Model CRUD
-  resources :persons do
+  resources :groups do
     resources :comments, only: [:create, :destroy]
   end
-  resources :organizations do
+  resources :profiles, only: [:show, :edit] do
     resources :comments, only: [:create, :destroy]
   end
+  resources :settings, only: [:show, :edit]
 
   # GET
   get "/locale/:locale" => "home#switch_locale", as: "switch_locale"

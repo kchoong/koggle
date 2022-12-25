@@ -4,10 +4,17 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  before_create :build_profile
+  before_create :build_setting
+
   validates :email, presence: true, uniqueness: { case_sensitive: false }
   validates :username, presence: true, uniqueness: { case_sensitive: false }
   # only allow letter, number, underscore and punctuation.
   validates_format_of :username, with: /^[a-zA-Z0-9_\.]*$/, :multiline => true
+
+  has_one :profile
+  has_one :setting
+  belongs_to :group, optional: true
 
   attr_writer :login
 
@@ -23,4 +30,5 @@ class User < ApplicationRecord
       where(conditions.to_h).first
     end
   end
+
 end
