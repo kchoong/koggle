@@ -38,10 +38,7 @@ de:
       users: Benutzer
     dashboard: Dashboard
     home: Startseite
-    login: Anmelden
-    logout: Abmelden
     profile: Profil
-    register: Registrieren
     search: Suche...
     settings: Einstellungen
   organization:

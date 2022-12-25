@@ -12,13 +12,14 @@ header
           input class="form-control form-control-dark text-bg-dark" aria-label="Search" placeholder=t("navigation.search") type="search"
 
         div class="text-end"
-          button class="btn btn-outline-light me-2" type="button"
-            a class="nav-link text-white" href="#"
-              = t("navigation.login")
+          - if not user_signed_in?
+            button class="btn btn-outline-light me-2" type="button"
+              a class="nav-link" href=new_user_session_path
+                = t('devise.sessions.new.sign_in')
 
-          button class="btn btn-primary me-2" type="button"
-            a class="nav-link text-white" href="#"
-              = t("navigation.register")
+            button class="btn btn-primary me-2" type="button"
+              a class="nav-link text-white" href=new_user_registration_path
+                = t('devise.registrations.new.sign_up')
 
           div class="btn-group"
             button type="button" class="btn btn-outline-light dropdown-toggle me-2" data-bs-toggle="dropdown" aria-expanded="false"

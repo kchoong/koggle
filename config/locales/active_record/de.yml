@@ -10,9 +10,6 @@ de:
       person:
         one: Person
         other: Personen
-      user:
-        one: Benutzer
-        other: Benutzer
     attributes:
       comment:
         name: Name
@@ -29,7 +26,3 @@ de:
         organization: Organisation
         profession: Beruf
         title: Titel
-      user:
-        username: Benutzername
-        email: E-Mail
-        encrypted_password: Passwort

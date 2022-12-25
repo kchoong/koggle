@@ -22,18 +22,13 @@ div class="table-responsive"
         tr
           th
             a href=person_path(person) = person.id
-          td
-            - if person.firstname.present?
-              = person.firstname
+          td = person.firstname if person.firstname.present?
           td = person.lastname
           td = person.gender
-          td
-            - if person.birthday.present?
-              = l(person.birthday, :format => :long)
+          td = l(person.birthday, :format => :long) if person.birthday.present?
           td
             - if person.organization.present?
               a href=organization_path(person.organization) = person.organization.name
-
           td
             button type="button" class="btn btn-primary btn-sm me-2"
               a class="text-white" href=edit_person_path(person)

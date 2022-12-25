@@ -38,10 +38,7 @@ en:
       users: Users
     dashboard: Dashboard
     home: Home
-    login: Login
-    logout: Sign out
     profile: Profile
-    register: Sign up
     search: Search...
     settings: Settings
   organization:
