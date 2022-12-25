@@ -17,4 +17,8 @@ class Calendar {
     }
 }
 
-export {Calendar};
+addEventListener('DOMContentLoaded', () => {
+    Calendar.init();
+})
+
+export {Calendar}

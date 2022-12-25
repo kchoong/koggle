@@ -15,6 +15,11 @@ de:
         lastname: Nachname
         occupation: Tätigkeit
         title: Titel
+      profile/gender:
+        diverse: Diverse
+        male: Männlich
+        female: Weiblich
+        no_answer: Keine Angabe
       user:
         confirmation_sent_at: Bestätigung gesendet am
         confirmation_token: Bestätigungs-Token

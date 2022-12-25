@@ -8,10 +8,10 @@ html
     = favicon_link_tag "favicon.ico"
 
     = stylesheet_link_tag "application", "data-turbo-track": "reload"
-    = yield :stylesheet_includes
 
     = javascript_include_tag "application", "data-turbo-track": "reload", defer: true
-    = yield :javascript_includes
+    = javascript_include_tag params[:controller]
+
   body
     = render "layouts/partials/navigation"
 

@@ -4,15 +4,21 @@ div id="sidebar" class="d-flex flex-column bg-dark text-white flex-shrink-0 p-3 
       a class="nav-link text-white" href=dashboard_path
         i class="bi bi-kanban-fill pe-3"
         = t("navigation.dashboard")
-    li
-      a class="nav-link text-white" href="#"
-        i class="bi bi-person-fill pe-3"
-        = t("navigation.admin.users")
-    li
-      a class="nav-link text-white" href=groups_path
-        i class="bi bi-people-fill pe-3"
-        = t("navigation.admin.groups")
 
+    - if current_user.admin?
+      li id="adminmenu" class="submenu"
+        a class="nav-link text-white dropdown-toggle" data-bs-toggle="collapse" data-bs-target="#adminmenu_items" href="#" aria-expanded="true"
+          i class="bi bi-nut-fill pe-3"
+          = t("navigation.admin.admin")
+        ul id="adminmenu_items" class="submenu collapse show"
+          li
+            a class="nav-link text-white" href="#"
+              i class="bi bi-person-fill pe-3"
+              = t("navigation.admin.users")
+          li
+            a class="nav-link text-white" href=groups_path
+              i class="bi bi-people-fill pe-3"
+              = t("navigation.admin.groups")
   hr
 
   div id="usermenu" class="dropdown"

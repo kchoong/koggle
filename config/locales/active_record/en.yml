@@ -15,6 +15,11 @@ en:
         lastname: Lastname
         occupation: Occupation
         title: Title
+      profile/gender:
+        diverse: Diverse
+        male: Male
+        female: Female
+        no_answer: Prefer not to answer
       user:
         confirmation_sent_at: Confirmation sent at
         confirmation_token: Confirmation token

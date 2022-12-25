@@ -1,5 +1,7 @@
 class Profile < ApplicationRecord
 
+  enum gender: [:no_answer, :female, :male, :diverse]
+
   validates :title, presence: false
   validates :firstname, presence: false
   validates :lastname, presence: false
