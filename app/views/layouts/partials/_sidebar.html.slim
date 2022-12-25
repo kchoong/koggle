@@ -1,41 +1,36 @@
 div id="sidebar" class="d-flex flex-column bg-dark text-white flex-shrink-0 p-3 position-fixed"
   ul class="nav nav-pills flex-column mb-auto"
-    li class="nav-item"
-      a class="nav-link text-white active" aria-current="page" href=root_path
-        i class="bi bi-house-fill pe-3"
-        = t("navigation.home")
     li
       a class="nav-link text-white" href=dashboard_path
         i class="bi bi-kanban-fill pe-3"
         = t("navigation.dashboard")
     li
-      a class="nav-link text-white" href=persons_path
+      a class="nav-link text-white" href="#"
         i class="bi bi-person-fill pe-3"
-        = t("navigation.admin.persons")
+        = t("navigation.admin.users")
     li
-      a class="nav-link text-white" href=organizations_path
+      a class="nav-link text-white" href=groups_path
         i class="bi bi-people-fill pe-3"
-        = t("navigation.admin.organizations")
+        = t("navigation.admin.groups")
 
-  - if user_signed_in?
-    hr
+  hr
 
-    div id="usermenu" class="dropdown"
-      a id="usermenuDropdown" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" href="#"
-        = image_tag "placeholder/profile.png", class: "rounded-circle me-2", height: 32, width: 32
-        strong = current_user.username
-      ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="usermenuDropdown"
-        li
-          a class="dropdown-item" href="#"
-            i class="bi bi-person-fill pe-3"
-            = t("navigation.profile")
-        li
-          a class="dropdown-item" href="#"
-            i class="bi bi-gear-fill pe-3"
-            = t("navigation.settings")
-        li
-          hr class="dropdown-divider"
-        li
-          a class="dropdown-item" href=destroy_user_session_path data-method="delete"
-            i class="bi bi-box-arrow-right pe-3"
-            = t("devise.sessions.destroy.sign_out")
+  div id="usermenu" class="dropdown"
+    a id="usermenuDropdown" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" href="#"
+      = image_tag "placeholder/profile.png", class: "rounded-circle me-2", height: 32, width: 32
+      strong = current_user.username
+    ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="usermenuDropdown"
+      li
+        a class="dropdown-item" href="#"
+          i class="bi bi-person-fill pe-3"
+          = t("navigation.profile")
+      li
+        a class="dropdown-item" href="#"
+          i class="bi bi-gear-fill pe-3"
+          = t("navigation.settings")
+      li
+        hr class="dropdown-divider"
+      li
+        a class="dropdown-item" href=destroy_user_session_path data-method="delete"
+          i class="bi bi-box-arrow-right pe-3"
+          = t("devise.sessions.destroy.sign_out")

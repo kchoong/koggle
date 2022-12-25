@@ -16,6 +16,10 @@ class User < ApplicationRecord
   has_one :setting
   belongs_to :group, optional: true
 
+  def name
+    self.username
+  end
+
   attr_writer :login
 
   def login

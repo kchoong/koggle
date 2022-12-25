@@ -12,8 +12,8 @@ de:
     save: Speichern
     update: Aktualisieren
   comment:
-    anonymous_hint: Lassen Sie den Namen weg, um anonym zu bleiben
     no_comments: Keine Kommentare...
+    no_login: Bitte melden Sie sich an um einen Kommentar zu erstellen.
     controller:
       error:
         created: Kommentar konnte nicht erstellt werden.

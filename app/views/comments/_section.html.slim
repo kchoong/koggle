@@ -11,15 +11,15 @@ div class="comment-section"
         = Comment.model_name.human(count: comments.count)
         span<> class="badge bg-primary"
           = comments.count
-      = simple_form_for [entity, Comment.new] do |f|
-        div class="mb-3"
-          = f.input :name
-          small class="form-text text-muted"
-            = t("comment.anonymous_hint")
-        div class="mb-3"
-          = f.input :text, :as => :text, :input_html => { 'rows' => 3 }
-        div class="mb-3"
-          = f.submit Comment, class: "btn btn-primary me-1"
+      - if user_signed_in?
+        = simple_form_for [entity, Comment.new] do |f|
+          div class="mb-3"
+            = f.input :text, :as => :text, :input_html => { 'rows' => 3 }
+          div class="mb-3"
+            = f.hidden_field :name, :value => current_user.username
+            = f.submit Comment, class: "btn btn-primary me-1"
+      - else
+        div class="alert alert-info" = t("comment.no_login")
     div class="col-8"
       - if comments.blank?
         div class="alert alert-secondary" = t("comment.no_comments")

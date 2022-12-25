@@ -12,8 +12,8 @@ en:
     save: Save
     update: Update
   comment:
-    anonymous_hint: Leave empty to stay anonymous
     no_comments: No comments...
+    no_login: Please login to add a comment.
     controller:
       error:
         created: Comment could not be posted.

@@ -16,9 +16,10 @@ html
     = render "layouts/partials/navigation"
 
     main class="d-flex flex-nowrap"
-      = render "layouts/partials/sidebar"
+      - if user_signed_in?
+        = render "layouts/partials/sidebar"
 
-      div id="content" class="container-fluid sidebar-offset"
+      div id="content" class=(user_signed_in? ? "container-fluid sidebar-offset" : "container-fluid")
         = render "layouts/partials/flash"
 
         div class="row"

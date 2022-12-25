@@ -11,7 +11,7 @@ class Calendar {
         }))
             .then((data) => data.text())
             .then((data) => {
-                let container = document.getElementById("calendarWidget");
+                let container = document.querySelector("#calendarWidget");
                 container.innerHTML = data;
             });
     }

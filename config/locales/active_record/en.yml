@@ -8,7 +8,7 @@ en:
         description: Description
         name: Name
         users: Members
-      person:
+      profile:
         birthday: Birthday
         firstname: Firstname
         gender: Gender
