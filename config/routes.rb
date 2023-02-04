@@ -1,6 +1,14 @@
+# Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  # Root
+  root "home#index"
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  # Authentication
+  devise_for :users
+
+  # Model CRUD
+
+  # GET
+  get "/dashboard" => "dashboard#index"
 end
+

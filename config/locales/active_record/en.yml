@@ -1,0 +1,62 @@
+en:
+  activerecord:
+    attributes:
+      comment:
+        name: Name
+        text: Comment
+      group:
+        description: Description
+        name: Name
+        users: Members
+      profile:
+        birthday: Birthday
+        firstname: Firstname
+        gender: Gender
+        lastname: Lastname
+        occupation: Occupation
+        title: Title
+      profile/gender:
+        diverse: Diverse
+        male: Male
+        female: Female
+        no_answer: Prefer not to answer
+      user:
+        confirmation_sent_at: Confirmation sent at
+        confirmation_token: Confirmation token
+        confirmed_at: Confirmed at
+        created_at: Created at
+        current_password: Current password
+        current_sign_in_at: Current sign-in at
+        current_sign_in_ip: IP of current sign-in
+        email: E-Mail
+        encrypted_password: Encrypted password
+        failed_attempts: Failed attempts
+        last_sign_in_at: Last sign-in at
+        last_sign_in_ip: Last sign-in IP
+        locked_at: Locked at
+        login: Username or E-Mail
+        password: Password
+        password_confirmation: Password confirmation
+        remember_created_at: Remember created at
+        remember_me: Remember me
+        reset_password_sent_at: Password-Reset-Mail sent at
+        reset_password_token: Password-Reset token
+        sign_in_count: Sign-in count
+        unconfirmed_email: Unconfirmed E-Mail
+        unlock_token: Unlock token
+        updated_at: Updated at
+        terms_accepted_at: Terms
+        privacy_accepted_at: Privacy
+    models:
+      comment:
+        one: Comment
+        other: Comments
+      group:
+        one: Group
+        other: Groups
+      profile:
+        one: Profile
+        other: Profiles
+      user:
+        one: User
+        other: Users
