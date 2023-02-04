@@ -1,12 +1,2 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
-
-// Other SASS files
-@import "./application.scss";
-@import "./layout.scss";
-
-@font-face {
-  font-family: "bootstrap-icons";
-  src: font-url("bootstrap-icons/font/fonts/bootstrap-icons.woff2") format("woff2"),
-  font-url("bootstrap-icons/font/fonts/bootstrap-icons.woff") format("woff");
-}
