@@ -1,0 +1,18 @@
+= simple_form_for(@worker) do |f|
+  = f.error_notification
+  = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+
+  .form-inputs
+    = f.input :first_name
+    = f.input :last_name
+    = f.input :birthday
+    = f.input :address_1
+    = f.input :address_2
+    = f.input :city
+    = f.input :country
+    = f.input :postcode
+    = f.input :work_hours
+    = f.input :vacation_days
+
+  .form-actions
+    = f.button :submit
