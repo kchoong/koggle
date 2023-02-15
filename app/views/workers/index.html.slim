@@ -1,11 +1,42 @@
-p style="color: green" = notice
+h1 class="page-title" = t("worker.titles.list")
 
-h1 Workers
+div class="container-fluid bg-light rounded-3 p-3 mb-3"
+  button class="btn btn-primary btn-lg me-2" type="button"
+    a class="text-white" href=new_worker_path
+      = t("worker.links.create_btn")
+      i class="bi bi-plus-square-fill ps-2"
 
-#workers
-  - @workers.each do |worker|
-    == render worker
-    p
-      = link_to "Show this worker", worker
-
-= link_to "New worker", new_worker_path
+div class="table-responsive"
+  table class="entity-table table table-striped"
+    thead class="table-dark"
+      tr
+        th = t("id")
+        th = Worker.human_attribute_name :name
+        th = User.human_attribute_name :email
+        th = Worker.human_attribute_name :birthday
+        th = Worker.human_attribute_name :full_address
+        th = Worker.human_attribute_name :office
+        th = t("actions.actions")
+    tbody class="table-group-divider"
+      - @workers.each do |worker|
+        tr
+          th = worker.id
+          td
+            a href=worker_path(worker) = worker.name
+          td = worker.user.email
+          td
+            - if worker.birthday.present?
+              = l(worker.birthday, :format => :long)
+          td = worker.full_address
+          td
+            - if worker.office.present?
+              a href=office_path(worker.office) = worker.office.name
+          td
+            button type="button" class="btn btn-primary btn-sm me-2"
+              a class="text-white" href=edit_worker_path(worker)
+                = t("actions.edit")
+                i class="bi bi-pencil-fill ps-2"
+            button type="button" class="btn btn-primary btn-sm me-2"
+              a class="text-white" href=worker_path(worker) data-method="delete" data-confirm=t("actions.confirm")
+                = t("actions.delete")
+                i class="bi bi-trash-fill ps-2"

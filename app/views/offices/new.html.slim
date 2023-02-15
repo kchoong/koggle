@@ -1,8 +1,8 @@
-h1 New office
+h1 class="page-title" = t("office.titles.create")
 
 == render "form", office: @office
 
 br
 
 div
-  = link_to "Back to offices", offices_path
+  = link_to t("office.links.back_list"), offices_path

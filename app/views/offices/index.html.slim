@@ -1,11 +1,36 @@
-p style="color: green" = notice
+h1 class="page-title" = t("office.titles.list")
 
-h1 Offices
+div class="container-fluid bg-light rounded-3 p-3 mb-3"
+  button class="btn btn-primary btn-lg me-2" type="button"
+    a class="text-white" href=new_office_path
+      = t("office.links.create_btn")
+      i class="bi bi-plus-square-fill ps-2"
 
-#offices
-  - @offices.each do |office|
-    == render office
-    p
-      = link_to "Show this office", office
-
-= link_to "New office", new_office_path
+div class="table-responsive"
+  table class="entity-table table table-striped"
+    thead class="table-dark"
+      tr
+        th = t("id")
+        th = Office.human_attribute_name :name
+        th = Office.human_attribute_name :description
+        th = Office.human_attribute_name :full_address
+        th = Office.human_attribute_name :workers
+        th = t("actions.actions")
+    tbody class="table-group-divider"
+      - @offices.each do |office|
+        tr
+          th = office.id
+          td
+            a href=office_path(office) = office.name
+          td = office.description
+          td = office.full_address
+          td = office.workers.size
+          td
+            button type="button" class="btn btn-primary btn-sm me-2"
+              a class="text-white" href=edit_office_path(office)
+                = t("actions.edit")
+                i class="bi bi-pencil-fill ps-2"
+            button type="button" class="btn btn-primary btn-sm me-2"
+              a class="text-white" href=office_path(office) data-method="delete" data-confirm=t("actions.confirm")
+                = t("actions.delete")
+                i class="bi bi-trash-fill ps-2"

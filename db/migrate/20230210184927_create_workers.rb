@@ -6,11 +6,14 @@ class CreateWorkers < ActiveRecord::Migration[7.0]
       t.date :birthday
       t.string :address_1
       t.string :address_2
+      t.string :postcode
       t.string :city
       t.string :country
-      t.string :postcode
       t.integer :work_hours
       t.integer :vacation_days
+
+      t.references :user, index: true
+      t.references :office, index: true
 
       t.timestamps
     end

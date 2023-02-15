@@ -4,18 +4,31 @@ en:
       comment:
         name: Name
         text: Comment
-      group:
+      office:
+        address_1: Address 1
+        address_2: Address 2
+        city: City
+        country: Country
         description: Description
+        full_address: Address
         name: Name
-        users: Members
-      profile:
+        postcode: ZIP/Postal Code
+        workers: Workers
+      worker:
+        address_1: Address 1
+        address_2: Address 2
         birthday: Birthday
-        firstname: Firstname
+        city: City
+        country: Country
+        first_name: First Name
+        full_address: Address
         gender: Gender
-        lastname: Lastname
-        occupation: Occupation
-        title: Title
-      profile/gender:
+        last_name: Last Name
+        office: Office
+        postcode: ZIP/Postal Code
+        vacation_days: Vacation Days
+        work_hours: Work Hours
+      worker/gender:
         diverse: Diverse
         male: Male
         female: Female
@@ -51,12 +64,12 @@ en:
       comment:
         one: Comment
         other: Comments
-      group:
-        one: Group
-        other: Groups
-      profile:
-        one: Profile
-        other: Profiles
+      office:
+        one: Office
+        other: Offices
+      worker:
+        one: Worker
+        other: Workers
       user:
         one: User
         other: Users

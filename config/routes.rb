@@ -1,7 +1,5 @@
 # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 Rails.application.routes.draw do
-  resources :offices
-  resources :workers
   # Root
   root "home#index"
 
@@ -9,6 +7,8 @@ Rails.application.routes.draw do
   devise_for :users
 
   # Model CRUD
+  resources :offices
+  resources :workers
 
   # GET
   get "/dashboard" => "dashboard#index"

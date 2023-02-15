@@ -65,6 +65,6 @@ class OfficesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def office_params
-      params.require(:office).permit(:name, :description, :address_1, :address_2, :city, :country, :postcode, :floor)
+      params.require(:office).permit(:name, :description, :address_1, :address_2, :postcode, :city, :country)
     end
 end

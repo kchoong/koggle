@@ -19,7 +19,6 @@ class OfficesTest < ApplicationSystemTestCase
     fill_in "City", with: @office.city
     fill_in "Country", with: @office.country
     fill_in "Description", with: @office.description
-    fill_in "Floor", with: @office.floor
     fill_in "Name", with: @office.name
     fill_in "Postcode", with: @office.postcode
     click_on "Create Office"
@@ -37,7 +36,6 @@ class OfficesTest < ApplicationSystemTestCase
     fill_in "City", with: @office.city
     fill_in "Country", with: @office.country
     fill_in "Description", with: @office.description
-    fill_in "Floor", with: @office.floor
     fill_in "Name", with: @office.name
     fill_in "Postcode", with: @office.postcode
     click_on "Update Office"

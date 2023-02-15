@@ -6,6 +6,7 @@ en:
     actions: Actions
     back: Back
     confirm: Are you sure?
+    cancel: Cancel
     create: Create
     delete: Delete
     edit: Edit
@@ -33,23 +34,32 @@ en:
     en: English
   navigation:
     admin:
-      groups: Groups
+      offices: Offices
       users: Users
+      workers: Workers
     dashboard: Dashboard
     home: Home
     profile: Profile
     search: Search...
     settings: Settings
-  group:
-    all_groups: List of all groups
-    all_members: List of all members
-    create: Create new group
-    create_btn: New Group
-    edit_html: "Edit group <i>%{name}</i>"
-  profile:
-    edit_html: "Edit profile <i>%{name}</i>"
-  user:
-    all_users: List of all users
+  office:
+    links:
+      back_list: Back to offices
+      create_btn: New office
+      view: View this office
+    titles:
+      create: Create new office
+      edit_html: "Edit office <i>%{name}</i>"
+      list: List of all offices
+  worker:
+    links:
+      back_list: Back to workers
+      create_btn: New worker
+      view: View this worker
+    titles:
+      create: Create new worker
+      edit_html: "Edit worker <i>%{name}</i>"
+      list: List of all workers
   time:
     ago: "%{time} ago"
     formats:

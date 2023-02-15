@@ -1,10 +1,10 @@
-h1 Editing office
+h1 class="page-title" = t("office.titles.edit_html", name: @office.name)
 
 == render "form", office: @office
 
 br
 
 div
-  => link_to "Show this office", @office
+  => link_to t("office.links.view"), @office
   '|
-  =< link_to "Back to offices", offices_path
+  =< link_to t("office.links.back_list"), offices_path
