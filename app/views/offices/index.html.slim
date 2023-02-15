@@ -7,9 +7,30 @@ div class="table-responsive"
   table class="table table-striped table-sm"
     thead class="table-dark"
       tr
-        th = t("id")
-        th = Office.human_attribute_name :name
-        th = Office.human_attribute_name :description
+        th
+          a class=(@pager.order_by == "id" ? "fw-bold" : "") href=offices_path(order_by: "id", order_direction: (@pager.order_direction == "asc" ? :desc : :asc))
+            = t("id")
+          - if @pager.order_by == "id"
+            - if @pager.order_direction == "asc"
+              i<> class="bi bi-caret-up-fill"
+            - else
+              i<> class="bi bi-caret-down-fill"
+        th
+          a class=(@pager.order_by == "name" ? "fw-bold" : "") href=offices_path(order_by: "name", order_direction: (@pager.order_direction == "asc" ? :desc : :asc))
+            = Office.human_attribute_name :name
+          - if @pager.order_by == "name"
+            - if @pager.order_direction == "asc"
+              i<> class="bi bi-caret-up-fill"
+            - else
+              i<> class="bi bi-caret-down-fill"
+        th
+          a class=(@pager.order_by == "description" ? "fw-bold" : "") href=offices_path(order_by: "description", order_direction: (@pager.order_direction == "asc" ? :desc : :asc))
+            = Office.human_attribute_name :description
+          - if @pager.order_by == "description"
+            - if @pager.order_direction == "asc"
+              i<> class="bi bi-caret-up-fill"
+            - else
+              i<> class="bi bi-caret-down-fill"
         th = Office.human_attribute_name :full_address
         th = Office.human_attribute_name :workers
         th = t("actions.actions")

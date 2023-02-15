@@ -3,7 +3,8 @@
     ul class="pagination justify-content-center"
       li class=(["page-item", @pager.page > 1 ? "" : "disabled"])
         a class="page-link" aria-label=t("pagination.previous") href=send(path_name, page: @pager.page - 1, order_by: @pager.order_by, order_direction: @pager.order_direction)
-          span aria-hidden="true" &laquo
+          span aria-hidden="true"
+            i class="bi bi-caret-left-fill"
       - if @pager.page > 1
         li class="page-item"
           a class="page-link" href=send(path_name, page: @pager.page - 1, order_by: @pager.order_by, order_direction: @pager.order_direction)
@@ -29,4 +30,5 @@
 
       li class=(["page-item", @pager.page < @pager.pages ? "" : "disabled"])
         a class="page-link" aria-label=t("pagination.next") href=send(path_name, page: @pager.page + 1, order_by: @pager.order_by, order_direction: @pager.order_direction)
-          span aria-hidden="true" &raquo
+          span aria-hidden="true"
+            i class="bi bi-caret-right-fill"
