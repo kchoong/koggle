@@ -2,6 +2,7 @@ en:
   application: Koggle
   anonymous: Anonymous
   id: ID
+  page_title: "%{title} - Koggle"
   actions:
     actions: Actions
     back: Back
@@ -24,9 +25,9 @@ en:
     controller:
       error:
       success:
-        created: "#{name} has been successfully created."
-        deleted: "#{name} has been successfully deleted."
-        edited: "#{name} has been successfully updated."
+        created: "%{name} has been successfully created."
+        deleted: "%{name} has been successfully deleted."
+        edited: "%{name} has been successfully updated."
   dashboard:
     title: Dashboard
   language:
@@ -45,16 +46,17 @@ en:
   office:
     links:
       back_list: Back to offices
-      create_btn: New office
       view: View this office
     titles:
       create: Create new office
       edit_html: "Edit office <i>%{name}</i>"
       list: List of all offices
+  pagination:
+    next: Next
+    previous: Previous
   worker:
     links:
       back_list: Back to workers
-      create_btn: New worker
       view: View this worker
     titles:
       create: Create new worker

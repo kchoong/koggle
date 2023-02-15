@@ -1,9 +1,11 @@
 class WorkersController < ApplicationController
+  include Pagination
+
   before_action :set_worker, only: %i[ show edit update destroy ]
 
   # GET /workers or /workers.json
   def index
-    @workers = Worker.all
+    @workers = paginate Worker
   end
 
   # GET /workers/1 or /workers/1.json

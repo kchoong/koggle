@@ -21,4 +21,11 @@ module ApplicationHelper
     l(time, :format => :long)
   end
 
+  def pagination(path_name=nil)
+    unless path_name
+      path_name = "#{controller_name}_path"
+    end
+    render("application/pagination", path_name: path_name )
+  end
+
 end

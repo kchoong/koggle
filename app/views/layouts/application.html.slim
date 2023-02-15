@@ -1,7 +1,8 @@
 doctype html
 html
   head
-    title = t("application")
+    title
+      = t("application")
     meta name="viewport" content="width=device-width,initial-scale=1"
     = csrf_meta_tags
     = csp_meta_tag
@@ -16,9 +17,8 @@ html
     = render "layouts/partials/navigation"
 
     main
-      div id="content" class="container-fluid"
+      div class="container-fluid px-5 pb-3"
         = render "layouts/partials/flash"
 
-        div class="row"
-          div class="col-10 offset-1"
-            = yield
+        div id="content"
+          = yield

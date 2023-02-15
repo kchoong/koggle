@@ -1,9 +1,11 @@
 class OfficesController < ApplicationController
+  include Pagination
+
   before_action :set_office, only: %i[ show edit update destroy ]
 
   # GET /offices or /offices.json
   def index
-    @offices = Office.all
+    @offices = paginate Office
   end
 
   # GET /offices/1 or /offices/1.json

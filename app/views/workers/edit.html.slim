@@ -1,10 +1,10 @@
-h1 Editing worker
+h1 = t("worker.titles.edit_html", name: @office.name)
 
 == render "form", worker: @worker
 
 br
 
 div
-  => link_to "Show this worker", @worker
+  => link_to t("worker.links.view"), @worker
   '|
-  =< link_to "Back to workers", workers_path
+  =< link_to t("worker.links.back_list"), workers_path

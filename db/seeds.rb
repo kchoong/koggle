@@ -12,9 +12,8 @@ require 'faker'
 # Faker::Config.locale = :de
 
 # Admin user/worker
-admin_worker = Worker.create!(last_name: "Admin")
+admin_worker = Worker.create!(first_name: "Kevin", last_name: "Choong")
 admin_user = User.create!(username: "admin", email: "admin@koggle.azg", password: "adminadmin", worker:admin_worker, admin: true)
-
 
 # Offices
 (1..50).each do |i|

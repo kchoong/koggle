@@ -1,7 +1,7 @@
 div class="row"
   div class="col-6 offset-3"
     div class="container-fluid bg-light rounded-3 p-5 my-5"
-      h1 class="page-title" = t('devise.registrations.new.sign_up')
+      h1 = t('devise.registrations.new.sign_up')
 
       = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
         div class="mb-3"
