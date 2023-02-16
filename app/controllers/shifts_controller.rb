@@ -5,7 +5,7 @@ class ShiftsController < ApplicationController
 
   # GET /shifts or /shifts.json
   def index
-    @shifts = paginate Shift
+    @shifts = paginate Shift, :start_time, :desc
   end
 
   # GET /shifts/1 or /shifts/1.json

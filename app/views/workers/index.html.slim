@@ -8,27 +8,27 @@ div class="table-responsive"
     thead class="table-dark"
       tr
         th
-          a class=(@pager.order_by == "id" ? "fw-bold" : "") href=workers_path(order_by: "id", order_direction: (@pager.order_direction == "asc" ? :desc : :asc))
+          a class=(@pager.sort_by == "id" ? "fst-italic" : "") href=workers_path(sort_by: "id", sort_order: (@pager.sort_order == "asc" ? :desc : :asc))
             = t("id")
-          - if @pager.order_by == "id"
-            - if @pager.order_direction == "asc"
+          - if @pager.sort_by == "id"
+            - if @pager.sort_order == "asc"
               i<> class="bi bi-caret-up-fill"
             - else
               i<> class="bi bi-caret-down-fill"
         th
-          a class=(@pager.order_by == "last_name" ? "fw-bold" : "") href=workers_path(order_by: "last_name", order_direction: (@pager.order_direction == "asc" ? :desc : :asc))
+          a class=(@pager.sort_by == "last_name" ? "fst-italic" : "") href=workers_path(sort_by: "last_name", sort_order: (@pager.sort_order == "asc" ? :desc : :asc))
             = Worker.human_attribute_name :name
-          - if @pager.order_by == "last_name"
-            - if @pager.order_direction == "asc"
+          - if @pager.sort_by == "last_name"
+            - if @pager.sort_order == "asc"
               i<> class="bi bi-caret-up-fill"
             - else
               i<> class="bi bi-caret-down-fill"
         th = Worker.human_attribute_name :email
         th
-          a class=(@pager.order_by == "birthday" ? "fw-bold" : "") href=workers_path(order_by: "birthday", order_direction: (@pager.order_direction == "asc" ? :desc : :asc))
+          a class=(@pager.sort_by == "birthday" ? "fst-italic" : "") href=workers_path(sort_by: "birthday", sort_order: (@pager.sort_order == "asc" ? :desc : :asc))
             = Worker.human_attribute_name :birthday
-          - if @pager.order_by == "birthday"
-            - if @pager.order_direction == "asc"
+          - if @pager.sort_by == "birthday"
+            - if @pager.sort_order == "asc"
               i<> class="bi bi-caret-up-fill"
             - else
               i<> class="bi bi-caret-down-fill"

@@ -2,12 +2,12 @@
   nav
     ul class="pagination justify-content-center"
       li class=(["page-item", @pager.page > 1 ? "" : "disabled"])
-        a class="page-link" aria-label=t("pagination.previous") href=send(path_name, page: @pager.page - 1, order_by: @pager.order_by, order_direction: @pager.order_direction)
+        a class="page-link" aria-label=t("pagination.previous") href=send(path_name, page: @pager.page - 1, sort_by: @pager.sort_by, sort_order: @pager.sort_order)
           span aria-hidden="true"
             i class="bi bi-caret-left-fill"
       - if @pager.page > 1
         li class="page-item"
-          a class="page-link" href=send(path_name, page: @pager.page - 1, order_by: @pager.order_by, order_direction: @pager.order_direction)
+          a class="page-link" href=send(path_name, page: @pager.page - 1, sort_by: @pager.sort_by, sort_order: @pager.sort_order)
             = @pager.page - 1
 
       li class="page-item active"
@@ -16,7 +16,7 @@
 
       - @pager.next_pages.each do |page|
         li class="page-item"
-          a class="page-link" href=send(path_name, page: page, order_by: @pager.order_by, order_direction: @pager.order_direction)
+          a class="page-link" href=send(path_name, page: page, sort_by: @pager.sort_by, sort_order: @pager.sort_order)
             = page
 
       - if not @pager.next_pages.include?(@pager.pages - 1) and @pager.page < @pager.pages - 1
@@ -25,10 +25,10 @@
 
       - if @pager.page < @pager.pages
         li class="page-item"
-          a class="page-link" href=send(path_name, page: @pager.pages, order_by: @pager.order_by, order_direction: @pager.order_direction)
+          a class="page-link" href=send(path_name, page: @pager.pages, sort_by: @pager.sort_by, sort_order: @pager.sort_order)
             = @pager.pages
 
       li class=(["page-item", @pager.page < @pager.pages ? "" : "disabled"])
-        a class="page-link" aria-label=t("pagination.next") href=send(path_name, page: @pager.page + 1, order_by: @pager.order_by, order_direction: @pager.order_direction)
+        a class="page-link" aria-label=t("pagination.next") href=send(path_name, page: @pager.page + 1, sort_by: @pager.sort_by, sort_order: @pager.sort_order)
           span aria-hidden="true"
             i class="bi bi-caret-right-fill"

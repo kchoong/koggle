@@ -8,10 +8,10 @@ div class="table-responsive"
     thead class="table-dark"
       tr
         th
-          a class=(@pager.order_by == "id" ? "fw-bold" : "") href=shifts_path(order_by: "id", order_direction: (@pager.order_direction == "asc" ? :desc : :asc))
+          a class=(@pager.sort_by == "id" ? "fst-italic" : "") href=shifts_path(sort_by: "id", sort_order: (@pager.sort_order == "asc" ? :desc : :asc))
             = t("id")
-          - if @pager.order_by == "id"
-            - if @pager.order_direction == "asc"
+          - if @pager.sort_by == "id"
+            - if @pager.sort_order == "asc"
               i<> class="bi bi-caret-up-fill"
             - else
               i<> class="bi bi-caret-down-fill"
@@ -19,18 +19,18 @@ div class="table-responsive"
         th = Shift.human_attribute_name :worker
         th = Shift.human_attribute_name :office
         th
-          a class=(@pager.order_by == "start_time" ? "fw-bold" : "") href=shifts_path(order_by: "start_time", order_direction: (@pager.order_direction == "asc" ? :desc : :asc))
+          a class=(@pager.sort_by == "start_time" ? "fst-italic" : "") href=shifts_path(sort_by: "start_time", sort_order: (@pager.sort_order == "asc" ? :desc : :asc))
             = Shift.human_attribute_name :start_time
-          - if @pager.order_by == "start_time"
-            - if @pager.order_direction == "asc"
+          - if @pager.sort_by == "start_time"
+            - if @pager.sort_order == "asc"
               i<> class="bi bi-caret-up-fill"
             - else
               i<> class="bi bi-caret-down-fill"
         th
-          a class=(@pager.order_by == "end_time" ? "fw-bold" : "") href=shifts_path(order_by: "end_time", order_direction: (@pager.order_direction == "asc" ? :desc : :asc))
+          a class=(@pager.sort_by == "end_time" ? "fst-italic" : "") href=shifts_path(sort_by: "end_time", sort_order: (@pager.sort_order == "asc" ? :desc : :asc))
             = Shift.human_attribute_name :end_time
-          - if @pager.order_by == "end_time"
-            - if @pager.order_direction == "asc"
+          - if @pager.sort_by == "end_time"
+            - if @pager.sort_order == "asc"
               i<> class="bi bi-caret-up-fill"
             - else
               i<> class="bi bi-caret-down-fill"

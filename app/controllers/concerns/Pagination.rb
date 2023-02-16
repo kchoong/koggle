@@ -1,7 +1,7 @@
 module Pagination
   extend ActiveSupport::Concern
 
-  class Pager < Struct.new(:page, :pages, :per_page, :next_pages, :size, :order_by, :order_direction)
+  class Pager < Struct.new(:page, :pages, :per_page, :next_pages, :size, :sort_by, :sort_order)
   end
 
   def default_per_page
@@ -20,20 +20,22 @@ module Pagination
     (page_num - 1) * per_page
   end
 
-  def order_by
-    params.fetch(:order_by, :id)
+  def sort_by(default)
+    params.fetch(:sort_by, default).to_s
   end
 
-  def order_direction
-    params.fetch(:order_direction, :asc)
+  def sort_order(default)
+    params.fetch(:sort_order, default).to_s
   end
 
-  def paginate(records)
+  def paginate(records, default_sort_by=:id, default_sort_order=:asc)
     size = records.all.count
     pages = (size + per_page - 1) / per_page
     next_pages = page_num.upto(page_num + 2).drop(1).select { |num| num < pages }
-    @pager = Pager.new(page_num, pages, per_page, next_pages, size, order_by, order_direction)
+    page_sort_by = sort_by(default_sort_by)
+    page_sort_order = sort_order(default_sort_order)
+    @pager = Pager.new(page_num, pages, per_page, next_pages, size, page_sort_by, page_sort_order)
 
-    records.limit(per_page).offset(paginate_offset).order("#{order_by}": order_direction)
+    records.limit(per_page).offset(paginate_offset).order("#{page_sort_by}": page_sort_order)
   end
 end

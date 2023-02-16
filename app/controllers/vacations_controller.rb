@@ -5,7 +5,7 @@ class VacationsController < ApplicationController
 
   # GET /vacations or /vacations.json
   def index
-    @vacations = paginate Vacation
+    @vacations = paginate Vacation, :start_date, :desc
   end
 
   # GET /vacations/1 or /vacations/1.json

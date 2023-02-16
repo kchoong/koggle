@@ -8,26 +8,26 @@ div class="table-responsive"
     thead class="table-dark"
       tr
         th
-          a class=(@pager.order_by == "id" ? "fw-bold" : "") href=offices_path(order_by: "id", order_direction: (@pager.order_direction == "asc" ? :desc : :asc))
+          a class=(@pager.sort_by == "id" ? "fst-italic" : "") href=offices_path(sort_by: "id", sort_order: (@pager.sort_order == "asc" ? :desc : :asc))
             = t("id")
-          - if @pager.order_by == "id"
-            - if @pager.order_direction == "asc"
+          - if @pager.sort_by == "id"
+            - if @pager.sort_order == "asc"
               i<> class="bi bi-caret-up-fill"
             - else
               i<> class="bi bi-caret-down-fill"
         th
-          a class=(@pager.order_by == "name" ? "fw-bold" : "") href=offices_path(order_by: "name", order_direction: (@pager.order_direction == "asc" ? :desc : :asc))
+          a class=(@pager.sort_by == "name" ? "fst-italic" : "") href=offices_path(sort_by: "name", sort_order: (@pager.sort_order == "asc" ? :desc : :asc))
             = Office.human_attribute_name :name
-          - if @pager.order_by == "name"
-            - if @pager.order_direction == "asc"
+          - if @pager.sort_by == "name"
+            - if @pager.sort_order == "asc"
               i<> class="bi bi-caret-up-fill"
             - else
               i<> class="bi bi-caret-down-fill"
         th
-          a class=(@pager.order_by == "description" ? "fw-bold" : "") href=offices_path(order_by: "description", order_direction: (@pager.order_direction == "asc" ? :desc : :asc))
+          a class=(@pager.sort_by == "description" ? "fst-italic" : "") href=offices_path(sort_by: "description", sort_order: (@pager.sort_order == "asc" ? :desc : :asc))
             = Office.human_attribute_name :description
-          - if @pager.order_by == "description"
-            - if @pager.order_direction == "asc"
+          - if @pager.sort_by == "description"
+            - if @pager.sort_order == "asc"
               i<> class="bi bi-caret-up-fill"
             - else
               i<> class="bi bi-caret-down-fill"

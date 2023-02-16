@@ -8,28 +8,28 @@ div class="table-responsive"
     thead class="table-dark"
       tr
         th
-          a class=(@pager.order_by == "id" ? "fw-bold" : "") href=vacations_path(order_by: "id", order_direction: (@pager.order_direction == "asc" ? :desc : :asc))
+          a class=(@pager.sort_by == "id" ? "fst-italic" : "") href=vacations_path(sort_by: "id", sort_order: (@pager.sort_order == "asc" ? :desc : :asc))
             = t("id")
-          - if @pager.order_by == "id"
-            - if @pager.order_direction == "asc"
+          - if @pager.sort_by == "id"
+            - if @pager.sort_order == "asc"
               i<> class="bi bi-caret-up-fill"
             - else
               i<> class="bi bi-caret-down-fill"
 
         th = Vacation.human_attribute_name :worker
         th
-          a class=(@pager.order_by == "start_date" ? "fw-bold" : "") href=vacations_path(order_by: "start_date", order_direction: (@pager.order_direction == "asc" ? :desc : :asc))
+          a class=(@pager.sort_by == "start_date" ? "fst-italic" : "") href=vacations_path(sort_by: "start_date", sort_order: (@pager.sort_order == "asc" ? :desc : :asc))
             = Vacation.human_attribute_name :start_time
-          - if @pager.order_by == "start_date"
-            - if @pager.order_direction == "asc"
+          - if @pager.sort_by == "start_date"
+            - if @pager.sort_order == "asc"
               i<> class="bi bi-caret-up-fill"
             - else
               i<> class="bi bi-caret-down-fill"
         th
-          a class=(@pager.order_by == "end_date" ? "fw-bold" : "") href=vacations_path(order_by: "end_date", order_direction: (@pager.order_direction == "asc" ? :desc : :asc))
+          a class=(@pager.sort_by == "end_date" ? "fst-italic" : "") href=vacations_path(sort_by: "end_date", sort_order: (@pager.sort_order == "asc" ? :desc : :asc))
             = Vacation.human_attribute_name :end_time
-          - if @pager.order_by == "end_date"
-            - if @pager.order_direction == "asc"
+          - if @pager.sort_by == "end_date"
+            - if @pager.sort_order == "asc"
               i<> class="bi bi-caret-up-fill"
             - else
               i<> class="bi bi-caret-down-fill"
