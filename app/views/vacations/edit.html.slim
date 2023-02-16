@@ -1,0 +1,11 @@
+h1 = t("vacation.titles.edit_html", id: @vacation.id)
+
+== render "form", vacation: @vacation
+
+br
+
+div
+  => link_to t("vacation.links.view"), @vacation
+  '|
+  =< link_to t("vacation.links.back_list"), vacations_path
+

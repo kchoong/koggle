@@ -1,0 +1,11 @@
+h1 = t("shift.titles.edit_html", id: @shift.id)
+
+== render "form", shift: @shift
+
+br
+
+div
+  => link_to t("shift.links.view"), @shift
+  '|
+  =< link_to t("shift.links.back_list"), shifts_path
+

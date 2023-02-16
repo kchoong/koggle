@@ -13,7 +13,17 @@ en:
         full_address: Address
         name: Name
         postcode: ZIP/Postal Code
+        shifts: Work Shifts
         workers: Workers
+      shift:
+        end_time: End Time
+        office: Office
+        start_time: Start Time
+        worker: Worker
+      vacation:
+        end_date: End Date
+        start_date: Start Date
+        worker: Worker
       worker:
         address_1: Address 1
         address_2: Address 2
@@ -26,7 +36,9 @@ en:
         last_name: Last Name
         office: Office
         postcode: ZIP/Postal Code
+        shifts: Work Shifts
         vacation_days: Vacation Days
+        vacations: Vacations
         work_hours: Work Hours
       worker/gender:
         diverse: Diverse
@@ -67,6 +79,12 @@ en:
       office:
         one: Office
         other: Offices
+      shift:
+        one: Work shift
+        other: Work shifts
+      vacation:
+        one: Vacation
+        other: Vacations
       worker:
         one: Worker
         other: Workers

@@ -1,0 +1,8 @@
+h1 = t("vacation.titles.create")
+
+== render "form", vacation: @vacation
+
+br
+
+div
+  = link_to t("vacation.links.back_list"), vacations_path

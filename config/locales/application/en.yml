@@ -54,6 +54,22 @@ en:
   pagination:
     next: Next
     previous: Previous
+  shift:
+    links:
+      back_list: Back to work shifts
+      view: View this work shift
+    titles:
+      create: Create new work shift
+      edit_html: "Edit work shift <i>%{id}</i>"
+      list: List of all work shifts
+  vacation:
+    links:
+      back_list: Back to vacations
+      view: View this vacation
+    titles:
+      create: Create new vacation
+      edit_html: "Edit vacation <i>%{id}</i>"
+      list: List of all vacations
   worker:
     links:
       back_list: Back to workers

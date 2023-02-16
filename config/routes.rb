@@ -6,8 +6,10 @@ Rails.application.routes.draw do
   # Authentication
   devise_for :users
 
-  # Model CRUD
+  # Resources
   resources :offices
+  resources :shifts
+  resources :vacations
   resources :workers
 
   # GET

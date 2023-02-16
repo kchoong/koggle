@@ -12,8 +12,8 @@ class CreateWorkers < ActiveRecord::Migration[7.0]
       t.integer :work_hours
       t.integer :vacation_days
 
-      t.references :user, index: true
-      t.references :office, index: true
+      t.belongs_to :user, index: true
+      t.belongs_to :office, index: true, foreign_key: true
 
       t.timestamps
     end

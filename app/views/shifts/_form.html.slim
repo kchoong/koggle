@@ -1,0 +1,12 @@
+= simple_form_for(@shift) do |f|
+  = f.error_notification
+  = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+
+  .form-inputs
+    = f.input :start_time
+    = f.input :end_time
+    = f.association :worker
+    = f.association :office
+
+  .form-actions
+    = f.button :submit, class: "btn-primary"
