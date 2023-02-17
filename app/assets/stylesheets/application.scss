@@ -4,3 +4,13 @@
 a {
   text-decoration: none;
 }
+
+.records-table {
+  th {
+    a {
+      &:hover, &:visited, &:link, &:active {
+        color: inherit;
+      }
+    }
+  }
+}
