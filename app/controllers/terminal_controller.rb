@@ -7,7 +7,7 @@ class TerminalController < ApplicationController
   end
 
   def office
-
+    render("terminal/office", layout: "fullscreen")
   end
 
   def check

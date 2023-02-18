@@ -1,16 +1,14 @@
 - if flash.any?
-  div class="row"
-    div class="col-10 offset-1"
-      - flash.each do |key, text|
-        - if %w[primary secondary success danger info].member?(key.to_s)
-          div class="alert alert-#{key} alert-dismissible fade show" role="alert"
-            = text
-            button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"
-        - if key == 'notice'
-          div class="alert alert-success alert-dismissible fade show" role="alert"
-            = text
-            button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"
-        - if key == 'alert'
-          div class="alert alert-danger alert-dismissible fade show" role="alert"
-            = text
-            button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"
+  - flash.each do |key, text|
+    - if %w[primary secondary success danger info].member?(key.to_s)
+      div class="alert alert-#{key} alert-dismissible fade show" role="alert"
+        = text
+        button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"
+    - if key == 'notice'
+      div class="alert alert-success alert-dismissible fade show" role="alert"
+        = text
+        button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"
+    - if key == 'alert'
+      div class="alert alert-danger alert-dismissible fade show" role="alert"
+        = text
+        button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"
