@@ -61,6 +61,9 @@ gem "rails-i18n"
 gem "devise"
 gem "cancancan"
 
+# cron jobs
+gem "whenever"
+
 # fake data for testing
 gem "faker"
 
