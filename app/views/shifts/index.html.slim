@@ -43,8 +43,10 @@ div class="table-responsive"
             a href=worker_path(shift.worker) = shift.worker.name
           td
             a href=office_path(shift.office) = shift.office.name
-          td = shift.start_time
-          td = shift.end_time
+          td = l(shift.start_time, :format => :long)
+          td
+            - if shift.end_time.present?
+              = l(shift.end_time, :format => :long)
           td
             button type="button" class="btn btn-primary btn-sm me-2"
               a class="text-white" href=edit_shift_path(shift)

@@ -12,7 +12,11 @@ Rails.application.routes.draw do
   resources :vacations
   resources :workers
 
-  # GET
+  # Dashboard
   get "/dashboard" => "dashboard#index"
+
+  # Terminal
+  get "/terminal/:id" => "terminal#office", as: :terminal_office
+  post "/terminal/:id" => "terminal#check", as: :terminal_office_check
 end
 

@@ -41,10 +41,9 @@ end
                           work_hours: rand(4..12),
                           vacation_days: rand(7..28),
                           office: office)
-
-  username = Faker::Internet.unique.username
+  username = i > 10 ? Faker::Internet.unique.username : "testuser#{i}"
+  password = i > 10 ? Faker::Internet.password : "testuser#{i}"
   email = "#{username}@koggle.azg"
-  password = Faker::Internet.password
   user = User.create!(username: username, email: email, password: password, worker: worker)
 end
 

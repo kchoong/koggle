@@ -29,7 +29,11 @@ en:
         deleted: "%{name} has been successfully deleted."
         edited: "%{name} has been successfully updated."
   dashboard:
-    title: Dashboard
+    titles:
+      index: Dashboard
+  home:
+    titles:
+      index: Home
   language:
     de: Deutsch
     en: English
@@ -62,6 +66,17 @@ en:
       create: Create new work shift
       edit_html: "Edit work shift <i>%{id}</i>"
       list: List of all work shifts
+  terminal:
+    controller:
+      error:
+        invalid_credentials_html: "<b>Invalid credentials.</b> Sorry, we couldn't check you in/out, please try again!"
+      info:
+        check_still_html: "You are still checked into the following office: <b>%{office}</b>"
+      success:
+        check_in_html: "You have checked into the following office: <b>%{office}</b>"
+        check_out_html: "You have checked out of the following office: <b>%{office}</b>"
+    titles:
+      index: Terminal
   vacation:
     links:
       back_list: Back to vacations
