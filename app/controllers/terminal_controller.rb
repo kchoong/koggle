@@ -7,18 +7,17 @@ class TerminalController < ApplicationController
   end
 
   def office
+    @worker = Worker.new
     render("terminal/office", layout: "fullscreen")
   end
 
   def check
-    login = params[:user][:login]
-    password = params[:user][:password]
-    user = User.where(username: login).first
+    worker = Worker.find_by pin: params[:worker][:pin]
 
     # Validate authentication
-    if user.present? and user.valid_password?(password)
+    if worker.present?
       # Check for another active shift
-      active_shifts = Shift.where(worker: user.worker, end_time: nil)
+      active_shifts = Shift.where(worker: worker, end_time: nil)
 
       if active_shifts.any?
         # Active shifts still running, not creating new shift
@@ -41,7 +40,7 @@ class TerminalController < ApplicationController
 
       else
         # Create new shift at the office
-        Shift.create!(worker: user.worker, office: @office, start_time: DateTime.now)
+        Shift.create!(worker: worker, office: @office, start_time: DateTime.now)
         flash[:success] = t("terminal.controller.success.check_in_html", office: @office.name).html_safe
       end
 

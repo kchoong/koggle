@@ -20,7 +20,10 @@ header class="text-bg-dark px-5 py-3 mb-4"
         - if user_signed_in?
           div class="dropdown text-end"
             a class="d-block text-decoration-none dropdown-toggle text-white" href="#" data-bs-toggle="dropdown" aria-expanded="false"
-              = image_tag "placeholder/profile.png", class: "rounded-circle me-2", height: 32, width: 32
+              - if current_user.worker.present? and current_user.worker.avatar.present?
+                = image_tag current_user.worker.avatar.variant(:minithumb), class: "rounded-circle me-2"
+              - else
+                = image_tag "placeholder/profile.png", class: "rounded-circle me-2", height: 50, width: 50
             ul class="dropdown-menu dropdown-menu-dark text-small"
               li
                 a class="dropdown-item" href="#"

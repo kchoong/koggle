@@ -67,6 +67,6 @@ class WorkersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def worker_params
-      params.require(:worker).permit(:first_name, :last_name, :birthday, :address_1, :address_2, :city, :country, :postcode, :work_hours, :vacation_days)
+      params.require(:worker).permit(:first_name, :last_name, :birthday, :address_1, :address_2, :city, :country, :postcode, :work_hours, :vacation_days, :avatar)
     end
 end

@@ -11,6 +11,7 @@ class CreateWorkers < ActiveRecord::Migration[7.0]
       t.string :country
       t.integer :work_hours
       t.integer :vacation_days
+      t.string :pin
 
       t.belongs_to :user, index: true
       t.belongs_to :office, index: true, foreign_key: true

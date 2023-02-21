@@ -27,6 +27,7 @@ en:
       worker:
         address_1: Address 1
         address_2: Address 2
+        avatar: Avatar
         birthday: Birthday
         city: City
         country: Country
@@ -35,6 +36,7 @@ en:
         gender: Gender
         last_name: Last Name
         office: Office
+        pin: PIN
         postcode: ZIP/Postal Code
         shifts: Work Shifts
         vacation_days: Vacation Days

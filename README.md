@@ -22,3 +22,7 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+* Specifications with versions
+* How to run for development
+* Cronjobs start

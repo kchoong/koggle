@@ -12,7 +12,17 @@ require 'faker'
 # Faker::Config.locale = :de
 
 # Admin user/worker
-admin_worker = Worker.create!(first_name: "Kevin", last_name: "Choong")
+admin_worker = Worker.create!(first_name: "Kevin",
+                              last_name: "Choong",
+                              birthday: Faker::Date.birthday(min_age: 18, max_age: 80),
+                              address_1: Faker::Address.street_address,
+                              address_2: Faker::Address.secondary_address,
+                              postcode: Faker::Address.postcode,
+                              city: Faker::Address.city,
+                              country: Faker::Address.country,
+                              work_hours: rand(4..12) * 7 * 4,
+                              vacation_days: rand(7..28),
+                              pin: Faker::Alphanumeric.unique.alphanumeric(number: 6))
 admin_user = User.create!(username: "admin", email: "admin@koggle.azg", password: "adminadmin", worker:admin_worker, admin: true)
 
 # Offices
@@ -27,7 +37,7 @@ admin_user = User.create!(username: "admin", email: "admin@koggle.azg", password
 end
 
 # Users and workers
-(1..100).each do |i|
+(1..10).each do |i|
   office = Office.order('RANDOM()').first
 
   worker = Worker.create!(first_name: Faker::Name.first_name,
@@ -38,9 +48,15 @@ end
                           postcode: Faker::Address.postcode,
                           city: Faker::Address.city,
                           country: Faker::Address.country,
-                          work_hours: rand(4..12),
+                          work_hours: rand(4..12) * 7 * 4,
                           vacation_days: rand(7..28),
+                          pin: Faker::Alphanumeric.unique.alphanumeric(number: 6),
                           office: office)
+
+  avatar_path = "cat#{rand(0..9)}.png"
+  worker.avatar.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'placeholder', avatar_path)),
+                       filename: avatar_path, content_type: 'image/jpg')
+
   username = i > 10 ? Faker::Internet.unique.username : "testuser#{i}"
   password = i > 10 ? Faker::Internet.password : "testuser#{i}"
   email = "#{username}@koggle.azg"
@@ -48,6 +64,7 @@ end
 end
 
 # Work shifts and vacations (might overlap for now)
+Faker::UniqueGenerator.clear # Clear before
 Worker.all.drop(1).each do |worker|
   # Work shifts
   (1..100).each do |i|
