@@ -38,15 +38,14 @@ en:
     de: Deutsch
     en: English
   navigation:
-    admin:
-      offices: Offices
-      users: Users
-      workers: Workers
-    dashboard: Dashboard
+    admin: Admin
     home: Home
+    offices: Offices
     profile: Profile
-    search: Search...
     settings: Settings
+    shifts: Work Shifts
+    vacations: Vacations
+    workers: Workers
   office:
     links:
       back_list: Back to offices

@@ -1,10 +1,6 @@
-p style="color: green" = notice
-
-== render @worker
-
-div
-  => link_to "Edit this worker", edit_worker_path(@worker)
-  '|
-  =< link_to "Back to workers", workers_path
-
-  = button_to "Destroy this worker", @worker, method: :delete
+div class="container bg-light rounded-3 p-5 mb-4"
+  div class="d-flex"
+    div class="flex-grow-1 ms-3"
+      h1 = @worker.name
+    div class="flex-shrink-0"
+      = image_tag "placeholder/profile.png", alt: @worker.name, class: "rounded", height: 250, width: 250

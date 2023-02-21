@@ -6,20 +6,15 @@ header class="text-bg-dark px-5 py-3 mb-4"
 
       ul class="nav col-12 col-md-6 mb-2 justify-content-center mb-md-0"
         li
-          a.nav-link.px-2.text-secondary[href="#"]
-            | Home
+          a class="nav-link px-2 text-white" href=root_path = t("navigation.home")
         li
-          a.nav-link.px-2.text-white[href="#"]
-            | Features
+          a class="nav-link px-2 text-white" href=workers_path = t("navigation.workers")
         li
-          a.nav-link.px-2.text-white[href="#"]
-            | Pricing
+          a class="nav-link px-2 text-white" href=offices_path = t("navigation.offices")
         li
-          a.nav-link.px-2.text-white[href="#"]
-            | FAQs
+          a class="nav-link px-2 text-white" href=shifts_path = t("navigation.shifts")
         li
-          a.nav-link.px-2.text-white[href="#"]
-            | About
+          a class="nav-link px-2 text-white" href=vacations_path = t("navigation.vacations")
 
       div class="col-md-3 text-end"
         - if user_signed_in?
