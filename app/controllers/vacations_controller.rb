@@ -27,7 +27,7 @@ class VacationsController < ApplicationController
 
     respond_to do |format|
       if @vacation.save
-        format.html { redirect_to vacation_url(@vacation), notice: "Vacation was successfully created." }
+        format.html { redirect_to vacation_url(@vacation), success: t("crud.controller.success.created", name: Vacation.model_name.human) }
         format.json { render :show, status: :created, location: @vacation }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -40,7 +40,7 @@ class VacationsController < ApplicationController
   def update
     respond_to do |format|
       if @vacation.update(vacation_params)
-        format.html { redirect_to vacation_url(@vacation), notice: "Vacation was successfully updated." }
+        format.html { redirect_to vacation_url(@vacation), success: t("crud.controller.success.edited", name: Vacation.model_name.human) }
         format.json { render :show, status: :ok, location: @vacation }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -54,7 +54,7 @@ class VacationsController < ApplicationController
     @vacation.destroy
 
     respond_to do |format|
-      format.html { redirect_to vacations_url, notice: "Vacation was successfully destroyed." }
+      format.html { redirect_to vacations_url, notice: t("crud.controller.success.deleted", name: Vacation.model_name.human) }
       format.json { head :no_content }
     end
   end

@@ -27,7 +27,7 @@ class OfficesController < ApplicationController
 
     respond_to do |format|
       if @office.save
-        format.html { redirect_to office_url(@office), notice: "Office was successfully created." }
+        format.html { redirect_to office_url(@office), success: t("crud.controller.success.created", name: @office.name) }
         format.json { render :show, status: :created, location: @office }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -40,7 +40,7 @@ class OfficesController < ApplicationController
   def update
     respond_to do |format|
       if @office.update(office_params)
-        format.html { redirect_to office_url(@office), notice: "Office was successfully updated." }
+        format.html { redirect_to office_url(@office), success: t("crud.controller.success.edited", name: @office.name) }
         format.json { render :show, status: :ok, location: @office }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -54,7 +54,7 @@ class OfficesController < ApplicationController
     @office.destroy
 
     respond_to do |format|
-      format.html { redirect_to offices_url, notice: "Office was successfully destroyed." }
+      format.html { redirect_to offices_url, notice: t("crud.controller.success.deleted", name: @office.name) }
       format.json { head :no_content }
     end
   end

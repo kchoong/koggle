@@ -33,6 +33,7 @@ div class="table-responsive"
               i<> class="bi bi-caret-up-fill"
             - else
               i<> class="bi bi-caret-down-fill"
+        th = Vacation.human_attribute_name :duration
         th = t("actions.actions")
     tbody class="table-group-divider"
       - @vacations.each do |vacation|
@@ -42,6 +43,7 @@ div class="table-responsive"
             a href=worker_path(vacation.worker) = vacation.worker.name
           td = vacation.start_date
           td = vacation.end_date
+          td = t("duration.days", days: vacation.duration)
           td
             button type="button" class="btn btn-primary btn-sm me-2"
               a class="text-white" href=vacation_path(vacation)

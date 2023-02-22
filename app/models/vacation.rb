@@ -5,11 +5,10 @@ class Vacation < ApplicationRecord
   validates :end_date, presence: true
 
   belongs_to :worker
+  has_many :comments, as: :commentable
 
   def duration
-    if self.end_date.present?
-      (self.end_date - self.start_date).to_int
-    end
+    (self.end_date - self.start_date).to_int
   end
 
 end

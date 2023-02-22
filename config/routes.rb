@@ -7,10 +7,18 @@ Rails.application.routes.draw do
   devise_for :users
 
   # Resources
-  resources :offices
-  resources :shifts
-  resources :vacations
-  resources :workers
+  resources :offices do
+    resources :comments, only: [:create, :destroy]
+  end
+  resources :shifts do
+    resources :comments, only: [:create, :destroy]
+  end
+  resources :vacations do
+    resources :comments, only: [:create, :destroy]
+  end
+  resources :workers do
+    resources :comments, only: [:create, :destroy]
+  end
 
   # Dashboard
   get "/dashboard" => "dashboard#index"

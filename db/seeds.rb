@@ -11,22 +11,44 @@ require 'faker'
 # Set locale for faker
 # Faker::Config.locale = :de
 
-# Admin user/worker
-admin_worker = Worker.create!(first_name: "Kevin",
-                              last_name: "Choong",
-                              birthday: Faker::Date.birthday(min_age: 18, max_age: 80),
-                              address_1: Faker::Address.street_address,
-                              address_2: Faker::Address.secondary_address,
-                              postcode: Faker::Address.postcode,
-                              city: Faker::Address.city,
-                              country: Faker::Address.country,
-                              work_hours: rand(4..12) * 7 * 4,
-                              vacation_days: rand(7..28),
-                              pin: Faker::Alphanumeric.unique.alphanumeric(number: 6))
-admin_user = User.create!(username: "admin", email: "admin@koggle.azg", password: "adminadmin", worker:admin_worker, admin: true)
+NUM_ADMINS = 5
+NUM_OFFICES = 25
+NUM_WORKERS = 100
+NUM_SHIFTS = 100
+NUM_VACATIONS = 3
+
+def create_worker(office=nil)
+  worker = Worker.create!(first_name: Faker::Name.first_name,
+                 last_name: Faker::Name.last_name,
+                 birthday: Faker::Date.birthday(min_age: 18, max_age: 80),
+                 address_1: Faker::Address.street_address,
+                 address_2: Faker::Address.secondary_address,
+                 postcode: Faker::Address.postcode,
+                 city: Faker::Address.city,
+                 country: Faker::Address.country,
+                 work_hours: rand(4..8) * 7 * 4,
+                 vacation_days: rand(7..28),
+                 pin: Faker::Alphanumeric.unique.alphanumeric(number: 6),
+                 office: office)
+
+  avatar_path = "cat#{rand(0..9)}.png"
+  worker.avatar.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'placeholder', avatar_path)),
+                       filename: avatar_path, content_type: 'image/jpg')
+
+  worker
+end
+
+# Admin users and worker
+(1..NUM_ADMINS).each do |i|
+  worker = create_worker
+  username = "admin#{i}"
+  password = "admin#{i}"
+  email = "admin#{i}@koggle.azg"
+  user = User.create!(username: username, email: email, password: password, worker: worker, admin: true)
+end
 
 # Offices
-(1..25).each do |i|
+(1..NUM_OFFICES).each do |i|
   office = Office.create!(name: Faker::Company.unique.name,
                           description: Faker::Commerce.department(max: 5),
                           address_1: Faker::Address.street_address,
@@ -34,29 +56,17 @@ admin_user = User.create!(username: "admin", email: "admin@koggle.azg", password
                           postcode: Faker::Address.postcode,
                           city: Faker::Address.city,
                           country: Faker::Address.country)
+
+  worker = create_worker(office)
+  username = "testoa#{i}"
+  password =  "testoa#{i}"
+  email = "testoa#{i}@koggle.azg"
+  user = User.create!(username: username, email: email, password: password, worker: worker)
 end
 
 # Users and workers
-(1..100).each do |i|
-  office = Office.order('RANDOM()').first
-
-  worker = Worker.create!(first_name: Faker::Name.first_name,
-                          last_name: Faker::Name.last_name,
-                          birthday: Faker::Date.birthday(min_age: 18, max_age: 80),
-                          address_1: Faker::Address.street_address,
-                          address_2: Faker::Address.secondary_address,
-                          postcode: Faker::Address.postcode,
-                          city: Faker::Address.city,
-                          country: Faker::Address.country,
-                          work_hours: rand(4..8) * 7 * 4,
-                          vacation_days: rand(7..28),
-                          pin: Faker::Alphanumeric.unique.alphanumeric(number: 6),
-                          office: office)
-
-  avatar_path = "cat#{rand(0..9)}.png"
-  worker.avatar.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'placeholder', avatar_path)),
-                       filename: avatar_path, content_type: 'image/jpg')
-
+(1..NUM_WORKERS).each do |i|
+  worker = create_worker(Office.order('RANDOM()').first)
   username = i > 10 ? Faker::Internet.unique.username : "testuser#{i}"
   password = i > 10 ? Faker::Internet.password : "testuser#{i}"
   email = "#{username}@koggle.azg"
@@ -65,9 +75,9 @@ end
 
 # Work shifts and vacations (might overlap for now)
 Faker::UniqueGenerator.clear # Clear before
-Worker.all.drop(1).each do |worker|
+Worker.all.drop(NUM_ADMINS).each do |worker|
   # Work shifts
-  (1..100).each do |i|
+  (1..NUM_SHIFTS).each do |i|
     day = Faker::Date.unique.between(from: 1.year.ago.to_date, to: Date.yesterday)
     start_time = Faker::Time.between_dates(from: day, to: day, period: :morning)
     end_time = Faker::Time.between_dates(from: day, to: day, period: :evening)
@@ -82,7 +92,7 @@ Worker.all.drop(1).each do |worker|
   end
 
   # Vacations
-  (1..rand(1..3)).each do |i|
+  (1..rand(1..NUM_VACATIONS)).each do |i|
     start_date = Faker::Date.unique.between(from: 1.year.ago.to_date, to: Date.today)
     end_date = start_date + rand(7..14)
     Vacation.create!(worker: worker, start_date: start_date, end_date: end_date)

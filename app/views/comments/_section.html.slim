@@ -1,0 +1,27 @@
+- comments = entity.comments.order(created_at: :desc)
+
+div class="comment-section border-top pt-3 mt-5"
+  div class="row"
+    div class="col-12"
+      h5
+        = Comment.model_name.human(count: comments.count)
+        span<> class="badge bg-primary" = comments.count
+      - if user_signed_in?
+        = simple_form_for [entity, Comment.new] do |f|
+          div class="mb-3"
+            = f.input :text, as: :text, input_html: { 'rows' => 3 }, label: false
+          div class="mb-3"
+            = f.hidden_field :author, :value => current_user.worker.name
+            = f.submit Comment, class: "btn btn-primary me-1"
+      - else
+        div class="alert alert-info" = t("comment.no_login")
+
+    div class="col-12"
+      - comments.each do |comment|
+        div class="card"
+          div class="card-body"
+            p class="card-text" = comment.text
+            span<> class="float-end"
+              = comment.author
+              |  -
+              span<> class="date" data-date=l(comment.created_at) = format_time(comment.created_at)

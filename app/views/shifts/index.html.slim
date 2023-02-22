@@ -34,6 +34,7 @@ div class="table-responsive"
               i<> class="bi bi-caret-up-fill"
             - else
               i<> class="bi bi-caret-down-fill"
+        th = Shift.human_attribute_name :duration
         th = t("actions.actions")
     tbody class="table-group-divider"
       - @shifts.each do |shift|
@@ -47,6 +48,9 @@ div class="table-responsive"
           td
             - if shift.end_time.present?
               = l(shift.end_time, :format => :long)
+          td
+            - if shift.end_time.present?
+              = t("duration.minutes", minutes: shift.duration)
           td
             button type="button" class="btn btn-primary btn-sm me-2"
               a class="text-white" href=shift_path(shift)

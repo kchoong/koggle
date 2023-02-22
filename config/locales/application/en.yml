@@ -17,14 +17,13 @@ en:
   comment:
     no_comments: No comments...
     no_login: Please login to add a comment.
-    controller:
-      error:
-        created: Comment could not be posted.
-      success:
-        created: Comment has been successfully posted.
   crud:
     controller:
       error:
+        created: "%{name} could not been created."
+        deleted: "%{name} could not been deleted."
+        edited: "%{name} could not been updated."
+        no_entity: "No entity found for %{name}."
       success:
         created: "%{name} has been successfully created."
         deleted: "%{name} has been successfully deleted."

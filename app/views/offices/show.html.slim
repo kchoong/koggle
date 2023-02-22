@@ -23,3 +23,6 @@ div class="container bg-light rounded-3 p-5 mb-4"
           = @office.workers.size
 
     div class="flex-shrink-0"
+
+  div class="container-fluid"
+    = render "comments/section", entity: @office, entity_id: @office.id, entity_class: @office.class

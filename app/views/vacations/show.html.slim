@@ -21,7 +21,9 @@ div class="container bg-light rounded-3 p-5 mb-4"
         div class="col-4"
           = Vacation.human_attribute_name :duration
         div class="col-8"
-          - if @vacation.end_date.present?
-            = t("duration.days", days: @vacation.duration)
+          = t("duration.days", days: @vacation.duration)
 
     div class="flex-shrink-0"
+
+  div class="container-fluid"
+    = render "comments/section", entity: @vacation, entity_id: @vacation.id, entity_class: @vacation.class

@@ -27,7 +27,7 @@ class ShiftsController < ApplicationController
 
     respond_to do |format|
       if @shift.save
-        format.html { redirect_to shift_url(@shift), notice: "Shift was successfully created." }
+        format.html { redirect_to shift_url(@shift), success: t("crud.controller.success.created", name: Shift.model_name.human) }
         format.json { render :show, status: :created, location: @shift }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -40,7 +40,7 @@ class ShiftsController < ApplicationController
   def update
     respond_to do |format|
       if @shift.update(shift_params)
-        format.html { redirect_to shift_url(@shift), notice: "Shift was successfully updated." }
+        format.html { redirect_to shift_url(@shift), success: t("crud.controller.success.edited", name: Shift.model_name.human) }
         format.json { render :show, status: :ok, location: @shift }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -54,7 +54,7 @@ class ShiftsController < ApplicationController
     @shift.destroy
 
     respond_to do |format|
-      format.html { redirect_to shifts_url, notice: "Shift was successfully destroyed." }
+      format.html { redirect_to shifts_url, notice: t("crud.controller.success.deleted", name: Shift.model_name.human) }
       format.json { head :no_content }
     end
   end

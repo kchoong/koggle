@@ -8,6 +8,7 @@ class Worker < ApplicationRecord
 
   has_many :shifts, dependent: :nullify
   has_many :vacations, dependent: :nullify
+  has_many :comments, as: :commentable
 
   has_one_attached :avatar do |attachable|
     attachable.variant :profile, resize_to_limit: [250, 250]
