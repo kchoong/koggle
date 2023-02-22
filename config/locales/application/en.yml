@@ -13,6 +13,7 @@ en:
     edit: Edit
     save: Save
     update: Update
+    view: View
   comment:
     no_comments: No comments...
     no_login: Please login to add a comment.
@@ -31,6 +32,10 @@ en:
   dashboard:
     titles:
       index: Dashboard
+  duration:
+    days: "%{days} Days"
+    hours: "%{hours} Hours"
+    minutes: "%{minutes} Minutes"
   home:
     titles:
       index: Home

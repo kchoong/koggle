@@ -1,10 +1,39 @@
-p style="color: green" = notice
+div class="container bg-light rounded-3 p-5 mb-4"
+  div class="d-flex"
+    div class="flex-grow-1 ms-3"
+      h1 = @shift.worker.name
 
-== render @shift
+      div class="row"
+        div class="col-4"
+          = Shift.human_attribute_name :office
+        div class="col-8"
+          = @shift.office.name
 
-div
-  => link_to "Edit this shift", edit_shift_path(@shift)
-  '|
-  =< link_to "Back to shifts", shifts_path
+      div class="row"
+        div class="col-4"
+          = Office.human_attribute_name :full_address
+        div class="col-8"
+          = @shift.office.full_address
 
-  = button_to "Destroy this shift", @shift, method: :delete
+      div class="row"
+        div class="col-4"
+          = Shift.human_attribute_name :start_time
+        div class="col-8"
+          - if @shift.start_time.present?
+            = l(@shift.start_time, :format => :long)
+
+      div class="row"
+        div class="col-4"
+          = Shift.human_attribute_name :end_time
+        div class="col-8"
+          - if @shift.end_time.present?
+            = l(@shift.end_time, :format => :long)
+
+      div class="row"
+        div class="col-4"
+          = Shift.human_attribute_name :duration
+        div class="col-8"
+          - if @shift.end_time.present?
+            = t("duration.minutes", minutes: @shift.duration)
+
+    div class="flex-shrink-0"

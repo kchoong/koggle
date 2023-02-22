@@ -3,7 +3,38 @@ div class="container bg-light rounded-3 p-5 mb-4"
     div class="flex-grow-1 ms-3"
       h1 = @worker.name
 
-      = @worker.pin
+      div class="row"
+        div class="col-4"
+          = Worker.human_attribute_name :office
+        div class="col-8"
+          - if @worker.office.present?
+            a href=office_path(@worker.office) = @worker.office.name
+
+      div class="row"
+        div class="col-4"
+          = Worker.human_attribute_name :birthday
+        div class="col-8"
+          - if @worker.birthday.present?
+            = l(@worker.birthday, :format => :long)
+
+      div class="row"
+        div class="col-4"
+          = Worker.human_attribute_name :full_address
+        div class="col-8"
+          = @worker.full_address
+
+      div class="row"
+        div class="col-4"
+          = Worker.human_attribute_name :work_hours
+        div class="col-8"
+          = @worker.work_hours
+
+      div class="row"
+        div class="col-4"
+          = Worker.human_attribute_name :vacation_days
+        div class="col-8"
+          = @worker.vacation_days
+
     div class="flex-shrink-0"
       - if @worker.avatar.present?
         = image_tag @worker.avatar.variant(:profile)

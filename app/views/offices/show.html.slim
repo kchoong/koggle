@@ -1,10 +1,25 @@
-p style="color: green" = notice
+div class="container bg-light rounded-3 p-5 mb-4"
+  div class="d-flex"
+    div class="flex-grow-1 ms-3"
+      h1 = @office.name
 
-== render @office
+      div class="row"
+        div class="col-4"
+          = Office.human_attribute_name :description
+        div class="col-8"
+          - if @office.description.present?
+            = @office.description
 
-div
-  => link_to "Edit this office", edit_office_path(@office)
-  '|
-  =< link_to "Back to offices", offices_path
+      div class="row"
+        div class="col-4"
+          = Office.human_attribute_name :full_address
+        div class="col-8"
+          = @office.full_address
 
-  = button_to "Destroy this office", @office, method: :delete
+      div class="row"
+        div class="col-4"
+          = Office.human_attribute_name :workers
+        div class="col-8"
+          = @office.workers.size
+
+    div class="flex-shrink-0"

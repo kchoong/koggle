@@ -37,7 +37,7 @@ admin_user = User.create!(username: "admin", email: "admin@koggle.azg", password
 end
 
 # Users and workers
-(1..10).each do |i|
+(1..100).each do |i|
   office = Office.order('RANDOM()').first
 
   worker = Worker.create!(first_name: Faker::Name.first_name,
@@ -48,7 +48,7 @@ end
                           postcode: Faker::Address.postcode,
                           city: Faker::Address.city,
                           country: Faker::Address.country,
-                          work_hours: rand(4..12) * 7 * 4,
+                          work_hours: rand(4..8) * 7 * 4,
                           vacation_days: rand(7..28),
                           pin: Faker::Alphanumeric.unique.alphanumeric(number: 6),
                           office: office)
@@ -68,9 +68,9 @@ Faker::UniqueGenerator.clear # Clear before
 Worker.all.drop(1).each do |worker|
   # Work shifts
   (1..100).each do |i|
-    day = Faker::Date.unique.between(from: 1.year.ago.to_date, to: Date.today)
-    start_time = Faker::Time.between_dates(from: day - 1, to: day, period: :morning)
-    end_time = Faker::Time.between_dates(from: day - 1, to: day, period: :evening)
+    day = Faker::Date.unique.between(from: 1.year.ago.to_date, to: Date.yesterday)
+    start_time = Faker::Time.between_dates(from: day, to: day, period: :morning)
+    end_time = Faker::Time.between_dates(from: day, to: day, period: :evening)
 
     # 80% Chance to work at their main office
     if rand > 0.8

@@ -1,10 +1,27 @@
-p style="color: green" = notice
+div class="container bg-light rounded-3 p-5 mb-4"
+  div class="d-flex"
+    div class="flex-grow-1 ms-3"
+      h1 = @vacation.worker.name
 
-== render @vacation
+      div class="row"
+        div class="col-4"
+          = Vacation.human_attribute_name :start_date
+        div class="col-8"
+          - if @vacation.start_date.present?
+            = l(@vacation.start_date, :format => :long)
 
-div
-  => link_to "Edit this vacation", edit_vacation_path(@vacation)
-  '|
-  =< link_to "Back to vacations", vacations_path
+      div class="row"
+        div class="col-4"
+          = Vacation.human_attribute_name :end_date
+        div class="col-8"
+          - if @vacation.end_date.present?
+            = l(@vacation.end_date, :format => :long)
 
-  = button_to "Destroy this vacation", @vacation, method: :delete
+      div class="row"
+        div class="col-4"
+          = Vacation.human_attribute_name :duration
+        div class="col-8"
+          - if @vacation.end_date.present?
+            = t("duration.days", days: @vacation.duration)
+
+    div class="flex-shrink-0"

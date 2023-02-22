@@ -16,11 +16,13 @@ en:
         shifts: Work Shifts
         workers: Workers
       shift:
+        duration: Duration
         end_time: End Time
         office: Office
         start_time: Start Time
         worker: Worker
       vacation:
+        duration: Duration
         end_date: End Date
         start_date: Start Date
         worker: Worker
