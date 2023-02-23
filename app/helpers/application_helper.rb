@@ -21,11 +21,14 @@ module ApplicationHelper
     l(time, :format => :long)
   end
 
-  def pagination(path_name=nil)
+  def pagination(path_name = nil)
     unless path_name
       path_name = "#{controller_name}_path"
     end
-    render("application/pagination", path_name: path_name )
+    render("application/pagination", path_name: path_name)
   end
 
+  def is_admin_user
+    user_signed_in? and current_user.admin == true
+  end
 end

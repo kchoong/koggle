@@ -58,10 +58,4 @@ class TerminalController < ApplicationController
     @office = Office.find(params[:id])
   end
 
-  # Only allow a list of trusted parameters through.
-  def office_params
-    params.require(:office).permit(id)
-    params.require(:user).permit(:login, :password)
-  end
-
 end

@@ -61,6 +61,8 @@ en:
   pagination:
     next: Next
     previous: Previous
+  report:
+    list_shifts_html: "List of work shifts for <i>%{name}</i>"
   shift:
     links:
       back_list: Back to work shifts
