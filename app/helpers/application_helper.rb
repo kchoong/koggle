@@ -1,5 +1,14 @@
 module ApplicationHelper
 
+  def page_title(separator = " – ")
+    [content_for(:title), t("application")].compact.join(separator)
+  end
+
+  def page_heading(title, additional_classes=nil)
+    content_for(:title){ title }
+    content_tag(:h1, title, class: additional_classes)
+  end
+
   def get_locale_flag(locale)
     case locale
     when :en
