@@ -9,17 +9,13 @@ Rails.application.routes.draw do
   # Resources
   resources :offices do
     resources :comments, only: [:create, :destroy]
-    get "/report(/:year(/:month(/:day)))" => "report#office"
+    get "/report(/:year(/:month(/:day)))(.:format)" => "report#office"
   end
-  resources :shifts do
-    resources :comments, only: [:create, :destroy]
-  end
-  resources :vacations do
-    resources :comments, only: [:create, :destroy]
-  end
+  resources :shifts
+  resources :vacations
   resources :workers do
     resources :comments, only: [:create, :destroy]
-    get "/report(/:year(/:month(/:day)))" => "report#worker"
+    get "/report(/:year(/:month(/:day)))(.:format)" => "report#worker"
   end
 
   # Dashboard

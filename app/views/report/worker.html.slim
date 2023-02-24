@@ -1,3 +1,11 @@
 h1 = t("report.list_shifts_html", name: @entity.name)
 
+div class="btn-group my-3" role="group"
+  a class="btn btn-outline-primary" role="button" href="#{@current_path}.json"
+    = t("format.json")
+  a class="btn btn-outline-primary" role="button" href="#{@current_path}.xml"
+    = t("format.xml")
+  a class="btn btn-outline-primary" role="button" href="#{@current_path}.xlsx"
+    = t("format.xlsx")
+
 = render "report/table"

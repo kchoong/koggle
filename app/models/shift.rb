@@ -5,7 +5,6 @@ class Shift < ApplicationRecord
 
   belongs_to :worker
   belongs_to :office
-  has_many :comments, as: :commentable
 
   def duration
     if self.end_time.present?

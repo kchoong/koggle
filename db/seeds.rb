@@ -26,7 +26,7 @@ def create_worker(office=nil)
                  postcode: Faker::Address.postcode,
                  city: Faker::Address.city,
                  country: Faker::Address.country,
-                 work_hours: rand(4..8) * 7 * 4,
+                 work_hours: rand(4..8) * 5 * 4,
                  vacation_days: rand(7..28),
                  pin: Faker::Alphanumeric.unique.alphanumeric(number: 6),
                  office: office)

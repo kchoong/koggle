@@ -35,6 +35,10 @@ en:
     days: "%{days} Days"
     hours: "%{hours} Hours"
     minutes: "%{minutes} Minutes"
+  format:
+    json: JSON
+    xlsx: Excel
+    xml: XML
   home:
     titles:
       index: Home
