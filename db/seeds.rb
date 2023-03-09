@@ -16,6 +16,7 @@ NUM_OFFICES = 25
 NUM_WORKERS = 100
 NUM_SHIFTS = 100
 NUM_VACATIONS = 3
+NUM_COMMENTS = 10
 
 def create_worker(office=nil)
   worker = Worker.create!(first_name: Faker::Name.first_name,
@@ -73,7 +74,7 @@ end
   user = User.create!(username: username, email: email, password: password, worker: worker)
 end
 
-# Work shifts and vacations (might overlap for now)
+# Work shifts, vacations and comments
 Faker::UniqueGenerator.clear # Clear before
 Worker.all.drop(NUM_ADMINS).each do |worker|
   # Work shifts
@@ -98,6 +99,12 @@ Worker.all.drop(NUM_ADMINS).each do |worker|
     Vacation.create!(worker: worker, start_date: start_date, end_date: end_date)
   end
 
+  # Comments
+  (1..rand(1..NUM_COMMENTS)).each do |i|
+    Comment.create!(author:Faker::Artist.name, text: Faker::Quote.famous_last_words, commentable_id: worker.id, commentable_type: worker.class)
+  end
+
   # Clears used values for all generators
   Faker::UniqueGenerator.clear
 end
+

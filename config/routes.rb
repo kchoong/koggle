@@ -24,5 +24,11 @@ Rails.application.routes.draw do
   # Terminal
   get "/terminal/:id" => "terminal#office", as: :terminal_office
   post "/terminal/:id" => "terminal#check", as: :terminal_office_check
+
+  # Admin
+  namespace :admin do
+    resources :shift_corrections
+  end
+
 end
 

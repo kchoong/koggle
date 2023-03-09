@@ -1,0 +1,11 @@
+p style="color: green" = notice
+
+h1 Shift corrections
+
+#admin_shift_corrections
+  - @admin_shift_corrections.each do |admin_shift_correction|
+    == render admin_shift_correction
+    p
+      = link_to "Show this shift correction", admin_shift_correction
+
+= link_to "New shift correction", new_admin_shift_correction_path

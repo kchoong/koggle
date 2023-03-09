@@ -5,7 +5,7 @@ module Pagination
   end
 
   def default_per_page
-    25
+    20
   end
 
   def page_num
