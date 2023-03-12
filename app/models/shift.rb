@@ -6,6 +6,8 @@ class Shift < ApplicationRecord
   belongs_to :worker
   belongs_to :office
 
+  has_many :corrections, :class_name => 'Admin::ShiftCorrection', dependent: :nullify
+
   def duration
     if self.end_time.present?
       time_diff = (self.end_time - self.start_time)

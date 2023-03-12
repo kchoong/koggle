@@ -1,0 +1,15 @@
+= page_heading t("shift_correction.titles.edit_shift_html", id: @shift.id)
+
+= simple_form_for(@shift, url: admin_update_shift_path(id: @shift.id)) do |f|
+  = f.error_notification
+  = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+
+  .form-inputs
+    = f.input :start_time
+    = f.input :end_time
+    = simple_fields_for :correction do |c|
+      = c.hidden_field :editor, value: current_user.username
+      = c.input :description, as: :text, required: true
+
+  .form-actions
+    = f.button :submit, class: "btn-primary"

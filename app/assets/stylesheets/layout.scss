@@ -1,2 +1,12 @@
 @use "sass:math";
 @import "bootstrap/scss/variables";
+
+#navigation {
+  .nav-link {
+    padding: 0;
+
+    &:hover {
+      // border-bottom: 1px solid $white;
+    }
+  }
+}

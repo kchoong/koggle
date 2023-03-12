@@ -1,30 +1,37 @@
-header class="text-bg-dark px-5 py-3 mb-4"
+header id="navigation" class="text-bg-dark px-5 py-3 mb-4"
   div class="container-fluid"
     div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
       a class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-white text-decoration-none text-" href="/"
         h3 = t("application")
 
       ul class="nav col-12 col-md-6 mb-2 justify-content-center mb-md-0"
-        li
-          a class="nav-link px-2 text-white" href=root_path = t("navigation.home")
-        li
-          a class="nav-link px-2 text-white" href=workers_path = t("navigation.workers")
-        li
-          a class="nav-link px-2 text-white" href=offices_path = t("navigation.offices")
-        li
-          a class="nav-link px-2 text-white" href=shifts_path = t("navigation.shifts")
-        li
-          a class="nav-link px-2 text-white" href=vacations_path = t("navigation.vacations")
+        li class="nav-link"
+          a class="btn btn-dark" href=root_path = t("navigation.home")
+        li class="nav-link"
+          a class="btn btn-dark" href=workers_path = t("navigation.workers")
+        li class="nav-link"
+          a class="btn btn-dark" href=offices_path = t("navigation.offices")
+        li class="nav-link"
+          a class="btn btn-dark" href=shifts_path = t("navigation.shifts")
+        li class="nav-link"
+          a class="btn btn-dark" href=vacations_path = t("navigation.vacations")
+        li class="nav-link dropdown"
+          button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"
+            = t("navigation.admin.admin")
+          ul class="dropdown-menu dropdown-menu-dark"
+            li
+              a class="dropdown-item" href=admin_shift_corrections_path
+                = t("navigation.admin.corrections")
 
       div class="col-md-3 text-end"
         - if user_signed_in?
-          div class="dropdown text-end"
+          div class="nav-link dropdown text-end"
             a class="d-block text-decoration-none dropdown-toggle text-white" href="#" data-bs-toggle="dropdown" aria-expanded="false"
               - if current_user.worker.present? and current_user.worker.avatar.present?
                 = image_tag current_user.worker.avatar.variant(:minithumb), class: "rounded-circle me-2"
               - else
                 = image_tag "placeholder/profile.png", class: "rounded-circle me-2", height: 50, width: 50
-            ul class="dropdown-menu dropdown-menu-dark text-small"
+            ul class="dropdown-menu dropdown-menu-dark"
               li
                 a class="dropdown-item" href="#"
                   i class="bi bi-person-fill pe-3"

@@ -27,7 +27,9 @@ Rails.application.routes.draw do
 
   # Admin
   namespace :admin do
-    resources :shift_corrections
+    resources :shift_corrections, only: [:index]
+    get "/shift_corrections/edit_shift/:id" => "shift_corrections#edit_shift", as: :edit_shift
+    patch "/shift_corrections/update_shift/:id" => "shift_corrections#update_shift", as: :update_shift
   end
 
 end

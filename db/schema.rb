@@ -40,9 +40,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_09_094527) do
   end
 
   create_table "admin_shift_corrections", force: :cascade do |t|
+    t.string "editor"
     t.string "description"
+    t.integer "shift_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["shift_id"], name: "index_admin_shift_corrections_on_shift_id"
   end
 
   create_table "comments", force: :cascade do |t|

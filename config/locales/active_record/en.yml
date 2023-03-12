@@ -1,6 +1,10 @@
 en:
   activerecord:
     attributes:
+      admin/shift_correction:
+        description: Description
+        editor: Editor
+        shift: Work Shift
       comment:
         name: Name
         text: Comment
@@ -77,6 +81,9 @@ en:
         terms_accepted_at: Terms
         privacy_accepted_at: Privacy
     models:
+      admin/shift_correction:
+        one: Work shift correction
+        other: Work shift corrections
       comment:
         one: Comment
         other: Comments
