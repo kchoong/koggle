@@ -1,0 +1,117 @@
+de:
+  application: Koggle
+  anonymous: Anonym
+  id: ID
+  page_title: "%{title} - Koggle"
+  actions:
+    actions: Aktionen
+    back: Zurück
+    confirm: Sind Sie sicher?
+    cancel: Abbrechen
+    create: Erstellen
+    delete: Löschen
+    edit: Bearbeiten
+    save: Speichern
+    update: Aktualisieren
+    view: Ansicht
+  comment:
+    no_comments: Keine Kommentare...
+    no_login: Bitte loggen Sie sich ein, um einen Kommentar abzugeben.
+  crud:
+    controller:
+      error:
+        created: "%{name} konnte nicht erstellt werden."
+        deleted: "%{name} konnte nicht gelöscht werden."
+        edited: "%{name} konnte nicht aktualisiert werden."
+        no_entity: "Kein Eintrag gefunden für %{name}."
+      success:
+        created: "%{name} wurde erfolgreich erstellt."
+        deleted: "%{name} wurde erfolgreich gelöscht."
+        edited: "%{name} wurde erfolgreich aktualisiert."
+  dashboard:
+    titles:
+      index: Dashboard
+  duration:
+    days: "%{days} Tage"
+    hours: "%{hours} Stunden"
+    minutes: "%{minutes} Minuten"
+  format:
+    json: JSON
+    xlsx: Excel
+    xml: XML
+  home:
+    titles:
+      index: Home
+  language:
+    de: Deutsch
+    en: English
+  navigation:
+    admin:
+      admin: Admin
+      corrections: Arbeitsschicht-Korrekturen
+    home: Home
+    offices: Büros
+    profile: Profil
+    settings: Einstellungen
+    shifts: Arbeitsschichten
+    vacations: Urlaube
+    workers: Mitarbeiter
+  office:
+    links:
+      back_list: Zurück zu den Büros
+      view: Büro ansehen
+    titles:
+      create: Neues Büro erstellen
+      edit_html: "Büro <i>%{name}</i> bearbeiten"
+      list: Liste aller Büros
+  pagination:
+    next: Nächste Seite
+    previous: Vorherige Seite
+  report:
+    list_shifts_html: "Liste aller Arbeitsschichten für <i>%{name}</i>"
+  shift:
+    links:
+      back_list: Zurück zu den Arbeitsschichten
+      view: Arbeitsschicht ansehen
+    titles:
+      create: Neue Arbeitsschicht erstellen
+      edit_html: "Arbeitsschicht <i>%{id}</i> bearbeiten"
+      list: Liste aller Arbeitsschichten
+  shift_correction:
+    titles:
+      edit_shift_html: "Arbeitsschicht <i>%{id}</i> bearbeiten"
+      list: Liste aller Arbeitsschicht-Korrekturen
+  terminal:
+    controller:
+      error:
+        invalid_credentials_html: "<b>Ungültige Anmeldedaten.</b> Wir konnten Sie leider nicht ein-/auschecken, bitte versuchen Sie es erneut!"
+      info:
+        check_still_html: "Sie sind immernoch in dem folgenden Büro eingecheckt: <b>%{office}</b>"
+      success:
+        check_in_html: "Sie haben sich im folgenden Büro eingecheckt: <b>%{office}</b>"
+        check_out_html: "Sie haben sich im folgenden Büro ausgecheckt: <b>%{office}</b>"
+    titles:
+      index: Terminal
+  vacation:
+    links:
+      back_list: Zurück zu den Urlauben
+      view: Urlaub ansehen
+    titles:
+      create: Neuen Urlaub erstellen
+      edit_html: "Urlaub <i>%{id}</i> bearbeiten"
+      list: Liste aller Urlaube
+  worker:
+    links:
+      back_list: Zurück zu den Mitarbeitern
+      view: Mitarbeiter ansehen
+    titles:
+      create: Neuen Mitarbeiter erstellen
+      edit_html: "Mitarbeiter <i>%{name}</i> bearbeiten"
+      list: Liste aller Mitarbeiter
+  time:
+    ago: "Vor %{time}"
+    formats:
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      long: "%B %d, %Y %H:%M"
+      short: "%d %b %H:%M"
+      month_year: "%B %Y"

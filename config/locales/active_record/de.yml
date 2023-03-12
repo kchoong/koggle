@@ -1,0 +1,104 @@
+de:
+  activerecord:
+    attributes:
+      admin/shift_correction:
+        description: Beschreibung
+        editor: Editor
+        shift: Arbeitsschicht
+      comment:
+        name: Name
+        text: Kommentar
+      office:
+        address_1: Adresse 1
+        address_2: Adresse 2
+        city: Stadt
+        country: Land
+        description: Beschreibung
+        full_address: Adresse
+        name: Name
+        postcode: ZIP/Postleitzahl
+        shifts: Arbeitsschichten
+        workers: Mitarbeiter
+      shift:
+        duration: Laufzeit
+        end_time: Endzeitpunkt
+        office: Büro
+        start_time: Startzeitpunkt
+        worker: Mitarbeiter
+      vacation:
+        duration: Dauer
+        end_date: Endtermin
+        start_date: Starttermin
+        worker: Mitarbeiter
+      worker:
+        address_1: Adresse 1
+        address_2: Adresse 2
+        avatar: Avatar
+        birthday: Geburtstag
+        city: Stadt
+        country: Land
+        first_name: Vorname
+        full_address: Adresse
+        gender: Geschlecht
+        last_name: Nachname
+        office: Büro
+        pin: PIN
+        postcode: ZIP/Postleitzahl
+        shifts: Arbeitsschichten
+        vacation_days: Urlaubstage
+        vacations: Urlaube
+        work_hours: Arbeitsstunden
+      worker/gender:
+        diverse: Diverse
+        male: Männlich
+        female: Weiblich
+        no_answer: Lieber nicht beantworten
+      user:
+        confirmation_sent_at: Bestätigung gesendet am
+        confirmation_token: Bestätigungs-Token
+        confirmed_at: Bestätigt am
+        created_at: Erstellt am
+        current_password: Bisheriges Passwort
+        current_sign_in_at: Aktuelle Anmeldung vom
+        current_sign_in_ip: IP der aktuellen Anmeldung
+        email: E-Mail
+        encrypted_password: Verschlüsseltes Passwort
+        failed_attempts: Fehlversuche
+        last_sign_in_at: Letzte Anmeldung am
+        last_sign_in_ip: IP der letzten Anmeldung
+        locked_at: Gesperrt am
+        login: Benutzername oder E-Mail
+        password: Passwort
+        password_confirmation: Passwortbestätigung
+        remember_created_at: Angemeldet bleiben vom
+        remember_me: Angemeldet bleiben
+        reset_password_sent_at: Passwort-Zurücksetzen-E-Mail gesendet am
+        reset_password_token: Passwort-Zurücksetzen-Token
+        sign_in_count: Anzahl Anmeldungen
+        unconfirmed_email: Unbestätigte E-Mail-Adresse
+        unlock_token: Entsperrungs-Token
+        updated_at: Aktualisiert am
+        terms_accepted_at: AGB
+        privacy_accepted_at: Datenschutzerklärung
+    models:
+      admin/shift_correction:
+        one: Arbeitsschicht-Korrektur
+        other: Arbeitsschicht-Korrekturen
+      comment:
+        one: Kommentar
+        other: Kommentare
+      office:
+        one: Büro
+        other: Büros
+      shift:
+        one: Arbeitsschicht
+        other: Arbeitsschichten
+      vacation:
+        one: Urlaub
+        other: Urlaube
+      worker:
+        one: Mitarbeiter
+        other: Mitarbeiter
+      user:
+        one: Benutzer
+        other: Benutzer

@@ -5,7 +5,7 @@ module ApplicationHelper
   end
 
   def page_heading(title, additional_classes=nil)
-    content_for(:title){ title }
+    content_for(:title){ strip_tags(title) }
     content_tag(:h1, title, class: additional_classes)
   end
 

@@ -9,7 +9,7 @@
 require 'faker'
 
 # Set locale for faker
-# Faker::Config.locale = :de
+Faker::Config.locale = :de
 
 NUM_ADMINS = 5
 NUM_OFFICES = 25
