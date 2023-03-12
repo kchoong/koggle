@@ -45,9 +45,9 @@ en:
         pin: PIN
         postcode: ZIP/Postal Code
         shifts: Work Shifts
-        vacation_days: Vacation Days
+        vacation_days: Vacation Days (per year)
         vacations: Vacations
-        work_hours: Work Hours
+        work_hours: Work Hours (per month)
       worker/gender:
         diverse: Diverse
         male: Male

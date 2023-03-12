@@ -1,6 +1,7 @@
 de:
   application: Koggle
   anonymous: Anonym
+  copyright: © 2023 Kevin Choong
   id: ID
   page_title: "%{title} - Koggle"
   actions:
@@ -35,6 +36,10 @@ de:
     days: "%{days} Tage"
     hours: "%{hours} Stunden"
     minutes: "%{minutes} Minuten"
+  footer:
+    about: Über
+    terms_conditions: Allgemeine Geschäftsbedingungen
+    privacy_policy: Datenschutzrichtlinien
   format:
     json: JSON
     xlsx: Excel

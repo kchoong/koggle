@@ -45,9 +45,9 @@ de:
         pin: PIN
         postcode: ZIP/Postleitzahl
         shifts: Arbeitsschichten
-        vacation_days: Urlaubstage
+        vacation_days: Urlaubstage (pro Jahr)
         vacations: Urlaube
-        work_hours: Arbeitsstunden
+        work_hours: Arbeitsstunden (pro Monat)
       worker/gender:
         diverse: Diverse
         male: Männlich
