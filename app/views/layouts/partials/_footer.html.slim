@@ -1,18 +1,32 @@
 footer id="footer" class="footer mt-auto px-5 bg-dark"
-  div class="container-fluid py-3"
+  div class="container-fluid pt-3"
     div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
-      div class="col-md-4 mt-2 mt-md-0"
+      div class="col-12 col-md-6 mt-2 mt-md-0"
         ul class="nav"
-          li class="nav-item text-muted" = t("copyright")
-      div class="col-12 col-md-4 mt-2 mt-md-0"
-        ul class="nav justify-content-center"
           li class="nav-item"
             a class="nav-link text-white" href="#" = t("footer.about")
           li class="nav-item"
             a class="nav-link text-white" href="#" = t("footer.terms_conditions")
           li class="nav-item"
             a class="nav-link text-white" href="#" = t("footer.privacy_policy")
-        ul class="nav justify-content-center"
+      div class="col-md-6 mt-2 mt-md-0"
+        ul class="nav justify-content-end"
+          li class="nav-item btn-group language-switcher"
+            button type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"
+              = get_locale_flag(I18n.locale)
+              span class="ps-2" = I18n.locale.upcase
+            - if I18n.available_locales.count > 1
+              ul class="dropdown-menu dropdown-menu-dark"
+                - I18n.available_locales.each do |locale|
+                  li
+                    a class="dropdown-item #{"active" if I18n.locale == locale}" href=root_path(locale: locale)
+                      = get_locale_flag(locale)
+                      span class="ps-2" = t("language.#{locale}")
+
+  div class="container-fluid pb-3"
+    div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
+      div class="col-12 col-md-6 mt-2 mt-md-0"
+        ul class="nav"
           li class="nav-item"
             a class="nav-link text-white" href="#"
               i class="bi bi-twitter fs-5"
@@ -22,16 +36,6 @@ footer id="footer" class="footer mt-auto px-5 bg-dark"
           li class="nav-item"
             a class="nav-link text-white" href="#"
               i class="bi bi-discord fs-5"
-      div class="col-md-4 mt-2 mt-md-0"
+      div class="col-md-6 mt-2 mt-md-0"
         ul class="nav justify-content-end"
-          li class="nav-item btn-group language-switcher"
-            a class="nav-link text-white dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"
-              = get_locale_flag(I18n.locale)
-              span<> = I18n.locale.upcase
-            - if I18n.available_locales.count > 1
-              ul class="dropdown-menu dropdown-menu-dark"
-                - I18n.available_locales.each do |locale|
-                  li
-                    a class="dropdown-item #{"active" if I18n.locale == locale}" href=root_path(locale: locale)
-                      = get_locale_flag(locale)
-                      span<> = t("language.#{locale}")
+          li class="nav-item text-muted" = t("copyright")
