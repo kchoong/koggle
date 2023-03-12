@@ -1,0 +1,6 @@
+wb = xlsx_package.workbook
+wb.add_worksheet(name: "Shifts") do |sheet|
+  @shifts.each do |shift|
+    sheet.add_row [shift.worker.name, shift.office.name, shift.start_time, shift.end_time, shift.duration]
+  end
+end

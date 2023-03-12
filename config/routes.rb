@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     resources :vacations
     resources :workers do
       resources :comments, only: [:create, :destroy]
-      get "/report(/:year(/:month(/:day)))(.:format)" => "report#worker"
+      get "/report(/:year(/:month(/:day)))(.:format)" => "report#report"
     end
 
     # Dashboard

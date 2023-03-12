@@ -64,6 +64,10 @@ gem "cancancan"
 # cron jobs
 # gem "whenever"
 
+# excel sheet export
+gem 'caxlsx'
+gem 'caxlsx_rails'
+
 # fake data for testing
 gem "faker"
 
