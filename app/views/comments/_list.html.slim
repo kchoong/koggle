@@ -1,0 +1,13 @@
+- comments = entity.comments.order(created_at: :desc)
+
+- if comments.any?
+  div class="comment-section border-top pt-3 mt-5"
+    div class="col-12"
+      - comments.each do |comment|
+        div class="card mb-3"
+          div class="card-body"
+            p class="card-text" = comment.text
+            span<> class="float-end"
+              = comment.author
+              |  -
+              span<> class="date" data-date=l(comment.created_at) = format_time(comment.created_at)
