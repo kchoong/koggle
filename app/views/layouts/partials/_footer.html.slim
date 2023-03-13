@@ -1,7 +1,7 @@
 footer id="footer" class="footer mt-auto px-5 bg-dark"
   div class="container-fluid pt-3"
-    div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
-      div class="col-12 col-md-6 mt-2 mt-md-0"
+    div class="d-flex flex-wrap align-items-center justify-content-center"
+      div class="col-6 d-none d-md-block"
         ul class="nav"
           li class="nav-item"
             a class="nav-link text-white" href="#" = t("footer.about")
@@ -9,8 +9,8 @@ footer id="footer" class="footer mt-auto px-5 bg-dark"
             a class="nav-link text-white" href="#" = t("footer.terms_conditions")
           li class="nav-item"
             a class="nav-link text-white" href="#" = t("footer.privacy_policy")
-      div class="col-md-6 mt-2 mt-md-0"
-        ul class="nav justify-content-end"
+      div class="col-12 col-md-6"
+        ul class="nav justify-content-center justify-content-md-end"
           li class="nav-item btn-group language-switcher"
             button type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"
               = get_locale_flag(I18n.locale)
@@ -24,8 +24,8 @@ footer id="footer" class="footer mt-auto px-5 bg-dark"
                       span class="ps-2" = t("language.#{locale}")
 
   div class="container-fluid pb-3"
-    div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
-      div class="col-12 col-md-6 mt-2 mt-md-0"
+    div class="d-flex flex-wrap align-items-center justify-content-center"
+      div class="col-6 d-none d-md-block"
         ul class="nav"
           li class="nav-item"
             a class="nav-link text-white" href="#"
@@ -36,6 +36,6 @@ footer id="footer" class="footer mt-auto px-5 bg-dark"
           li class="nav-item"
             a class="nav-link text-white" href="#"
               i class="bi bi-discord fs-5"
-      div class="col-md-6 mt-2 mt-md-0"
-        ul class="nav justify-content-end"
+      div class="col-12 col-md-6"
+        ul class="nav justify-content-center justify-content-md-end"
           li class="nav-item text-muted" = t("copyright")
