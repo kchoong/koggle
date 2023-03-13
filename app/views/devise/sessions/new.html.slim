@@ -1,4 +1,4 @@
-div class="container-fluid container-md bg-light rounded-3 p-5 my-5"
+div class="container-fluid container-md bg-light rounded-3 p-5"
   = page_heading t('devise.sessions.new.sign_in')
 
   = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
@@ -9,7 +9,7 @@ div class="container-fluid container-md bg-light rounded-3 p-5 my-5"
     div class="mb-3"
       = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
     div class="mb-3"
-      = f.submit t('devise.sessions.new.sign_in'), class: "btn btn-primary me-1"
+      = f.submit t('devise.sessions.new.sign_in'), class: "btn btn-primary"
 
   div class="mb-3"
     = render "devise/shared/links"

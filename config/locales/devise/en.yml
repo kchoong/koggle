@@ -5,7 +5,7 @@ en:
     confirmations:
       confirmed: Your email address has been successfully confirmed.
       new:
-        resend_confirmation_instructions: Resend confirmation instructions.
+        resend_confirmation_instructions: Resend confirmation instructions
       send_instructions: You will receive an email with instructions for how to confirm your email address in a few minutes.
       send_paranoid_instructions: If your email address exists in our database, you will receive an email with instructions for how to confirm your email address in a few minutes.
     failure:
@@ -100,8 +100,8 @@ en:
         sign_in_with_provider: Login with %{provider}
         sign_up: Register
       minimum_password_length:
-        one: "(at least %{count} characters)"
-        other: "(at least %{count} characters)"
+        one: "at least %{count} characters"
+        other: "at least %{count} characters"
     unlocks:
       new:
         resend_unlock_instructions: Resend instructions to unlock your account

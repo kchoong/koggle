@@ -100,8 +100,8 @@ de:
         sign_in_with_provider: Mit %{provider} anmelden
         sign_up: Registrieren
       minimum_password_length:
-        one: "(mindestens %{count} Zeichen)"
-        other: "(mindestens %{count} Zeichen)"
+        one: "mindestens %{count} Zeichen"
+        other: "mindestens %{count} Zeichen"
     unlocks:
       new:
         resend_unlock_instructions: Anleitung zum Entsperren erneut schicken

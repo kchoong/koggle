@@ -10,6 +10,6 @@ div class="comment-section border-top pt-3"
             = f.input :text, as: :text, input_html: { 'rows' => 3 }, label: false
           div class="mb-3"
             = f.hidden_field :author, :value => current_user.worker.name
-            = f.submit Comment, class: "btn btn-primary me-1"
+            = f.submit Comment, class: "btn btn-primary"
       - else
         div class="alert alert-info" = t("comment.no_login")
