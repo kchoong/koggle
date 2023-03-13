@@ -67,6 +67,8 @@ en:
       view: View this office
     report:
       button: Report
+    terminal:
+      button: Terminal
     titles:
       create: Create new office
       edit_html: "Edit office <i>%{name}</i>"

@@ -22,7 +22,9 @@ div class="table-responsive"
         tr
           th = correction.id
           td = correction.editor
+          td = correction.description
           td
+            a href=shift_path(correction.shift) = correction.shift.id
           td = correction.created_at
 
 = pagination

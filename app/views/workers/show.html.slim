@@ -43,18 +43,21 @@ div class="container bg-light rounded-3 p-5 mb-4"
   div class="container-fluid mt-3"
     div class="row"
       div class="col-12"
-        button type="button" class="btn btn-dark btn-lg me-2"
-          a class="text-white" href=worker_report_path(@worker)
-            = t("worker.report.button")
-            i class="bi bi-graph-up ps-2"
-        button type="button" class="btn btn-dark btn-lg me-2"
-          a class="text-white" href=edit_worker_path(@worker)
-            = t("actions.edit")
-            i class="bi bi-pencil-fill ps-2"
-        button type="button" class="btn btn-danger btn-lg me-2"
-          a class="text-white" href=worker_path(@worker) data-method="delete" data-confirm=t("actions.confirm")
-            = t("actions.delete")
-            i class="bi bi-trash-fill ps-2"
+        - if can? :read, @worker.shifts
+          button type="button" class="btn btn-dark btn-lg me-2"
+            a class="text-white" href=worker_report_path(@worker)
+              = t("worker.report.button")
+              i class="bi bi-graph-up ps-2"
+        - if can? :update, @worker
+          button type="button" class="btn btn-dark btn-lg me-2"
+            a class="text-white" href=edit_worker_path(@worker)
+              = t("actions.edit")
+              i class="bi bi-pencil-fill ps-2"
+        - if can? :destroy, @worker
+          button type="button" class="btn btn-danger btn-lg me-2"
+            a class="text-white" href=worker_path(@worker) data-method="delete" data-confirm=t("actions.confirm")
+              = t("actions.delete")
+              i class="bi bi-trash-fill ps-2"
 
   div class="container-fluid mt-3"
     = render "comments/list", entity: @worker, entity_id: @worker.id, entity_class: @worker.class

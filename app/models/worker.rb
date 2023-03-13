@@ -1,6 +1,5 @@
 class Worker < ApplicationRecord
 
-  validates :last_name, presence: true
   validates :pin, presence: true, uniqueness: true
 
   belongs_to :user, optional: true

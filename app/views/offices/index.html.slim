@@ -1,8 +1,9 @@
 = page_heading t("office.titles.list")
 
-h1
-  a< class="text-black" href=new_office_path
-    i class="bi bi-plus-square-fill"
+- if can? :create, Office
+  h1
+    a< class="text-black" href=new_office_path
+      i class="bi bi-plus-square-fill"
 
 div class="table-responsive"
   table class="table table-striped table-sm records-table"
@@ -45,13 +46,20 @@ div class="table-responsive"
           td = office.full_address
           td = office.workers.size
           td
-            button type="button" class="btn btn-primary btn-sm me-2"
-              a class="text-white" href=edit_office_path(office)
-                = t("actions.edit")
-                i class="bi bi-pencil-fill ps-2"
-            button type="button" class="btn btn-primary btn-sm me-2"
-              a class="text-white" href=office_path(office) data-method="delete" data-confirm=t("actions.confirm")
-                = t("actions.delete")
-                i class="bi bi-trash-fill ps-2"
+            - if can? :terminal, office
+              button type="button" class="btn btn-primary btn-sm me-2"
+                a class="text-white" href=terminal_office_path(office)
+                  = t("office.terminal.button")
+                  i class="bi bi-box-arrow-right ps-2"
+            - if can? :edit, office
+              button type="button" class="btn btn-primary btn-sm me-2"
+                a class="text-white" href=edit_office_path(office)
+                  = t("actions.edit")
+                  i class="bi bi-pencil-fill ps-2"
+            - if can? :destroy, office
+              button type="button" class="btn btn-primary btn-sm me-2"
+                a class="text-white" href=office_path(office) data-method="delete" data-confirm=t("actions.confirm")
+                  = t("actions.delete")
+                  i class="bi bi-trash-fill ps-2"
 
 = pagination

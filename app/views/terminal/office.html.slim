@@ -8,4 +8,4 @@ div class="container-fluid container-md text-bg-dark text-center rounded-3 p-5"
   = simple_form_for(@worker, url: terminal_office_check_path(id: @office.id)) do |f|
     = f.input :pin, required: false, input_html: { type: "password", class: "fs-3 text-center" }, label: false
     button class="btn btn-outline-light btn-lg" type="submit"
-      i class="bi bi-arrow-right"
+      i class="bi bi-box-arrow-right"

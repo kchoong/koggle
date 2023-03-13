@@ -67,6 +67,8 @@ de:
       view: Büro ansehen
     report:
       button: Report
+    terminal:
+      button: Terminal
     titles:
       create: Neues Büro erstellen
       edit_html: "Büro <i>%{name}</i> bearbeiten"

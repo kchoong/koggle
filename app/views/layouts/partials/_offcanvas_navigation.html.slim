@@ -8,19 +8,24 @@ div id="offcanvasNavigation" class="offcanvas offcanvas-end text-bg-dark" tabind
     ul class="navbar-nav justify-content-end text-start"
       li class="nav-link my-2"
         a class="btn btn-dark" href=root_path = t("navigation.home")
-      li class="nav-link my-2"
-        a class="btn btn-dark" href=workers_path = t("navigation.workers")
-      li class="nav-link my-2"
-        a class="btn btn-dark" href=offices_path = t("navigation.offices")
-      li class="nav-link my-2"
-        a class="btn btn-dark" href=shifts_path = t("navigation.shifts")
-      li class="nav-link my-2"
-        a class="btn btn-dark" href=vacations_path = t("navigation.vacations")
-      li class="nav-link dropdown my-2"
-        button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" = t("navigation.admin.admin")
-        ul class="dropdown-menu dropdown-menu-dark"
-          li
-            a class="dropdown-item" href=admin_shift_corrections_path = t("navigation.admin.corrections")
+      - if can? :read, Worker
+        li class="nav-link my-2"
+          a class="btn btn-dark" href=workers_path = t("navigation.workers")
+      - if can? :read, Office
+        li class="nav-link my-2"
+          a class="btn btn-dark" href=offices_path = t("navigation.offices")
+      - if can? :read, Shift
+        li class="nav-link my-2"
+          a class="btn btn-dark" href=shifts_path = t("navigation.shifts")
+      - if can? :read, Vacation
+        li class="nav-link my-2"
+          a class="btn btn-dark" href=vacations_path = t("navigation.vacations")
+      - if is_admin_user
+        li class="nav-link dropdown my-2"
+          button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" = t("navigation.admin.admin")
+          ul class="dropdown-menu dropdown-menu-dark"
+            li
+              a class="dropdown-item" href=admin_shift_corrections_path = t("navigation.admin.corrections")
 
   div class="mt-auto"
     div class="container-fluid p-3"
@@ -34,7 +39,7 @@ div id="offcanvasNavigation" class="offcanvas offcanvas-end text-bg-dark" tabind
                 = image_tag "placeholder/profile.png", class: "rounded-circle me-2", height: 40, width: 40
             ul class="dropdown-menu dropdown-menu-dark"
               li
-                a class="dropdown-item" href="#"
+                a class="dropdown-item" href=worker_path(current_user.worker)
                   i class="bi bi-person-fill pe-3"
                   = t("navigation.profile")
               li

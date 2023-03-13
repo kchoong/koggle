@@ -21,8 +21,7 @@ div class="table-responsive"
         th = Shift.human_attribute_name :start_time
         th = Shift.human_attribute_name :end_time
         th = Shift.human_attribute_name :duration
-        - if is_admin_user
-          th = t("actions.actions")
+        th = t("actions.actions")
     tbody class="table-group-divider"
       - @shifts.each do |shift|
         tr
@@ -38,17 +37,16 @@ div class="table-responsive"
           td
             - if shift.end_time.present?
               = t("duration.minutes", minutes: shift.duration)
-          - if is_admin_user
-            td
-              button type="button" class="btn btn-primary btn-sm me-2"
-                a class="text-white" href=shift_path(shift)
-                  = t("actions.view")
-                  i class="bi bi-eye-fill ps-2"
-              button type="button" class="btn btn-primary btn-sm me-2"
-                a class="text-white" href=edit_shift_path(shift)
-                  = t("actions.edit")
-                  i class="bi bi-pencil-fill ps-2"
-              button type="button" class="btn btn-primary btn-sm me-2"
-                a class="text-white" href=shift_path(shift) data-method="delete" data-confirm=t("actions.confirm")
-                  = t("actions.delete")
-                  i class="bi bi-trash-fill ps-2"
+          td
+            button type="button" class="btn btn-primary btn-sm me-2"
+              a class="text-white" href=shift_path(shift)
+                = t("actions.view")
+                i class="bi bi-eye-fill ps-2"
+            button type="button" class="btn btn-primary btn-sm me-2"
+              a class="text-white" href=edit_shift_path(shift)
+                = t("actions.edit")
+                i class="bi bi-pencil-fill ps-2"
+            button type="button" class="btn btn-primary btn-sm me-2"
+              a class="text-white" href=shift_path(shift) data-method="delete" data-confirm=t("actions.confirm")
+                = t("actions.delete")
+                i class="bi bi-trash-fill ps-2"
