@@ -1,3 +1,16 @@
+= page_heading t("report.list_shifts_html", name: @entity.name)
+
+div class="my-3"
+  h5 class="d-inline pe-3"
+    = t("report.export_as")
+  div class="btn-group" role="group"
+    a class="btn btn-dark" role="button" href="#{@current_path}.json"
+      = t("format.json")
+    a class="btn btn-dark" role="button" href="#{@current_path}.xml"
+      = t("format.xml")
+    a class="btn btn-dark" role="button" href="#{@current_path}.xlsx"
+      = t("format.xlsx")
+
 div class="table-responsive"
   table class="table table-striped table-sm records-table"
     thead class="table-dark"

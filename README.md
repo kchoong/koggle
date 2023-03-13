@@ -1,28 +1,41 @@
-# README
+# Koggle
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Project for Web Engineering Lecture WS2022/23.  
+Kevin Choong, 33310631
 
-Things you may want to cover:
+## System requirements
 
-* Ruby version
+- **Ruby** 3.2.0
+- **Rails** 7.0.4
+- **SQLite** for database
+- **ImageMagick** and **libvips** for image processing
 
-* System dependencies
+## Installation and Deployment
 
-* Configuration
+```shell
+git clone 
+bundle install
+rails db:drop db:create db:migrate db:seed # More information below
+bin/dev
+```
 
-* Database creation
+## Database
 
-* Database initialization
+For this project I will be using a simple SQLite database. To initialize the database run the following command:
+```shell
+rails db:drop db:create db:migrate
+```
 
-* How to run the test suite
+**Warning:** The seed will only generate test data and should not be used for production.  
+To create some test data to play around with use the following seed command:
+```shell
+rails db:seed
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+## Configuration
 
-* Deployment instructions
+## Services
 
-* ...
+### Cronjobs
 
-* Specifications with versions
-* How to run for development
-* Cronjobs start
+## Tests

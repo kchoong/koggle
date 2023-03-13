@@ -2,19 +2,13 @@ class ReportController < ApplicationController
 
   before_action :set_date, :set_path
 
-  def worker
-    # get specified worker
-    @entity = Worker.find(params[:worker_id])
-    render_report
-  end
+  def report
+    # get specified entity
+    if params[:worker_id] then @entity = Worker.find(params[:worker_id])
+    elsif params[:office_id] then @entity = Office.find(params[:office_id])
+    else raise t("report.error.no_entity")
+    end
 
-  def office
-    # get specified office
-    @entity = Office.find(params[:office_id])
-    render_report
-  end
-
-  def render_report
     # determine start and end time based on passed entity and date elements
     if @month > 0 and @day > 0 then
       start_time = DateTime.new(@year, @month, @day)

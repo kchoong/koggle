@@ -73,6 +73,9 @@ de:
     next: Nächste Seite
     previous: Vorherige Seite
   report:
+    error:
+      no_entity: Kein Eintrag gefunden.
+    export_as: "Exportieren als:"
     list_shifts_html: "Liste aller Arbeitsschichten für <i>%{name}</i>"
   shift:
     links:

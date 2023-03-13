@@ -73,6 +73,9 @@ en:
     next: Next
     previous: Previous
   report:
+    error:
+      no_entity: No entity found.
+    export_as: "Export as:"
     list_shifts_html: "List of work shifts for <i>%{name}</i>"
   shift:
     links:
