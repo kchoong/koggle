@@ -1,6 +1,6 @@
 header id="navigation" class="text-bg-dark px-5 py-3 mb-4"
   div class="container-fluid"
-    div class="d-flex flex-wrap align-items-center justify-content-center"
+    div class="navbar navbar-dark d-flex flex-wrap align-items-center justify-content-center"
       a class="col-3 text-white text-decoration-none" href="/"
         h3 = t("application")
 
@@ -25,12 +25,12 @@ header id="navigation" class="text-bg-dark px-5 py-3 mb-4"
 
       div class="col-9 col-md-3 text-end"
         - if user_signed_in?
-          div class="nav-link dropdown text-end"
-            a class="d-block text-decoration-none dropdown-toggle text-white" href="#" data-bs-toggle="dropdown" aria-expanded="false"
+          div class="nav-link dropdown d-inline-block"
+            a class="text-decoration-none dropdown-toggle text-white" href="#" data-bs-toggle="dropdown" aria-expanded="false"
               - if current_user.worker.present? and current_user.worker.avatar.present?
-                = image_tag current_user.worker.avatar.variant(:minithumb), class: "rounded-circle me-2"
+                = image_tag current_user.worker.avatar.variant(:minithumb), class: "rounded-circle me-2",  height: 40, width: 40
               - else
-                = image_tag "placeholder/profile.png", class: "rounded-circle me-2", height: 50, width: 50
+                = image_tag "placeholder/profile.png", class: "rounded-circle me-2", height: 40, width: 40
             ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark"
               li
                 a class="dropdown-item" href="#"
@@ -54,3 +54,4 @@ header id="navigation" class="text-bg-dark px-5 py-3 mb-4"
           button class="btn btn-primary" type="button"
             a class="nav-link text-white" href=new_user_registration_path
               = t('devise.registrations.new.sign_up')
+        = render "layouts/partials/offcanvas_navigation"

@@ -1,0 +1,25 @@
+button class="navbar-toggler ms-2 d-inline-block d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavigation" aria-controls="offcanvasNavigation"
+  span class="navbar-toggler-icon"
+div id="offcanvasNavigation" class="offcanvas offcanvas-end text-bg-dark" tabindex="-1"
+  div class="offcanvas-header"
+    h5 class="offcanvas-title" = t("application")
+    button class="btn-close btn-close-white" type="button" data-bs-dismiss="offcanvas" aria-label="Close"
+  div class="offcanvas-body"
+    ul class="navbar-nav justify-content-end text-start"
+      li class="nav-link my-2"
+        a class="btn btn-dark" href=root_path = t("navigation.home")
+      li class="nav-link my-2"
+        a class="btn btn-dark" href=workers_path = t("navigation.workers")
+      li class="nav-link my-2"
+        a class="btn btn-dark" href=offices_path = t("navigation.offices")
+      li class="nav-link my-2"
+        a class="btn btn-dark" href=shifts_path = t("navigation.shifts")
+      li class="nav-link my-2"
+        a class="btn btn-dark" href=vacations_path = t("navigation.vacations")
+      li class="nav-link dropdown my-2"
+        button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"
+          = t("navigation.admin.admin")
+        ul class="dropdown-menu dropdown-menu-dark"
+          li
+            a class="dropdown-item" href=admin_shift_corrections_path
+              = t("navigation.admin.corrections")
