@@ -64,12 +64,15 @@ gem "cancancan"
 # cron jobs
 # gem "whenever"
 
-# excel sheet export
-gem 'caxlsx'
-gem 'caxlsx_rails'
+# excel spreadsheet generator
+gem "caxlsx"
+gem "caxlsx_rails"
 
-# fake data for testing
+# seed data generation for testing
 gem "faker"
+
+# view compontents
+gem "view_component"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 gem "image_processing", "~> 1.2"

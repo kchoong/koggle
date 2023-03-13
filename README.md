@@ -8,12 +8,14 @@ Kevin Choong, 33310631
 - **Ruby** 3.2.0
 - **Rails** 7.0.4
 - **SQLite** for database
-- **ImageMagick** and **libvips** for image processing
+- **ImageMagick & libvips** for image processing
+- **crontab** for cronjobs
 
 ## Installation and Deployment
 
 ```shell
-git clone 
+git clone https://github.com/sekassel/abschlussprojekt-kchoong.git koggle
+cd koggle
 bundle install
 rails db:drop db:create db:migrate db:seed # More information below
 bin/dev
