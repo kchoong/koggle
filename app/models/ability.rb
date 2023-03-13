@@ -42,6 +42,8 @@ class Ability
     can :show, Shift, worker_id: user_worker.id
     can :show, Vacation, worker_id: user_worker.id
 
+    can [:read, :create], Comment
+
     return unless user.admin?
     can :manage, :all
   end

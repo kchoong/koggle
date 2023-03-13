@@ -16,8 +16,6 @@ en:
     update: Update
     view: View
   comment:
-    no_comments: No comments...
-    no_login: Please login to add a comment.
   crud:
     controller:
       error:

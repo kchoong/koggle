@@ -16,8 +16,6 @@ de:
     update: Aktualisieren
     view: Ansicht
   comment:
-    no_comments: Keine Kommentare...
-    no_login: Bitte loggen Sie sich ein, um einen Kommentar abzugeben.
   crud:
     controller:
       error:

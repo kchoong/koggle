@@ -2,12 +2,22 @@
 
 - if comments.any?
   div class="comment-section border-top pt-3"
-    div class="col-12"
-      - comments.each do |comment|
-        div class="card mb-3"
-          div class="card-body"
-            p class="card-text" = comment.text
-            span<> class="float-end"
-              = comment.author
-              |  -
-              span<> class="date" data-date=l(comment.created_at) = format_time(comment.created_at)
+    div class="row"
+      div class="col-12"
+        h5
+          = Comment.model_name.human(count: comments.count)
+          span<> class="badge bg-primary" = comments.count
+    - if can? :create, Comment
+      div class="row"
+        div class="col-12"
+          = render "comments/input", entity: entity
+    div class="row"
+      div class="col-12"
+        - comments.each do |comment|
+          div class="card mb-3"
+            div class="card-body"
+              p class="card-text" = comment.text
+              span<> class="float-end"
+                = comment.author
+                |  -
+                span<> class="date" data-date=l(comment.created_at) = format_time(comment.created_at)
