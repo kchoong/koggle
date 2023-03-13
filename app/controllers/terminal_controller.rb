@@ -2,10 +2,6 @@ class TerminalController < ApplicationController
 
   before_action :set_office
 
-  def index
-
-  end
-
   def office
     @worker = Worker.new
     render("terminal/office", layout: "fullscreen")
@@ -29,24 +25,24 @@ class TerminalController < ApplicationController
           shifts_in_office.each do |office_shift|
             office_shift.update!(end_time: DateTime.now)
           end
-          flash[:success] = t("terminal.controller.success.check_out_html", office: @office.name).html_safe
+          flash[:success] = t("terminal.controller.success.check_out", office: @office.name)
         end
 
         # Inform about active shifts for other offices
         if shifts_out_office.any?
-          flash[:info] = t("terminal.controller.info.check_still_html",
-                           office: shifts_out_office.map{|x| x.office.name}.join(", ")).html_safe
+          flash[:info] = t("terminal.controller.info.check_still",
+                           office: shifts_out_office.map{|x| x.office.name}.join(", "))
         end
 
       else
         # Create new shift at the office
         Shift.create!(worker: worker, office: @office, start_time: DateTime.now)
-        flash[:success] = t("terminal.controller.success.check_in_html", office: @office.name).html_safe
+        flash[:success] = t("terminal.controller.success.check_in", office: @office.name)
       end
 
     else
       # Not Valid!
-      flash[:danger] = t("terminal.controller.error.invalid_credentials_html").html_safe
+      flash[:danger] = t("terminal.controller.error.invalid_credentials")
     end
 
     redirect_to terminal_office_path

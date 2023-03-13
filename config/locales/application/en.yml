@@ -92,12 +92,12 @@ en:
   terminal:
     controller:
       error:
-        invalid_credentials_html: "<b>Invalid credentials.</b> Sorry, we couldn't check you in/out, please try again!"
+        invalid_credentials: "Invalid credentials. Sorry, we couldn't check you in/out, please try again!"
       info:
-        check_still_html: "You are still checked into the following office: <b>%{office}</b>"
+        check_still: "You are still checked into the following office: %{office}"
       success:
-        check_in_html: "You have checked into the following office: <b>%{office}</b>"
-        check_out_html: "You have checked out of the following office: <b>%{office}</b>"
+        check_in: "You have checked into the following office: %{office}"
+        check_out: "You have checked out of the following office: %{office}"
     titles:
       index: Terminal
   vacation:

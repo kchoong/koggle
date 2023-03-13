@@ -92,12 +92,12 @@ de:
   terminal:
     controller:
       error:
-        invalid_credentials_html: "<b>Ungültige Anmeldedaten.</b> Wir konnten Sie leider nicht ein-/auschecken, bitte versuchen Sie es erneut!"
+        invalid_credentials: "Ungültige Anmeldedaten. Wir konnten Sie leider nicht ein-/auschecken, bitte versuchen Sie es erneut!"
       info:
-        check_still_html: "Sie sind immernoch in dem folgenden Büro eingecheckt: <b>%{office}</b>"
+        check_still: "Sie sind immernoch in dem folgenden Büro eingecheckt: %{office}"
       success:
-        check_in_html: "Sie haben sich im folgenden Büro eingecheckt: <b>%{office}</b>"
-        check_out_html: "Sie haben sich im folgenden Büro ausgecheckt: <b>%{office}</b>"
+        check_in: "Sie haben sich im folgenden Büro eingecheckt: %{office}"
+        check_out: "Sie haben sich im folgenden Büro ausgecheckt: %{office}"
     titles:
       index: Terminal
   vacation:

@@ -17,9 +17,39 @@ div id="offcanvasNavigation" class="offcanvas offcanvas-end text-bg-dark" tabind
       li class="nav-link my-2"
         a class="btn btn-dark" href=vacations_path = t("navigation.vacations")
       li class="nav-link dropdown my-2"
-        button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"
-          = t("navigation.admin.admin")
+        button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" = t("navigation.admin.admin")
         ul class="dropdown-menu dropdown-menu-dark"
           li
-            a class="dropdown-item" href=admin_shift_corrections_path
-              = t("navigation.admin.corrections")
+            a class="dropdown-item" href=admin_shift_corrections_path = t("navigation.admin.corrections")
+
+  div class="mt-auto"
+    div class="container-fluid p-3"
+      div class="d-flex flex-wrap align-items-center justify-content-start"
+        - if user_signed_in?
+          div class="nav-link dropup"
+            a class="text-decoration-none dropdown-toggle text-white" href="#" data-bs-toggle="dropdown" aria-expanded="false"
+              - if current_user.worker.present? and current_user.worker.avatar.present?
+                = image_tag current_user.worker.avatar.variant(:minithumb), class: "rounded-circle me-2", height: 40, width: 40
+              - else
+                = image_tag "placeholder/profile.png", class: "rounded-circle me-2", height: 40, width: 40
+            ul class="dropdown-menu dropdown-menu-dark"
+              li
+                a class="dropdown-item" href="#"
+                  i class="bi bi-person-fill pe-3"
+                  = t("navigation.profile")
+              li
+                a class="dropdown-item" href="#"
+                  i class="bi bi-gear-fill pe-3"
+                  = t("navigation.settings")
+              li
+                hr class="dropdown-divider"
+              li
+                a class="dropdown-item" href=destroy_user_session_path data-method="delete"
+                  i class="bi bi-box-arrow-right pe-3"
+                  = t("devise.sessions.destroy.sign_out")
+        - else
+          button class="btn btn-outline-light me-2" type="button"
+            a class="nav-link" href=new_user_session_path = t('devise.sessions.new.sign_in')
+
+          button class="btn btn-primary" type="button"
+            a class="nav-link" href=new_user_registration_path = t('devise.registrations.new.sign_up')

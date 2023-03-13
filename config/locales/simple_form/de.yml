@@ -30,3 +30,6 @@ de:
       mark: '*'
     error_notification:
       default_message: "Bitte überprüfen Sie die Probleme unten:"
+    placeholders:
+      worker:
+        pin: Geben Sie Ihren PIN ein

@@ -30,3 +30,6 @@ en:
       mark: '*'
     error_notification:
       default_message: "Please review the problems below:"
+    placeholders:
+      worker:
+        pin: Enter your PIN
