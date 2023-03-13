@@ -34,10 +34,14 @@ To create some test data to play around with use the following seed command:
 rails db:seed
 ```
 
-## Configuration
-
 ## Services
 
 ### Cronjobs
+
+For the cronjobs I have used the gem [whenever](https://github.com/javan/whenever). To add the cronjobs of the project, run the following command:
+```shell
+whenever --update-crontab
+```
+This will add our cronjobs to the cron table of your system. You do not need to restart your cron service.
 
 ## Tests

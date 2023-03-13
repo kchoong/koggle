@@ -62,14 +62,11 @@ gem "devise"
 gem "cancancan"
 
 # cron jobs
-# gem "whenever"
+gem "whenever", require: false
 
 # excel spreadsheet generator
 gem "caxlsx"
 gem "caxlsx_rails"
-
-# seed data generation for testing
-gem "faker"
 
 # view compontents
 gem "view_component"
@@ -80,6 +77,9 @@ gem "image_processing", "~> 1.2"
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+
+  # seed data generation
+  gem "faker"
 end
 
 group :development do
