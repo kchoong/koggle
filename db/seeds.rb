@@ -9,7 +9,7 @@
 require 'faker'
 
 # Set locale for faker
-Faker::Config.locale = :de
+Faker::Config.locale = :en
 
 NUM_ADMINS = 5
 NUM_OFFICES = 25
@@ -39,30 +39,24 @@ def create_worker(office=nil)
   worker
 end
 
-# Admin users and worker
-(1..NUM_ADMINS).each do |i|
-  worker = create_worker
-  username = "admin#{i}"
-  password = "admin#{i}"
-  email = "admin#{i}@koggle.azg"
-  user = User.create!(username: username, email: email, password: password, worker: worker, admin: true)
-end
-
 # Offices
 (1..NUM_OFFICES).each do |i|
-  office = Office.create!(name: Faker::Company.unique.name,
+  office = Office.create!(name: Faker::Science.unique.element,
                           description: Faker::Commerce.department(max: 5),
                           address_1: Faker::Address.street_address,
                           address_2: Faker::Address.secondary_address,
                           postcode: Faker::Address.postcode,
                           city: Faker::Address.city,
                           country: Faker::Address.country)
+end
 
-  worker = create_worker(office)
-  username = "testoa#{i}"
-  password =  "testoa#{i}"
-  email = "testoa#{i}@koggle.azg"
-  user = User.create!(username: username, email: email, password: password, worker: worker)
+# Admin users and worker
+(1..NUM_ADMINS).each do |i|
+  worker = create_worker(Office.order('RANDOM()').first)
+  username = "admin#{i}"
+  password = "admin#{i}"
+  email = "admin#{i}@koggle.azg"
+  user = User.create!(username: username, email: email, password: password, worker: worker, admin: true)
 end
 
 # Users and workers
@@ -101,7 +95,10 @@ Worker.all.drop(NUM_ADMINS).each do |worker|
 
   # Comments
   (1..rand(1..NUM_COMMENTS)).each do |i|
-    Comment.create!(author:Faker::Artist.name, text: Faker::Quote.famous_last_words, commentable_id: worker.id, commentable_type: worker.class)
+    Comment.create!(author:Faker::Name.name,
+                    text: Faker::Lorem.paragraph(sentence_count: 1, supplemental: true, random_sentences_to_add: 4),
+                    commentable_id: worker.id,
+                    commentable_type: worker.class)
   end
 
   # Clears used values for all generators
