@@ -65,6 +65,8 @@ en:
     links:
       back_list: Back to offices
       view: View this office
+    report:
+      button: Report
     titles:
       create: Create new office
       edit_html: "Edit office <i>%{name}</i>"
@@ -112,6 +114,8 @@ en:
     links:
       back_list: Back to workers
       view: View this worker
+    report:
+      button: Report
     titles:
       create: Create new worker
       edit_html: "Edit worker <i>%{name}</i>"

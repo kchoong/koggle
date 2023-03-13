@@ -65,6 +65,8 @@ de:
     links:
       back_list: Zurück zu den Büros
       view: Büro ansehen
+    report:
+      button: Report
     titles:
       create: Neues Büro erstellen
       edit_html: "Büro <i>%{name}</i> bearbeiten"
@@ -112,6 +114,8 @@ de:
     links:
       back_list: Zurück zu den Mitarbeitern
       view: Mitarbeiter ansehen
+    report:
+      button: Report
     titles:
       create: Neuen Mitarbeiter erstellen
       edit_html: "Mitarbeiter <i>%{name}</i> bearbeiten"

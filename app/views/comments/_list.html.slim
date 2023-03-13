@@ -1,7 +1,7 @@
 - comments = entity.comments.order(created_at: :desc)
 
 - if comments.any?
-  div class="comment-section border-top pt-3 mt-5"
+  div class="comment-section border-top pt-3"
     div class="col-12"
       - comments.each do |comment|
         div class="card mb-3"
