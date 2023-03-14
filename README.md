@@ -7,14 +7,6 @@ This project is a time tracking system for a company, where the company can have
 The employees will check in and out of an office via a terminal webpage, that has to be setup in each location. 
 To check in and out the employees need to currently enter their personal PIN code, that they can see on their dashboard after logging in. 
 
-## Features
-
-- Terminal for offices and buildings
-- Report generation by year, month, day (HTML, JSON, XML, Excel)
-- Graph representation of work shifts
-- Role and permission management
-- Vacation and birthday tracking
-
 ## System requirements
 
 - **Ruby** 3.2.0
@@ -23,6 +15,20 @@ To check in and out the employees need to currently enter their personal PIN cod
 - **SQLite** for database
 - **ImageMagick & libvips** for image processing
 - **crontab** for cronjobs
+
+## Features
+
+- Terminal for offices and buildings
+- Report generation by year, month, day (HTML, JSON, XML, Excel)
+- Graph representation of work shifts
+- Role and permission management
+- Vacation and birthday tracking
+- Localization: English & German
+
+![dashboard](app/assets/images/github/dashboard.png)
+![terminal](app/assets/images/github/terminal.png)
+![report_monthly](app/assets/images/github/report_monthly.png)
+![workers](app/assets/images/github/workers.png)
 
 ## Installation and Deployment
 
@@ -33,6 +39,31 @@ bundle install
 rails db:drop db:create db:migrate db:seed # More information below
 bin/dev
 ```
+
+### Usage
+
+I would recommend just logging in as an administrator user,
+since many features aren't available to the public or the employees due to this being a work shift tracking system.
+Further information to the development/test logins are below.
+
+After logging in you will be redirected to the dashboard, where you can see time, date, your current work shift status, 
+a graph of your working time for the current week and the PIN to check in and out of offices.
+You can access all the indexes of the records via the navigation as an administrator.
+In those tables you can execute further CRUD operations.
+
+To simulate the check in and out process, 
+you can simply go to the offices list and go to their terminal through the specified button.
+On that page you can type in the PIN from your dashboard to check yourself in and out of the selected office.
+
+For reports you can go to the details page of any worker or office of your choosing and click on the "Report"-Button.
+On the report page you will be able to specify the range and date for the report. 
+You will be also able to view the report in multiple formats.
+
+### Important paths
+
+- Terminal: `/terminal/$ID`
+- Report for worker: `/workers/$ID/report`
+- Report for office: `/offices/$ID/report`
 
 ## Database
 
@@ -72,3 +103,7 @@ For the cronjobs I have used the gem [whenever](https://github.com/javan/wheneve
 whenever --update-crontab
 ```
 This will add our cronjobs to the cron table of your system. You do not need to restart your cron service.
+
+## Tests
+
+The UI tests are currently not working, due to issues with Bootstrap.
