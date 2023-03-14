@@ -3,6 +3,17 @@
 Project for Web Engineering Lecture WS2022/23.  
 Kevin Choong, 33310631
 
+This project is a time tracking system for a company, where the company can have multiple location and offices.  
+The employees will check in and out of an office via a terminal webpage, that has to be setup in each location. 
+To check in and out the employees need to currently enter their personal PIN code, that they can see on their dashboard after logging in. 
+
+## Features
+
+- Terminal for offices and buildings
+- Report generation by year, month, day (HTML, JSON, XML, Excel)
+- Graph representation of work shifts
+- Vacation and birthday tracking
+
 ## System requirements
 
 - **Ruby** 3.2.0
@@ -34,6 +45,22 @@ To create some test data to play around with use the following seed command:
 ```shell
 rails db:seed
 ```
+
+### Development & Test Login
+
+You can login to the development/test system, that contains the seed data with the following authentications:
+
+For an administrator account use: 
+
+- Username: `admin1`
+- E-Mail: `admin1@mail.azg`
+- Password: `admin1`
+
+For an normal account use:
+
+- Username: `testuser1`
+- E-Mail: `testuser1@mail.azg`
+- Password: `testuser1`
 
 ## Services
 
