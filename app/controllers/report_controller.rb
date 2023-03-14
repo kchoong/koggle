@@ -1,13 +1,20 @@
 class ReportController < ApplicationController
 
-  before_action :set_date, :set_path
+  before_action :set_entity, :set_date, :set_path
+
+  def yearly
+
+  end
+
+  def monthly
+
+  end
+
+  def daily
+
+  end
 
   def report
-    # get specified entity
-    if params[:worker_id] then @entity = Worker.find(params[:worker_id])
-    elsif params[:office_id] then @entity = Office.find(params[:office_id])
-    else raise t("report.error.no_entity")
-    end
 
     # determine start and end time based on passed entity and date elements
     if @month > 0 and @day > 0 then
@@ -25,6 +32,10 @@ class ReportController < ApplicationController
     @shifts = Shift.where("#{@entity.model_name.element}": @entity, start_time: start_time .. end_time)
     @shifts = @shifts.order(start_time: :asc)
 
+    # set date range
+    @start_date = l(start_time.to_date, :format => :short)
+    @end_date = l(end_time.to_date, :format => :short)
+
     respond_to do |format|
       format.html
       format.json { render json: @shifts }
@@ -38,6 +49,14 @@ class ReportController < ApplicationController
 
   private
   # Use callbacks to share common setup or constraints between actions.
+
+  def set_entity
+    if params[:worker_id] then @entity = Worker.find(params[:worker_id])
+    elsif params[:office_id] then @entity = Office.find(params[:office_id])
+    else raise t("report.error.no_entity")
+    end
+  end
+
   def set_date
     @year = params[:year] ? params[:year].to_i : Date.today.year
     @month = params[:month].to_i

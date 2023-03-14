@@ -34,10 +34,10 @@ en:
       today_birthdays: "Today's birthdays:"
   date:
     formats:
-      default: "%A, %d %B %Y"
-      long: "%d %B %Y"
+      default: "%A, %d. %B %Y"
+      long: "%d. %B %Y"
       short: "%d.%m.%Y"
-      full: "%A, %d %B %Y"
+      full: "%A, %d. %B %Y"
       month_year: "%B %Y"
   duration:
     days: "%{days} Days"
@@ -72,8 +72,6 @@ en:
     links:
       back_list: Back to offices
       view: View this office
-    report:
-      button: Report
     terminal:
       button: Terminal
     titles:
@@ -84,10 +82,16 @@ en:
     next: Next
     previous: Previous
   report:
+    button: Report
+    daily: Daily
+    date_range: "%{start} - %{end}"
     error:
       no_entity: No entity found.
     export_as: "Export as:"
-    list_shifts_html: "List of work shifts for <i>%{name}</i>"
+    monthly: Monthly
+    period: "Time period:"
+    report_for_html: "Report for <i>%{name}</i>"
+    yearly: Yearly
   shift:
     links:
       back_list: Back to work shifts
@@ -123,8 +127,6 @@ en:
     links:
       back_list: Back to workers
       view: View this worker
-    report:
-      button: Report
     titles:
       create: Create new worker
       edit_html: "Edit worker <i>%{name}</i>"

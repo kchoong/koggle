@@ -34,10 +34,10 @@ de:
       today_birthdays: "Geburtstage heute:"
   date:
     formats:
-      default: "%A, %d %B %Y"
-      long: "%d %B %Y"
+      default: "%A, %d. %B %Y"
+      long: "%d. %B %Y"
       short: "%d.%m.%Y"
-      full: "%A, %d %B %Y"
+      full: "%A, %d. %B %Y"
       month_year: "%B %Y"
   duration:
     days: "%{days} Tage"
@@ -72,8 +72,6 @@ de:
     links:
       back_list: Zurück zu den Büros
       view: Büro ansehen
-    report:
-      button: Report
     terminal:
       button: Terminal
     titles:
@@ -84,10 +82,16 @@ de:
     next: Nächste Seite
     previous: Vorherige Seite
   report:
+    button: Report
+    daily: Täglich
+    date_range: "%{start} - %{end}"
     error:
       no_entity: Kein Eintrag gefunden.
     export_as: "Exportieren als:"
-    list_shifts_html: "Liste aller Arbeitsschichten für <i>%{name}</i>"
+    monthly: Monatlich
+    period: "Zeitraum:"
+    report_for_html: "Report für <i>%{name}</i>"
+    yearly: Jährlich
   shift:
     links:
       back_list: Zurück zu den Arbeitsschichten
@@ -123,8 +127,6 @@ de:
     links:
       back_list: Zurück zu den Mitarbeitern
       view: Mitarbeiter ansehen
-    report:
-      button: Report
     titles:
       create: Neuen Mitarbeiter erstellen
       edit_html: "Mitarbeiter <i>%{name}</i> bearbeiten"

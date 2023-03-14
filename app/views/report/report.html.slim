@@ -1,15 +1,27 @@
-= page_heading t("report.list_shifts_html", name: @entity.name)
+= page_heading t("report.report_for_html", name: @entity.name)
 
-div class="my-3"
-  h5 class="d-inline pe-3"
-    = t("report.export_as")
-  div class="btn-group" role="group"
-    a class="btn btn-dark" role="button" href="#{@current_path}.json"
-      = t("format.json")
-    a class="btn btn-dark" role="button" href="#{@current_path}.xml"
-      = t("format.xml")
-    a class="btn btn-dark" role="button" href="#{@current_path}.xlsx"
-      = t("format.xlsx")
+div class="row row-cols-2 my-3"
+  div class="col"
+    h3 = t("report.date_range", start: @start_date, end: @end_date)
+
+  div class="col text-end"
+    h5 class="d-inline pe-3" = t("report.period")
+    div class="btn-group" role="group"
+      a class="btn btn-dark" role="button" href=worker_report_yearly_path(@entity, year: Date.today.year) = t("report.yearly")
+      a class="btn btn-dark" role="button" href=worker_report_monthly_path(@entity, year: Date.today.year, month: Date.today.month) = t("report.monthly")
+      a class="btn btn-dark" role="button" href=worker_report_daily_path(@entity, year: Date.today.year, month: Date.today.month, day: Date.today.day) = t("report.daily")
+
+  div class="col"
+
+  div class="col text-end"
+    h5 class="d-inline pe-3" = t("report.export_as")
+    div class="btn-group" role="group"
+      a class="btn btn-dark" role="button" href="#{@current_path}.json"
+        = t("format.json")
+      a class="btn btn-dark" role="button" href="#{@current_path}.xml"
+        = t("format.xml")
+      a class="btn btn-dark" role="button" href="#{@current_path}.xlsx"
+        = t("format.xlsx")
 
 div class="table-responsive"
   table class="table table-striped table-sm records-table"
@@ -18,6 +30,7 @@ div class="table-responsive"
         th = t("id")
         th = Shift.human_attribute_name :worker
         th = Shift.human_attribute_name :office
+        th = Shift.human_attribute_name :date
         th = Shift.human_attribute_name :start_time
         th = Shift.human_attribute_name :end_time
         th = Shift.human_attribute_name :duration
@@ -30,6 +43,7 @@ div class="table-responsive"
             a href=worker_path(shift.worker) = shift.worker.name
           td
             a href=office_path(shift.office) = shift.office.name
+          td = l(shift.date, :format => :long)
           td = l(shift.start_time, :format => :long)
           td
             - if shift.end_time.present?

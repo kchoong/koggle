@@ -33,10 +33,19 @@ div class="container bg-light rounded-3 p-5 mb-4"
               = t("office.terminal.button")
               i class="bi bi-box-arrow-right ps-2"
         - if can? :read, @office.shifts
-          button type="button" class="btn btn-dark btn-lg me-2"
-            a class="text-white" href=office_report_path(@office)
-              = t("worker.report.button")
-              i class="bi bi-graph-up ps-2"
+          div class="btn-group me-2"
+            button type="button" class="btn btn-dark btn-lg "
+              a class="text-white" href=office_report_yearly_path(@office)
+                = t("report.button")
+                i class="bi bi-graph-up ps-2"
+            button class="btn btn-dark dropdown-toggle dropdown-toggle-split" type="button" data-bs-toggle="dropdown" aria-expanded="false"
+            ul class="dropdown-menu"
+              li
+                a class="dropdown-item" href=office_report_yearly_path(@office, year: Date.today.year) = t("report.yearly")
+              li
+                a class="dropdown-item" href=office_report_monthly_path(@office, year: Date.today.year, month: Date.today.month) = t("report.monthly")
+              li
+                a class="dropdown-item" href=office_report_daily_path(@office, year: Date.today.year, month: Date.today.month, day: Date.today.day) = t("report.daily")
         - if can? :update, @office
           button type="button" class="btn btn-dark btn-lg me-2"
             a class="text-white" href=edit_office_path(@office)

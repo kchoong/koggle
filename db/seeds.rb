@@ -70,7 +70,7 @@ end
 
 # Work shifts, vacations and comments
 Faker::UniqueGenerator.clear # Clear before
-Worker.all.drop(NUM_ADMINS).each do |worker|
+Worker.all.each do |worker|
   # Work shifts
   (1..NUM_SHIFTS).each do |i|
     day = Faker::Date.unique.between(from: 1.year.ago.to_date, to: Date.yesterday)

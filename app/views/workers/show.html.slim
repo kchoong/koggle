@@ -44,10 +44,19 @@ div class="container bg-light rounded-3 p-5 mb-4"
     div class="row"
       div class="col-12"
         - if can? :read, @worker.shifts
-          button type="button" class="btn btn-dark btn-lg me-2"
-            a class="text-white" href=worker_report_path(@worker)
-              = t("worker.report.button")
-              i class="bi bi-graph-up ps-2"
+          div class="btn-group me-2"
+            button type="button" class="btn btn-dark btn-lg "
+              a class="text-white" href=worker_report_yearly_path(@worker)
+                = t("report.button")
+                i class="bi bi-graph-up ps-2"
+            button class="btn btn-dark dropdown-toggle dropdown-toggle-split" type="button" data-bs-toggle="dropdown" aria-expanded="false"
+            ul class="dropdown-menu"
+              li
+                a class="dropdown-item" href=worker_report_yearly_path(@worker, year: Date.today.year) = t("report.yearly")
+              li
+                a class="dropdown-item" href=worker_report_monthly_path(@worker, year: Date.today.year, month: Date.today.month) = t("report.monthly")
+              li
+                a class="dropdown-item" href=worker_report_daily_path(@worker, year: Date.today.year, month: Date.today.month, day: Date.today.day) = t("report.daily")
         - if can? :update, @worker
           button type="button" class="btn btn-dark btn-lg me-2"
             a class="text-white" href=edit_worker_path(@worker)
