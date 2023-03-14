@@ -1,11 +1,11 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  start_date: 2023-02-16
-  end_date: 2023-02-16
+  start_date: 2023-03-07
+  end_date: 2023-03-16
   worker: one
 
 two:
-  start_date: 2023-02-16
-  end_date: 2023-02-16
+  start_date: 2023-02-28
+  end_date: 2023-03-14
   worker: two

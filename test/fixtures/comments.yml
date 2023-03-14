@@ -1,13 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  author: MyString
-  text: MyString
+  author: Raylene Rau
+  text: Comment 1
   commentable: one
-  commentable_type: Commentable
+  commentable_type: Worker
 
 two:
-  author: MyString
-  text: MyString
+  author: Magdalena Lowe
+  text: Comment 2
   commentable: two
-  commentable_type: Commentable
+  commentable_type: Office

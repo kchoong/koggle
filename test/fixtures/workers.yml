@@ -1,25 +1,28 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  first_name: MyString
-  last_name: MyString
-  birthday: 2023-02-10
-  address_1: MyString
-  address_2: MyString
-  city: MyString
-  country: MyString
-  postcode: MyString
-  work_hours: 1
-  vacation_days: 1
+  first_name: Raylene
+  last_name: Rau
+  birthday: 1961-11-06
+  address_1: 965 Danuta Groves
+  address_2: Suite 375
+  city: Nickolasborough
+  country: Tokelau
+  postcode: 13768
+  work_hours: 140
+  vacation_days: 8
+  pin: 123456
 
 two:
-  first_name: MyString
-  last_name: MyString
-  birthday: 2023-02-10
-  address_1: MyString
-  address_2: MyString
-  city: MyString
-  country: MyString
-  postcode: MyString
-  work_hours: 1
-  vacation_days: 1
+  first_name: Magdalena
+  last_name: Lowe
+  birthday: 1965-11-03
+  address_1: 38242 Treutel Camp
+  address_2: Suite 670
+  city: Lake Malcolm
+  country: Nepal
+  postcode: 72259
+  work_hours: 140
+  vacation_days: 13
+  pin: abcdef
+

@@ -12,6 +12,7 @@ To check in and out the employees need to currently enter their personal PIN cod
 - Terminal for offices and buildings
 - Report generation by year, month, day (HTML, JSON, XML, Excel)
 - Graph representation of work shifts
+- Role and permission management
 - Vacation and birthday tracking
 
 ## System requirements

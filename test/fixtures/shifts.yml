@@ -1,13 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  start_time: 2023-02-16 18:30:32
-  end_time: 2023-02-16 18:30:32
+  start_time: 2023-02-16 08:04:39
+  end_time: 2023-02-16 18:22:12
   worker: one
   office: one
 
 two:
-  start_time: 2023-02-16 18:30:32
-  end_time: 2023-02-16 18:30:32
+  start_time: 2023-02-16 08:33:23
+  end_time: 2023-02-16 17:20:31
   worker: two
   office: two

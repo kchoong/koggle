@@ -20,7 +20,7 @@ class Worker < ApplicationRecord
   end
 
   def full_address
-    [address_1, address_2, city, postcode, country].compact.join(', ')
+    [address_1, address_2, postcode, city, country].compact.join(', ')
   end
 
   def build(*args, &block)
