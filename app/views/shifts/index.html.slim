@@ -20,6 +20,7 @@ div class="table-responsive"
 
         th = Shift.human_attribute_name :worker
         th = Shift.human_attribute_name :office
+        th = Shift.human_attribute_name :office
         th
           a class=(@pager.sort_by == "start_time" ? "fst-italic" : "") href=shifts_path(sort_by: "start_time", sort_order: (@pager.sort_order == "asc" ? :desc : :asc))
             = Shift.human_attribute_name :start_time
@@ -46,6 +47,7 @@ div class="table-responsive"
             a href=worker_path(shift.worker) = shift.worker.name
           td
             a href=office_path(shift.office) = shift.office.name
+          td = l(shift.date, :format => :long)
           td = l(shift.start_time, :format => :long)
           td
             - if shift.end_time.present?

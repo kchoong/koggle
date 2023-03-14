@@ -46,7 +46,7 @@ div class="table-responsive"
           td = worker.user.email
           td
             - if worker.birthday.present?
-              = l(worker.birthday, :format => :long)
+              = l(worker.birthday, :format => :short)
           td = worker.full_address
           td
             - if worker.office.present?

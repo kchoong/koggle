@@ -21,7 +21,7 @@ div class="table-responsive"
         th = Vacation.human_attribute_name :worker
         th
           a class=(@pager.sort_by == "start_date" ? "fst-italic" : "") href=vacations_path(sort_by: "start_date", sort_order: (@pager.sort_order == "asc" ? :desc : :asc))
-            = Vacation.human_attribute_name :start_time
+            = Vacation.human_attribute_name :start_date
           - if @pager.sort_by == "start_date"
             - if @pager.sort_order == "asc"
               i<> class="bi bi-caret-up-fill"
@@ -29,7 +29,7 @@ div class="table-responsive"
               i<> class="bi bi-caret-down-fill"
         th
           a class=(@pager.sort_by == "end_date" ? "fst-italic" : "") href=vacations_path(sort_by: "end_date", sort_order: (@pager.sort_order == "asc" ? :desc : :asc))
-            = Vacation.human_attribute_name :end_time
+            = Vacation.human_attribute_name :end_date
           - if @pager.sort_by == "end_date"
             - if @pager.sort_order == "asc"
               i<> class="bi bi-caret-up-fill"
@@ -43,8 +43,8 @@ div class="table-responsive"
           th = vacation.id
           td
             a href=worker_path(vacation.worker) = vacation.worker.name
-          td = vacation.start_date
-          td = vacation.end_date
+          td = l(vacation.start_date, :format => :long)
+          td = l(vacation.end_date, :format => :long)
           td = t("duration.days", days: vacation.duration)
           td
             button type="button" class="btn btn-primary btn-sm me-2"

@@ -20,6 +20,7 @@ de:
         shifts: Arbeitsschichten
         workers: Mitarbeiter
       shift:
+        date: Datum
         duration: Laufzeit
         end_time: Endzeitpunkt
         office: Büro

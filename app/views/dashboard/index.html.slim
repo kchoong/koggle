@@ -1,5 +1,14 @@
 = page_heading t("dashboard.titles.index")
 
-div class="bg-light rounded p-4 mb-3"
-  h3 = Worker.human_attribute_name :pin
-  h4 = current_user.worker.pin
+div class="d-flex"
+  div class="d-flex flex-column w-75"
+
+  div class="d-flex flex-column w-25"
+    div class="bg-light rounded p-4 m-3"
+      = render(ClockComponent.new(datetime: @current_time))
+
+    div class="bg-light rounded p-4 m-3"
+      = render(CalendarComponent.new(date: @current_date))
+
+    div class="bg-light rounded p-4 m-3"
+      = render(PinComponent.new(worker: current_user.worker))
