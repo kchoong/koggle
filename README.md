@@ -3,7 +3,7 @@
 Project for Web Engineering Lecture WS2022/23  
 Kevin Choong, 33310631
 
-This project is a time tracking system for a company, where the company can have multiple location and offices.  
+This project is a time tracking system for a company, where the company can have multiple location and offices.
 The employees will check in and out of an office via a terminal webpage, that has to be setup in each location. 
 To check in and out the employees need to currently enter their personal PIN code, that they can see on their dashboard after logging in. 
 
