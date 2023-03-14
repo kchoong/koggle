@@ -29,7 +29,7 @@ de:
         edited: "%{name} wurde erfolgreich aktualisiert."
   dashboard:
     calendar:
-      today_birthdays: "Geburtstage heute:"
+      today_birthdays: "Heutige Geburtstage:"
     shift:
       status: "Arbeitsschicht Status:"
       item: "Sie haben Ihre Arbeitsschicht um %{time} begonnen. Büro: %{office}"
