@@ -1,6 +1,6 @@
 # Koggle
 
-Project for Web Engineering Lecture WS2022/23.  
+Project for Web Engineering Lecture WS2022/23  
 Kevin Choong, 33310631
 
 This project is a time tracking system for a company, where the company can have multiple location and offices.  
@@ -35,8 +35,10 @@ To check in and out the employees need to currently enter their personal PIN cod
 ```shell
 git clone https://github.com/sekassel/abschlussprojekt-kchoong.git koggle
 cd koggle
+
 bundle install
 rails db:drop db:create db:migrate db:seed # More information below
+
 bin/dev
 ```
 
