@@ -37,6 +37,9 @@ class ReportController < ApplicationController
     @start_date = l(start_time.to_date, :format => :short)
     @end_date = l(end_time.to_date, :format => :short)
 
+    # set graph data
+    @graph_shifts_data = @shifts.group_by_month { |u| u.start_time }.to_h { |k, v| [k, helpers.sum_duration(v)] }
+
     respond_to do |format|
       format.html
       format.json { render json: @shifts }

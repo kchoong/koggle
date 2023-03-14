@@ -91,6 +91,7 @@ GEM
     caxlsx_rails (0.6.3)
       actionpack (>= 3.1)
       caxlsx (>= 3.0)
+    chartkick (5.0.1)
     chronic (0.10.2)
     concurrent-ruby (1.2.0)
     crass (1.0.6)
@@ -110,6 +111,8 @@ GEM
     ffi (1.15.5)
     globalid (1.1.0)
       activesupport (>= 5.0)
+    groupdate (6.2.0)
+      activesupport (>= 5.2)
     htmlentities (4.3.4)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
@@ -270,10 +273,12 @@ DEPENDENCIES
   capybara
   caxlsx
   caxlsx_rails
+  chartkick
   cssbundling-rails
   debug
   devise
   faker
+  groupdate
   image_processing (~> 1.2)
   jbuilder
   jsbundling-rails

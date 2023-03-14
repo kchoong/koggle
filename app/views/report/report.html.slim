@@ -23,6 +23,9 @@ div class="row row-cols-2 my-3"
       a class="btn btn-dark" role="button" href="#{@current_path}.xlsx"
         = t("format.xlsx")
 
+div class="bg-light rounded p-4 my-5"
+  = render(ShiftsGraphComponent.new(shifts: @graph_shifts_data))
+
 div class="table-responsive"
   table class="table table-striped table-sm records-table"
     thead class="table-dark"

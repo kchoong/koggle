@@ -1,0 +1,10 @@
+div class="shift-status"
+  h3
+    = t("dashboard.shift.status")
+    - if @shifts.any?
+      span class="badge bg-success mx-3" = t("status.active")
+    - else
+      span class="badge bg-danger mx-3" = t("status.inactive")
+
+  - @shifts.each do |shift|
+    h4 = t("dashboard.shift.item", time: l(shift.start_time, :format => :long), office: shift.office.name)

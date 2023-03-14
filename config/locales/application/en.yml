@@ -16,6 +16,13 @@ en:
     update: Update
     view: View
   comment:
+  components:
+    calendar:
+      today_birthdays: "Today's birthdays:"
+    shifts:
+      graph:
+        date: Date
+        duration: Duration (in Minutes)
   crud:
     controller:
       error:
@@ -28,8 +35,6 @@ en:
         deleted: "%{name} has been successfully deleted."
         edited: "%{name} has been successfully updated."
   dashboard:
-    calendar:
-      today_birthdays: "Today's birthdays:"
     shift:
       status: "Work shift status:"
       item: "You have started your work shift at %{time}. Office: %{office}"

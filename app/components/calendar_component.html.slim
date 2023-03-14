@@ -25,7 +25,7 @@ div class="calendar text-center"
 
   - if @workers_birthday_today.any?
     div class="text-start pt-3"
-      h4 = t("dashboard.calendar.today_birthdays")
+      h4 = t("components.calendar.today_birthdays")
       ul
         - @workers_birthday_today.each do |worker|
           li = worker.name

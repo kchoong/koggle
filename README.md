@@ -7,6 +7,7 @@ Kevin Choong, 33310631
 
 - **Ruby** 3.2.0
 - **Rails** 7.0.4
+- **Yarn** for JavaScript packages
 - **SQLite** for database
 - **ImageMagick & libvips** for image processing
 - **crontab** for cronjobs
@@ -43,5 +44,3 @@ For the cronjobs I have used the gem [whenever](https://github.com/javan/wheneve
 whenever --update-crontab
 ```
 This will add our cronjobs to the cron table of your system. You do not need to restart your cron service.
-
-## Tests

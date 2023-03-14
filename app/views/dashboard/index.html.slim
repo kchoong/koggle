@@ -3,14 +3,10 @@
 div class="d-flex d-none d-lg-flex"
   div class="d-flex flex-column w-75"
     div class="bg-light rounded p-4 m-3"
-      h3
-        = t("dashboard.shift.status")
-        - if @active_shifts.any?
-          span class="badge bg-success mx-3" = t("status.active")
-        - else
-          span class="badge bg-danger mx-3" = t("status.inactive")
-      - @active_shifts.each do |shift|
-        h4 = t("dashboard.shift.item", time: l(shift.start_time, :format => :long), office: shift.office.name)
+      = render(ShiftsStatusComponent.new(shifts: @active_shifts))
+
+    div class="bg-light rounded p-4 m-3"
+      = render(ShiftsGraphComponent.new(shifts: @graph_shifts_data))
 
   div class="d-flex flex-column w-25"
     div class="bg-light rounded p-4 m-3"
@@ -23,6 +19,9 @@ div class="d-flex d-none d-lg-flex"
       = render(PinComponent.new(worker: current_user.worker))
 
 div class="d-flex flex-column d-flex d-lg-none"
+  div class="bg-light rounded p-4 m-3"
+    = render(ShiftsStatusComponent.new(shifts: @active_shifts))
+
   div class="bg-light rounded p-4 m-3"
     = render(ClockComponent.new(datetime: @current_time))
 

@@ -16,6 +16,13 @@ de:
     update: Aktualisieren
     view: Ansicht
   comment:
+  components:
+    calendar:
+      today_birthdays: "Heutige Geburtstage:"
+    shifts:
+      graph:
+        date: Datum
+        duration: Dauer (in Minuten)
   crud:
     controller:
       error:
@@ -28,8 +35,6 @@ de:
         deleted: "%{name} wurde erfolgreich gelöscht."
         edited: "%{name} wurde erfolgreich aktualisiert."
   dashboard:
-    calendar:
-      today_birthdays: "Heutige Geburtstage:"
     shift:
       status: "Arbeitsschicht Status:"
       item: "Sie haben Ihre Arbeitsschicht um %{time} begonnen. Büro: %{office}"

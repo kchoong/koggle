@@ -8,6 +8,8 @@
     "@rails/ujs": "^7.0.4-2",
     "bootstrap": "^5.2.3",
     "bootstrap-icons": "^1.10.3",
+    "chart.js": "^4.2.1",
+    "chartkick": "^5.0.1",
     "esbuild": "^0.17.5",
     "sass": "^1.57.1"
   },
