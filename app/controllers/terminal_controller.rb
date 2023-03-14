@@ -13,7 +13,7 @@ class TerminalController < ApplicationController
     # Validate authentication
     if worker.present?
       # Check for another active shift
-      active_shifts = Shift.where(worker: worker, end_time: nil)
+      active_shifts = helpers.get_active_shifts(worker)
 
       if active_shifts.any?
         # Active shifts still running, not creating new shift

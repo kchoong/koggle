@@ -28,10 +28,13 @@ de:
         deleted: "%{name} wurde erfolgreich gelöscht."
         edited: "%{name} wurde erfolgreich aktualisiert."
   dashboard:
-    titles:
-      index: Dashboard
     calendar:
       today_birthdays: "Geburtstage heute:"
+    shift:
+      status: "Arbeitsschicht Status:"
+      item: "Sie haben Ihre Arbeitsschicht um %{time} begonnen. Büro: %{office}"
+    titles:
+      index: Dashboard
   date:
     formats:
       default: "%A, %d. %B %Y"
@@ -104,6 +107,10 @@ de:
     titles:
       edit_shift_html: "Arbeitsschicht <i>%{id}</i> bearbeiten"
       list: Liste aller Arbeitsschicht-Korrekturen
+  status:
+    active: Aktiv
+    inactive: Inaktiv
+    standby: Standby
   terminal:
     controller:
       error:

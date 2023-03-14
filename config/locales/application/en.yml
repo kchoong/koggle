@@ -28,10 +28,13 @@ en:
         deleted: "%{name} has been successfully deleted."
         edited: "%{name} has been successfully updated."
   dashboard:
-    titles:
-      index: Dashboard
     calendar:
       today_birthdays: "Today's birthdays:"
+    shift:
+      status: "Work shift status:"
+      item: "You have started your work shift at %{time}. Office: %{office}"
+    titles:
+      index: Dashboard
   date:
     formats:
       default: "%A, %d. %B %Y"
@@ -104,6 +107,10 @@ en:
     titles:
       edit_shift_html: "Edit work shift <i>%{id}</i>"
       list: List of all work shift corrections
+  status:
+    active: Active
+    inactive: Inactive
+    standby: Standby
   terminal:
     controller:
       error:

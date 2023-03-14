@@ -7,6 +7,8 @@ class DashboardController < ApplicationController
 
     @current_time = DateTime.now
     @current_date = @current_time.to_date
+
+    @active_shifts = helpers.get_active_shifts(current_user.worker)
   end
 
 end
