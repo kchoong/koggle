@@ -11,6 +11,8 @@ class User < ApplicationRecord
 
   has_one :worker
 
+  before_create :build_worker
+
   def name
     self.username
   end

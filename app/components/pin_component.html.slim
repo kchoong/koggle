@@ -1,3 +1,4 @@
 div class="pin"
   h4 = Worker.human_attribute_name :pin
-  h3 = @worker.pin
+  - if @worker.pin.present?
+    h3 = @worker.pin
