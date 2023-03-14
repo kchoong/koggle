@@ -1,6 +1,7 @@
 = simple_form_for [entity, Comment.new] do |f|
-  div class="mb-3"
+  .form-inputs
     = f.input :text, as: :text, input_html: { 'rows' => 3 }, label: false
-  div class="mb-3"
     = f.hidden_field :author, :value => current_user.worker.name
+
+  .form-actions.mb-3
     = f.submit Comment, class: "btn btn-primary"

@@ -2,16 +2,12 @@
 
 div class="row row-cols-2 my-3"
   div class="col"
-    h3 = t("report.date_range", start: @start_date, end: @end_date)
+    h3 = t("report.date_range", start: @start_date_label, end: @end_date_label)
 
-  div class="col text-end"
-    h5 class="d-inline pe-3" = t("report.period")
-    div class="btn-group" role="group"
-      a class="btn btn-dark" role="button" href=worker_report_yearly_path(@entity, year: Date.today.year) = t("report.yearly")
-      a class="btn btn-dark" role="button" href=worker_report_monthly_path(@entity, year: Date.today.year, month: Date.today.month) = t("report.monthly")
-      a class="btn btn-dark" role="button" href=worker_report_daily_path(@entity, year: Date.today.year, month: Date.today.month, day: Date.today.day) = t("report.daily")
-
-  div class="col"
+  - if @entity.class.name == Worker.to_s
+    = render "report/switch_worker"
+  - if @entity.class.name == Office.to_s
+    = render "report/switch_office"
 
   div class="col text-end"
     h5 class="d-inline pe-3" = t("report.export_as")

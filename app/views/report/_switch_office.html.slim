@@ -1,0 +1,24 @@
+div class="col text-end"
+  h5 class="d-inline pe-3" = t("report.period")
+  div class="btn-group" role="group"
+    a class="btn btn-dark" role="button" href=office_report_path(@entity, year: @selected_time.year) = t("report.yearly")
+    a class="btn btn-dark" role="button" href=office_report_path(@entity, year: @selected_time.year, month: @selected_time.month) = t("report.monthly")
+    a class="btn btn-dark" role="button" href=office_report_path(@entity, year: @selected_time.year, month: @selected_time.month, day: @selected_time.day) = t("report.daily")
+
+div class="col"
+  = simple_form_for(:range, url: office_redirect_report_path(@entity)) do |f|
+    div class="row row-cols-2"
+      .form-inputs
+        div class="col"
+          - if @range_mode == :yearly
+            = f.input :date, as: :date,  label: false, required: false, selected: @selected_time, discard_day: true, discard_month: true
+          - if @range_mode == :monthly
+            = f.input :date, as: :date, label: false, required: false, selected: @selected_time, discard_day: true
+          - if @range_mode == :daily
+            = f.input :date, as: :date, label: false, required: false, selected: @selected_time
+        = f.hidden_field :mode, :value => @range_mode
+
+      .form-actions
+        div class="col"
+          = button_tag(type: 'submit', class: "btn btn-dark px-5") do
+            i class="bi bi-arrow-right"
