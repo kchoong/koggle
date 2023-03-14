@@ -12,6 +12,8 @@ one:
   work_hours: 140
   vacation_days: 8
   pin: 123456
+  user: one
+  office: one
 
 two:
   first_name: Magdalena
@@ -25,4 +27,6 @@ two:
   work_hours: 140
   vacation_days: 13
   pin: abcdef
+  user: two
+  office: two
 
