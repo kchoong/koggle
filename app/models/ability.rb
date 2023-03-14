@@ -33,9 +33,12 @@ class Ability
     can :read, Office
 
     return unless user.present?
+
     user_worker = user.worker
-    user_worker_id = user_worker.present? ? user_worker.id : nil
-    user_office_id = user_worker.office.present? ? user_worker.office.id : nil
+    if user_worker.present?
+      user_worker_id = user_worker.id
+      user_office_id = user_worker.office.present? ? user_worker.office.id : nil
+    end
 
     can :update, Worker, user: user
     can :update, Office, id: user_office_id

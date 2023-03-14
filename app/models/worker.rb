@@ -23,15 +23,4 @@ class Worker < ApplicationRecord
     [address_1, address_2, postcode, city, country].compact.join(', ')
   end
 
-  def build(*args, &block)
-    # Generate a unique PIN for the new worker
-    loop do
-      pin = Faker::Alphanumeric.alphanumeric(number: 6)
-      worker = Worker.find_by pin: params[:worker][:pin]
-      break unless worker.present?
-    end
-
-    Worker.new(pin: pin)
-  end
-
 end

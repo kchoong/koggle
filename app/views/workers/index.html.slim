@@ -43,7 +43,9 @@ div class="table-responsive"
           th = worker.id
           td
             a href=worker_path(worker) = worker.name
-          td = worker.user.email
+          td
+            - if worker.user.present?
+              = worker.user.email
           td
             - if worker.birthday.present?
               = l(worker.birthday, :format => :short)

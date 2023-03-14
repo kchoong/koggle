@@ -15,8 +15,9 @@ div class="d-flex d-none d-lg-flex"
     div class="bg-light rounded p-4 m-3"
       = render(CalendarComponent.new(date: @current_date))
 
-    div class="bg-light rounded p-4 m-3"
-      = render(PinComponent.new(worker: current_user.worker))
+    - current_user.worker.present?
+      div class="bg-light rounded p-4 m-3"
+        = render(PinComponent.new(worker: current_user.worker))
 
 div class="d-flex flex-column d-flex d-lg-none"
   div class="bg-light rounded p-4 m-3"
@@ -28,5 +29,6 @@ div class="d-flex flex-column d-flex d-lg-none"
   div class="bg-light rounded p-4 m-3"
     = render(CalendarComponent.new(date: @current_date))
 
-  div class="bg-light rounded p-4 m-3"
-    = render(PinComponent.new(worker: current_user.worker))
+  - current_user.worker.present?
+    div class="bg-light rounded p-4 m-3"
+      = render(PinComponent.new(worker: current_user.worker))

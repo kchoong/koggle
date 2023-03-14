@@ -38,10 +38,11 @@ div id="offcanvasNavigation" class="offcanvas offcanvas-end text-bg-dark" tabind
               - else
                 = image_tag "placeholder/profile.png", class: "rounded-circle me-2", height: 40, width: 40
             ul class="dropdown-menu dropdown-menu-dark"
-              li
-                a class="dropdown-item" href=worker_path(current_user.worker)
-                  i class="bi bi-person-fill pe-3"
-                  = t("navigation.profile")
+              - if current_user.worker.present?
+                li
+                  a class="dropdown-item" href=worker_path(current_user.worker)
+                    i class="bi bi-person-fill pe-3"
+                    = t("navigation.profile")
               li
                 a class="dropdown-item" href="#"
                   i class="bi bi-gear-fill pe-3"
