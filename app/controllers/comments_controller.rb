@@ -3,6 +3,7 @@ class CommentsController < ApplicationController
 
   # POST /comments or /comments.json
   def create
+    authorize! :create, Comment
     @comment = Comment.new(comment_params)
 
     if params[:worker_id] then @entity = Worker.find(params[:worker_id])
@@ -23,7 +24,7 @@ class CommentsController < ApplicationController
 
   # DELETE /comments/1 or /comments/1.json
   def destroy
-
+    authorize! :destroy, @comment
   end
 
   private

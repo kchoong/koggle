@@ -5,24 +5,29 @@ class VacationsController < ApplicationController
 
   # GET /vacations or /vacations.json
   def index
+    authorize! :read, Vacation
     @vacations = paginate Vacation, :start_date, :desc
   end
 
   # GET /vacations/1 or /vacations/1.json
   def show
+    authorize! :show, @vacation
   end
 
   # GET /vacations/new
   def new
+    authorize! :create, Vacation
     @vacation = Vacation.new
   end
 
   # GET /vacations/1/edit
   def edit
+    authorize! :update, @vacation
   end
 
   # POST /vacations or /vacations.json
   def create
+    authorize! :create, Vacation
     @vacation = Vacation.new(vacation_params)
 
     respond_to do |format|
@@ -38,6 +43,8 @@ class VacationsController < ApplicationController
 
   # PATCH/PUT /vacations/1 or /vacations/1.json
   def update
+    authorize! :update, @vacation
+
     respond_to do |format|
       if @vacation.update(vacation_params)
         format.html { redirect_to vacation_url(@vacation), success: t("crud.controller.success.edited", name: Vacation.model_name.human) }
@@ -51,6 +58,7 @@ class VacationsController < ApplicationController
 
   # DELETE /vacations/1 or /vacations/1.json
   def destroy
+    authorize! :destroy, @vacation
     @vacation.destroy
 
     respond_to do |format|

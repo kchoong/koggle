@@ -5,24 +5,29 @@ class WorkersController < ApplicationController
 
   # GET /workers or /workers.json
   def index
+    authorize! :read, Worker
     @workers = paginate Worker
   end
 
   # GET /workers/1 or /workers/1.json
   def show
+    authorize! :show, @worker
   end
 
   # GET /workers/new
   def new
+    authorize! :create, Worker
     @worker = Worker.new
   end
 
   # GET /workers/1/edit
   def edit
+    authorize! :update, @worker
   end
 
   # POST /workers or /workers.json
   def create
+    authorize! :create, Worker
     @worker = Worker.new(worker_params)
 
     respond_to do |format|
@@ -38,6 +43,8 @@ class WorkersController < ApplicationController
 
   # PATCH/PUT /workers/1 or /workers/1.json
   def update
+    authorize! :update, @worker
+
     respond_to do |format|
       if @worker.update(worker_params)
         format.html { redirect_to worker_url(@worker), success: t("crud.controller.success.edited", name: @worker.name) }
@@ -51,6 +58,7 @@ class WorkersController < ApplicationController
 
   # DELETE /workers/1 or /workers/1.json
   def destroy
+    authorize! :destroy, @worker
     @worker.destroy
 
     respond_to do |format|

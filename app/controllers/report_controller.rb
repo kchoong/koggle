@@ -15,6 +15,7 @@ class ReportController < ApplicationController
   end
 
   def report
+    authorize! :read, Shift
 
     # determine start and end time based on passed entity and date elements
     if @month > 0 and @day > 0 then

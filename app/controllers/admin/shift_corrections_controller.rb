@@ -5,16 +5,18 @@ class Admin::ShiftCorrectionsController < ApplicationController
 
   # GET /admin/shift_corrections or /admin/shift_corrections.json
   def index
+    authorize! :read, Admin::ShiftCorrection
     @shift_corrections = paginate Admin::ShiftCorrection, :id, :asc
   end
 
   # GET /admin/shift_corrections/edit_shift/1
   def edit_shift
-
+    authorize! :update, @shift
   end
 
   # POST /admin/shift_corrections/update_shift/1
   def update_shift
+    authorize! :update, @shift
     @shift.update!(shift_params)
     correction = Admin::ShiftCorrection.new(correction_params.merge(shift: @shift))
     correction.save!

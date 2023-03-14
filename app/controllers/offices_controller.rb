@@ -5,24 +5,29 @@ class OfficesController < ApplicationController
 
   # GET /offices or /offices.json
   def index
+    authorize! :read, Office
     @offices = paginate Office
   end
 
   # GET /offices/1 or /offices/1.json
   def show
+    authorize! :show, @office
   end
 
   # GET /offices/new
   def new
+    authorize! :create, Office
     @office = Office.new
   end
 
   # GET /offices/1/edit
   def edit
+    authorize! :update, @office
   end
 
   # POST /offices or /offices.json
   def create
+    authorize! :create, Office
     @office = Office.new(office_params)
 
     respond_to do |format|
@@ -38,6 +43,8 @@ class OfficesController < ApplicationController
 
   # PATCH/PUT /offices/1 or /offices/1.json
   def update
+    authorize! :update, @office
+
     respond_to do |format|
       if @office.update(office_params)
         format.html { redirect_to office_url(@office), success: t("crud.controller.success.edited", name: @office.name) }
@@ -51,6 +58,7 @@ class OfficesController < ApplicationController
 
   # DELETE /offices/1 or /offices/1.json
   def destroy
+    authorize! :destroy, @office
     @office.destroy
 
     respond_to do |format|

@@ -1,16 +1,17 @@
 - comments = entity.comments.order(created_at: :desc)
 
-- if comments.any?
-  div class="comment-section border-top pt-3"
+div class="comment-section border-top pt-3"
+  div class="row"
+    div class="col-12"
+      h5
+        = Comment.model_name.human(count: comments.count)
+        span<> class="badge bg-primary" = comments.count
+  - if can? :create, Comment
     div class="row"
       div class="col-12"
-        h5
-          = Comment.model_name.human(count: comments.count)
-          span<> class="badge bg-primary" = comments.count
-    - if can? :create, Comment
-      div class="row"
-        div class="col-12"
-          = render "comments/input", entity: entity
+        = render "comments/form", entity: entity
+
+  - if comments.any?
     div class="row"
       div class="col-12"
         - comments.each do |comment|

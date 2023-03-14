@@ -18,9 +18,8 @@ html class="h-100"
     main class="container-fluid"
       div class="container-fluid px-md-5 pb-3"
         - if flash.any?
-          div class="row"
-            div class="col-10 offset-1"
-              = render "layouts/partials/flash"
+          div class="container-fluid container-md"
+            = render "layouts/partials/flash"
 
         div id="content"
           = yield

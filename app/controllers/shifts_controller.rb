@@ -5,24 +5,29 @@ class ShiftsController < ApplicationController
 
   # GET /shifts or /shifts.json
   def index
+    authorize! :read, Shift
     @shifts = paginate Shift, :start_time, :desc
   end
 
   # GET /shifts/1 or /shifts/1.json
   def show
+    authorize! :show, @shift
   end
 
   # GET /shifts/new
   def new
+    authorize! :create, Shift
     @shift = Shift.new
   end
 
   # GET /shifts/1/edit
   def edit
+    authorize! :update, @shift
   end
 
   # POST /shifts or /shifts.json
   def create
+    authorize! :create, Shift
     @shift = Shift.new(shift_params)
 
     respond_to do |format|
@@ -38,6 +43,8 @@ class ShiftsController < ApplicationController
 
   # PATCH/PUT /shifts/1 or /shifts/1.json
   def update
+    authorize! :update, @shift
+
     respond_to do |format|
       if @shift.update(shift_params)
         format.html { redirect_to shift_url(@shift), success: t("crud.controller.success.edited", name: Shift.model_name.human) }
@@ -51,6 +58,7 @@ class ShiftsController < ApplicationController
 
   # DELETE /shifts/1 or /shifts/1.json
   def destroy
+    authorize! :destroy, @shift
     @shift.destroy
 
     respond_to do |format|

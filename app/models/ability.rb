@@ -34,13 +34,14 @@ class Ability
 
     return unless user.present?
     user_worker = user.worker
-    user_office_id = user_worker.office.present? ? user.worker.office.id : nil
+    user_worker_id = user_worker.present? ? user_worker.id : nil
+    user_office_id = user_worker.office.present? ? user_worker.office.id : nil
 
     can :update, Worker, user: user
     can :update, Office, id: user_office_id
 
-    can :show, Shift, worker_id: user_worker.id
-    can :show, Vacation, worker_id: user_worker.id
+    can :show, Shift, worker: user_worker
+    can :show, Vacation, worker: user_worker
 
     can [:read, :create], Comment
 
